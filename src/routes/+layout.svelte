@@ -1,5 +1,5 @@
 <svelte:head>
-	<link rel="stylesheet" href="src/lib/reset.css">
+	<link rel="stylesheet" href="/reset.css">
 </svelte:head>
 
 
