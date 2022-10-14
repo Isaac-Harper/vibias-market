@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="title">
+    <div class="title square">
         <h3>Baseball hat</h3> 
     </div>
     <div class="description">
