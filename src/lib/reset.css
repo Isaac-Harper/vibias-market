@@ -1,0 +1,63 @@
+@font-face {
+  font-family: recursive;
+  src: url("fonts/Recursive_VF_1.084.woff2");
+}
+  
+* {
+
+  --mono: "MONO" 0;
+  --casl: "CASL" 0;
+  --wght: 400;
+  --slnt: "slnt" 0;
+  --CRSV: "CRSV" 0.5;
+
+  --bold-wght: 700;
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  
+}
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  
+  
+  font-family: recursive;
+  font-variation-settings: var(--mono), var(--casl), var(--slnt), var(--CRSV);
+  font-weight: var(--wght);
+}
+body {
+  position: fixed;
+  overflow: hidden;
+  
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  
+  background-color: #F8F3D7;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--bold-wght);
+}
+#root, #__next {
+  isolation: isolate;
+}
