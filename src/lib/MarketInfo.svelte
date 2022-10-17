@@ -23,6 +23,8 @@
         grid-template-rows: 1fr 8fr;
         grid-template-areas: "title     list"
                              "body      list";
+                             
+        grid-area: marketI;   
 
     }
 

@@ -22,7 +22,7 @@
         border: 2px solid;
         border-radius: .8rem;
 
-        grid-area: marketI;
+        grid-area: marketL;
     }
 
     h3 {
