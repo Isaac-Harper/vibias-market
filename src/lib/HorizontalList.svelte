@@ -1,15 +1,15 @@
 
 <div class="container">
-    <div class="item">
+    <div class="item element--border--primary">
         Ader
     </div>
-    <div class="item">
+    <div class="item element--border--primary">
         Petra
     </div>
-    <div class="item">
+    <div class="item element--border--primary">
         Test Market
     </div>
-    <div class="item">
+    <div class="item element--border--primary">
         Public Market
     </div>
 
@@ -31,7 +31,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: solid black 2px;
         margin: 0 .2rem;
 
     }

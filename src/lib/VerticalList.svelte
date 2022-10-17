@@ -1,14 +1,14 @@
 <div class="container">
-    <div class="item">
+    <div class="item element--border--primary">
         Hats
     </div>
-    <div class="item">
+    <div class="item element--border--primary">
         Kyria part
     </div>
-    <div class="item">
+    <div class="item element--border--primary">
         Pet store
     </div>
-    <div class="item">
+    <div class="item element--border--primary">
         general
     </div>
 
@@ -29,7 +29,6 @@
         
         justify-content: center;
         align-items: center;
-        border: solid black 2px;
         margin: .2rem 0;
 
     }

@@ -19,9 +19,6 @@
         display: flex;
         flex-direction: column;
 
-        border: 2px solid;
-        border-radius: .8rem;
-
         grid-area: marketL;
     }
 
