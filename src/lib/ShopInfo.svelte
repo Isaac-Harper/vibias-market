@@ -7,6 +7,7 @@
         <h3>Hats</h3>
     </div>
     <div class="body">
+        <h3>Hats</h3>
         <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
     </div>
     <div class="list">
@@ -20,13 +21,12 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr 8fr;
-        grid-template-areas: "title     list"
+        grid-template-areas: "body     list"
                              "body      list";
 
         height: 100%;
         
         grid-area: shopI;
-        padding: 1rem;
     }
 
     .title {
@@ -35,6 +35,7 @@
 
     .body {
         grid-area: body;
+        padding 1rem;
     }
 
     .list {
