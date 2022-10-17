@@ -26,16 +26,15 @@
         height: 100%;
         
         grid-area: shopI;
+        padding: 1rem;
     }
 
     .title {
         grid-area: title;
-        padding: 0 .5rem;
     }
 
     .body {
         grid-area: body;
-        padding: 0 .5rem;
     }
 
     .list {

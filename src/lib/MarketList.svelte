@@ -20,6 +20,7 @@
         flex-direction: column;
 
         grid-area: marketL;
+        
     }
 
     h3 {
