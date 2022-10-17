@@ -12,6 +12,11 @@
   --CRSV: "CRSV" 0.5;
 
   --bold-wght: 700;
+  
+  --white: #F8F3D7;
+  --red: #B77647;
+  --green: #C2BD46;
+  --blue: #BFC8D3;
 }
 
 
@@ -41,7 +46,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   
-  background-color: #F8F3D7;
+  background-color: var(--white);
 }
 img, picture, video, canvas, svg {
   display: block;

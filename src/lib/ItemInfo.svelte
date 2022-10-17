@@ -37,7 +37,7 @@
 
     .buy {
         grid-area: buy;
-        background-color: #C2BD46;
+        background-color: var(--green);
         display: flex;
         align-items: center;
         justify-content: center;

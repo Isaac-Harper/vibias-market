@@ -2,7 +2,7 @@
     <div class="item element--border--primary">
         Hats
     </div>
-    <div class="item element--border--primary">
+    <div class="item element--border--primary selected">
         Kyria part
     </div>
     <div class="item element--border--primary">
@@ -31,5 +31,10 @@
         align-items: center;
         margin: .2rem 0;
 
+        background-color: var(--blue);
+    }
+    
+    .selected {
+        background-color: var(--red);
     }
 </style>

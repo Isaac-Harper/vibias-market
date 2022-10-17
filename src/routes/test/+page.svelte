@@ -73,7 +73,7 @@
         align-items: center;
         justify-content: center;
 
-        background-color: #B77647;
+        background-color: var(--red);
     }
 
     .settings {
@@ -82,7 +82,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #BFC8D3;
+        background-color: var(--blue);
     }
 
     .marketList {
