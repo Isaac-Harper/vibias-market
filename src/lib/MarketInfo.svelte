@@ -2,7 +2,7 @@
 	import VerticalList from "./VerticalList.svelte";
 
 </script>
-<div class="container">
+<div class="container element--border--primary"> 
     <div class="title">
         <h3>Ader</h3>
     </div>
