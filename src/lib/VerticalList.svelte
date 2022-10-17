@@ -31,7 +31,6 @@
         align-items: center;
         margin: .2rem 0;
 
-        background-color: var(--blue);
     }
     
     .selected {
