@@ -3,9 +3,6 @@
 
 </script>
 <div class="container element--border--primary">
-    <div class="title">
-        <h3>Hats</h3>
-    </div>
     <div class="body">
         <h3>Hats</h3>
         <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
