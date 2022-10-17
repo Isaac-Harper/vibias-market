@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="title square">
+<div class="container element--border--primary">
+    <div class="title">
         <h3>Baseball hat</h3> 
     </div>
     <div class="description">
@@ -20,9 +20,8 @@
         grid-template-areas: "title buy"
                              "description buy";
         overflow: hidden;
-
-        border: 2px solid;
-        border-radius: .8rem;
+        
+        grid-area: itemI;
     }
 
     .title {

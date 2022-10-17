@@ -18,25 +18,20 @@
 
         <UserInfo/>
 
-        <div class="logout box">
+        <div class="logout element--border--primary">
             logout
         </div>
-        <div class="settings box">
+        <div class="settings element--border--primary">
             setting
         </div>
 
         <MarketList/>
 
-        <div class="marketInfo box">
-            <MarketInfo/>
+        <MarketInfo/>
 
-        </div>
-        <div class="shopInfo box">
-            <ShopInfo/>
-        </div>
-        <div class="itemInfo">
-            <ItemInfo/>
-        </div>  
+        <ShopInfo/>
+
+        <ItemInfo/>
     </div>
 </div>
 

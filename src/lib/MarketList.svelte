@@ -6,7 +6,7 @@
 
 
 
-<div class="holder">
+<div class="holder element--border--primary">
     <h3>Markets</h3>
     <HorizontalList/>
 </div>
@@ -22,7 +22,7 @@
         border: 2px solid;
         border-radius: .8rem;
 
-        
+        grid-area: marketI;
     }
 
     h3 {

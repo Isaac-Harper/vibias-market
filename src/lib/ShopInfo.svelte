@@ -2,7 +2,7 @@
 	import VerticalList from "./VerticalList.svelte";
 
 </script>
-<div class="container">
+<div class="container element--border--primary">
     <div class="title">
         <h3>Hats</h3>
     </div>
@@ -24,6 +24,8 @@
                              "body      list";
 
         height: 100%;
+        
+        grid-area: shopI;
     }
 
     .title {
