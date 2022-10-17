@@ -35,7 +35,7 @@
 
     .body {
         grid-area: body;
-        padding 1rem;
+        padding: 1rem;
     }
 
     .list {
