@@ -1,5 +1,12 @@
 <script>
 	import VerticalList from "./VerticalList.svelte";
+	
+	
+	let shops = [
+	        "hat shop",
+	        "diner",
+	        "pickle hut"
+	]
 
 </script>
 <div class="container element--border--primary"> 
@@ -10,7 +17,7 @@
         <p>Welcome to Ader one of the largest citys in the world. Here you can find any item you need if you know where to look.</p>
     </div>
     <div class="list">
-        <VerticalList/>
+        <VerticalList elements={shops}/>
     </div>
 </div>
 
