@@ -1,5 +1,5 @@
 <script>
-	import VerticalList from "./VerticalList.svelte";
+	import VerticalList from "$lib/VerticalList.svelte";
 	
 	export let active_market_id: number
     export let shops: any[]
