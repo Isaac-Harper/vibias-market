@@ -1,18 +1,18 @@
+<script lang="ts">
+
+    export let elements = []
+</script>
+
 
 <div class="container">
-    <div class="item element--border--primary">
-        Ader
-    </div>
-    <div class="item element--border--primary">
-        Petra
-    </div>
-    <div class="item element--border--primary">
-        Test Market
-    </div>
-    <div class="item element--border--primary">
-        Public Market
-    </div>
 
+
+    {#each elements as element}
+        <div class="item element--border--primary">
+            {element}
+        </div>
+    
+    {/each}
 </div>
 
 <style>

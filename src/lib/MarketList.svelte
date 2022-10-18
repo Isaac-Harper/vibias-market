@@ -1,6 +1,7 @@
 <script>
 	import HorizontalList from "./HorizontalList.svelte";
 
+    export let markets
 </script>
 
 
@@ -8,7 +9,7 @@
 
 <div class="holder element--border--primary">
     <h3>Markets</h3>
-    <HorizontalList/>
+    <HorizontalList elements={markets}/>
 </div>
 
 <style>

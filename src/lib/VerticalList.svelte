@@ -9,7 +9,7 @@
     
     {#each elements as element}
         <div class="item element--border--primary">
-            {element}
+            {element.name}
         </div>
     
     {/each}

@@ -1,14 +1,17 @@
 <script>
 	import VerticalList from "./VerticalList.svelte";
 	
-	
-	export let shops = [
-	        "hat shop",
-	        "diner",
-	        "pickle hut"
-	]
+	export let active_market_id: number
+    export let shops: any[]
 
+    export let current_market: any[]
+
+
+    $: active_shops = shops.filter(value => value.market_id === active_market_id)
 </script>
+
+
+
 <div class="container element--border--primary"> 
     <div class="title">
         <h3>Ader</h3>
