@@ -5,6 +5,8 @@
 	import MarketList from "$lib/MarketList.svelte";
 	import ShopInfo from "$lib/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
+	
+	import { user, auth } from '$lib/db'
 
     var innerHeight;
 
@@ -13,14 +15,14 @@
 
 <svelte:window bind:innerHeight={innerHeight} />
 
-<div class="container" style="height: {innerHeight}px;">
-    <div class="grid">
+
+
+{#if $user}
+    <div class="grid" style="height: {innerHeight}px;">
 
         <UserInfo/>
 
-        <div class="logout element--border--primary">
-            logout
-        </div>
+        <button on:click={() => auth.signOut()} class="logout element--border--primary" >Sign out</button>
         <div class="settings element--border--primary">
             setting
         </div>
@@ -33,7 +35,8 @@
 
         <ItemInfo/>
     </div>
-</div>
+{/if}
+
 
 <style>
 
@@ -45,6 +48,8 @@
     }
 
     .grid {
+        padding: 1rem;
+        overscroll-behavior: contain;
         height: 100%;
         display: grid;
         gap: .5rem;

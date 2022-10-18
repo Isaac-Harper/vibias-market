@@ -1,6 +1,11 @@
+<script>
+    import { user } from '$lib/db'
+</script>
+
+
 <div class="container element--border--primary">
     <p>You are logged in as:</p>
-    <p>isaacharper909@gmail.com</p>
+    <p>{$user.email}</p>
 </div>
 
 <style>
@@ -15,3 +20,6 @@
         background: #C2BD46;
     }
 </style>
+
+
+
