@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HorizontalList from "$lib/HorizontalList.svelte";
 	import ItemInfo from "$lib/ItemInfo.svelte";
 	import MarketInfo from "$lib/MarketInfo.svelte";
