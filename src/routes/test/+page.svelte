@@ -5,7 +5,7 @@
 	import MarketList from "$lib/MarketList.svelte";
 	import ShopInfo from "$lib/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
-	
+	import Auth from "$lib/Auth.svelte";
 	import { user, auth } from '$lib/db'
 
     var innerHeight;
@@ -35,6 +35,10 @@
 
         <ItemInfo/>
     </div>
+{:else}
+    
+    <Auth/>
+ 
 {/if}
 
 
