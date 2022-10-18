@@ -2,7 +2,7 @@
 	import VerticalList from "./VerticalList.svelte";
 	
 	
-	let shops = [
+	export let shops = [
 	        "hat shop",
 	        "diner",
 	        "pickle hut"
