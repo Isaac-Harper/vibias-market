@@ -1,18 +1,18 @@
 <script lang="ts">
-    export let current_item = {}
+    export let active_item = {}
      
 </script>
 
 
-{#if current_item !== {} } 
+{#if active_item !== {} } 
     <div class="container element--border--primary">
         <div class="title">
-            <h3>{current_item.name}</h3> 
+            <h3>{active_item.name}</h3> 
         </div>
-        <div class="description">{current_item.description}</div>
+        <div class="description">{active_item.description}</div>
         <div class="buy">
             Buy <br> 
-            {current_item.price} Coins
+            {active_item.price} Coins
         </div>
     </div>
 {/if}

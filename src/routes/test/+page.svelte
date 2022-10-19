@@ -80,9 +80,7 @@
         {/await}
     </div>
 {:else}
-    
     <Auth/>
- 
 {/if}
 
 
