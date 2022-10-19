@@ -7,6 +7,8 @@
     
     
     function toggle_market(market) {
+        console.log(market)
+        console.log(active_market)
         if ( market == active_market) {
             currenr_market.set({})
         } else {
