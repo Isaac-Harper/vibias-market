@@ -5,10 +5,7 @@
     export let shops: any[]
 
     
-    function aa() {
-    console.log($shop_list)
-    }
-
+    $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
 </script>
 
 
@@ -18,13 +15,13 @@
             <h3>{$current_market.name}</h3>
         </div>
         <div class="body">
-            <p>{$current_market.description}</p>
+            <p>{$current_market.description}</p> 
         </div>
         
         
         <div class="list">
-            {#each $shop_list as element}
-                <div on:click={aa} class="item element--border--primary">
+            {#each current_shops as element}
+                <div class="item element--border--primary">
                     {element.name}
                 </div>
             
