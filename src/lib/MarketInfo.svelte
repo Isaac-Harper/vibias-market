@@ -19,7 +19,7 @@
         </div>
         
         
-        <div class="container">
+        <div class="list">
             {#each shops as element}
                 <div class="item element--border--primary">
                     {element.name}
@@ -60,7 +60,7 @@
         grid-area: list;
     }
     
-    .container {
+    .list {
         grid-area: list;
         display: flex;
         flex-direction: column;
