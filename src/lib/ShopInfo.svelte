@@ -1,20 +1,20 @@
 <script lang="ts">
 	import VerticalList from "./VerticalList.svelte";
     
-    export let current_shop = {}
+    export let active_shop = {}
     export let item_list = []
 </script>
 
 
 
-{#if current_shop !== {} }
+{#if Object.keys(active_shop).length !== 0 }
     <div class="container element--border--primary">
         <div class="body">
             <h3>Hats</h3>
             <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
         </div>
         <div class="list">
-            <VerticalList/>
+            <VerticalList elements={item_list}/>
         </div>
     </div>
 {/if}

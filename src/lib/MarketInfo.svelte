@@ -1,28 +1,25 @@
 <script lang="ts">
-	import VerticalList from "$lib/VerticalList.svelte";
-	
-	export let active_market_id: number
+	import VerticalList from "$lib/VerticalList.svelte"
     export let shops: any[]
 
-    export let current_market: any[]
+    export let active_market: any[]
 
-
-    $: active_shops = shops.filter(value => value.market_id === active_market_id)
 </script>
 
 
-
-<div class="container element--border--primary"> 
-    <div class="title">
-        <h3>Ader</h3>
+{#if Object.keys(active_market).length !== 0 }
+    <div class="container element--border--primary"> 
+        <div class="title">
+            <h3>Ader</h3>
+        </div>
+        <div class="body">
+            <p>Welcome to Ader one of the largest citys in the world. Here you can find any item you need if you know where to look.</p>
+        </div>
+        <div class="list">
+            <VerticalList elements={shops}/>
+        </div>
     </div>
-    <div class="body">
-        <p>Welcome to Ader one of the largest citys in the world. Here you can find any item you need if you know where to look.</p>
-    </div>
-    <div class="list">
-        <VerticalList elements={shops}/>
-    </div>
-</div>
+{/if}
 
 
 <style>
