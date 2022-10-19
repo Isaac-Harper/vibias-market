@@ -1,6 +1,8 @@
 <script lang="ts">
     export let active_item = {}
      
+     
+     $: console.log(active_item)
 </script>
 
 
