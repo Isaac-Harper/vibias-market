@@ -9,6 +9,7 @@
     function toggle_market(market) {
         console.log(market)
         console.log(active_market)
+        console.log($current_market)
         if ( market == active_market) {
             current_market.set({})
         } else {
