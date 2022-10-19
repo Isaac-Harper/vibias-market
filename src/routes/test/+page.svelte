@@ -71,24 +71,12 @@
 
 {#if $user}
     <div class="grid" style="height: {innerHeight}px;">
-
         <UserInfo/>
-
-        <button on:click={() => auth.signOut()} class="logout element--border--primary" >Sign out</button>
-        <div class="settings element--border--primary">
-            setting
-        </div>
-
         {#await init() then}
-        
             <MarketList {markets}/>
-
             <MarketInfo {shops} {active_market}/>
-
             <ShopInfo {items} {active_shop}/>
-
             <ItemInfo {active_item}/>
-        
         {/await}
     </div>
 {:else}
@@ -99,14 +87,6 @@
 
 
 <style>
-
-
-    .container {
-        padding: 1rem;
-        height: 100%;
-        overscroll-behavior: contain;
-    }
-
     .grid {
         padding: 1rem;
         overscroll-behavior: contain;
@@ -123,37 +103,6 @@
             "marketI    marketI"
             "shopI      shopI"
             "itemI      itemI";
-    }
-
-    .box {
-        border: 2px solid;
-        border-radius: .8rem;
-    }
-
-
-    
-
-    .marketList {
-        
-
-        
-
-        
-    }
-
-    .marketInfo {
-        grid-area: marketI;
-
-        
-
-    }
-
-    .shopInfo {
-        grid-area: shopI;
-    }
-
-    .itemInfo {
-        grid-area: itemI;
     }
 
 </style>
