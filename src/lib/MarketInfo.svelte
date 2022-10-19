@@ -4,7 +4,9 @@
     
     export let shops: any[]
 
-    $: current_shops = $shop_list.filter(v => v.id === $current_market.id)
+    let current_shops = $shop_list.filter(v => v.id === $current_market.id)
+    
+    
 
 </script>
 
