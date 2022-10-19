@@ -24,7 +24,7 @@
         
         
         <div class="list">
-            {#each current_shops as element}
+            {#each $shop_list as element}
                 <div on:click={aa} class="item element--border--primary">
                     {element.name}
                 </div>
