@@ -6,8 +6,9 @@
 
     let current_shops = $shop_list.filter(v => v.id === $current_market.id)
     
-    $: console.log($shop_list)
-    
+    function aa() {
+    console.log($shop_list)
+    }
 
 </script>
 
@@ -24,7 +25,7 @@
         
         <div class="list">
             {#each current_shops as element}
-                <div class="item element--border--primary">
+                <div on:click={aa} class="item element--border--primary">
                     {element.name}
                 </div>
             
