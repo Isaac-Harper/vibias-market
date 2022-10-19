@@ -21,7 +21,7 @@
     
     <div class="container">
         {#each markets as market}
-            <div on:click={() => toggle_market(element)} class="item element--border--primary">
+            <div on:click={() => toggle_market(market)} class="item element--border--primary">
                 {market.name}
             </div>
         {/each}
