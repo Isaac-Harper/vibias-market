@@ -12,13 +12,20 @@
 {#if Object.keys($current_market).length !== 0 }
     <div class="container element--border--primary"> 
         <div class="title">
-            <h3>{$current_market.title}</h3>
+            <h3>{$current_market.name}</h3>
         </div>
         <div class="body">
             <p>{$current_market.description}</p>
         </div>
-        <div class="list">
-            <VerticalList elements={shops}/>
+        
+        
+        <div class="container">
+            {#each shops as element}
+                <div class="item element--border--primary">
+                    {element.name}
+                </div>
+            
+            {/each}
         </div>
     </div>
 {/if}
@@ -52,4 +59,24 @@
     .list {
         grid-area: list;
     }
+    
+    .container {
+        grid-area: list;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+
+        padding: .5rem;
+        height: 100%;
+    }
+    .item {
+        flex: 0 0 5rem;
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        margin: .2rem 0;
+
+    }
+    
 </style>

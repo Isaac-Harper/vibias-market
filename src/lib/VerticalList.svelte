@@ -35,7 +35,5 @@
 
     }
     
-    .selected {
-        background-color: var(--red);
-    }
+    
 </style>
