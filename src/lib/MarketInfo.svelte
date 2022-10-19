@@ -1,8 +1,18 @@
 <script lang="ts">
-    import {shop_list, current_market} from "$lib/db"
+    import {shop_list, current_market, current_shop} from "$lib/db"
 
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
+    
+    
+    
+    function toggle_shop(shop) {
+        if ( shop == $current_shop) {
+            current_shop.set({})
+        } else {
+            current_shop.set(shop)
+        }
+    }
 </script>
 
 
@@ -17,9 +27,9 @@
         
         
         <div class="list">
-            {#each current_shops as element}
-                <div class="item element--border--primary">
-                    {element.name}
+            {#each current_shops as shop}
+                <div on:click={() => toggle_shop(shop)}  class="item element--border--primary" class:selected="{shop  === $current_shop}">
+                    {shop.name}
                 </div>
             
             {/each}
@@ -52,10 +62,7 @@
         grid-area: body;
         padding: 0 .5rem;
     }
-
-    .list {
-        grid-area: list;
-    }
+ 
     
     .list {
         grid-area: list;
@@ -74,6 +81,10 @@
         align-items: center;
         margin: .2rem 0;
 
+    }
+    
+    .selected {
+        background-color: var(--red);
     }
     
 </style>
