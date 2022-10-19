@@ -4,7 +4,7 @@
     
     export let shops: any[]
 
-    
+    $: current_shops = shops.filter(v => v.id === $current_market.id)
 
 </script>
 
@@ -20,7 +20,7 @@
         
         
         <div class="list">
-            {#each shops as element}
+            {#each current_shops as element}
                 <div class="item element--border--primary">
                     {element.name}
                 </div>
