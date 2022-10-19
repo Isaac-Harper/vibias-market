@@ -6,7 +6,7 @@
 </script>
 
 
-{#if active_item != {} } 
+{#if Object.keys(active_item).length !== 0} 
     <div class="container element--border--primary">
         <div class="title">
             <h3>{active_item.name}</h3> 
