@@ -74,8 +74,8 @@
     <div class="grid" style="height: {innerHeight}px; width: {innerWidth}px;">
         <UserInfo/>
         {#await init() then}
-            <MarketList {markets}/>
-            <MarketInfo {shops} {active_market}/>
+            <MarketList/>
+            <MarketInfo/>
             <ShopInfo {items} {active_shop}/>
             <ItemInfo {active_item}/>
         {/await}

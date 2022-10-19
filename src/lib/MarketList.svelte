@@ -1,8 +1,5 @@
 <script lang="ts">
-	import HorizontalList from "./HorizontalList.svelte";
-    import {current_market} from "$lib/db"
-    
-    export let markets
+    import {current_market, market_list} from "$lib/db"
     
     function toggle_market(market) {
         if ( market == $current_market) {
@@ -20,7 +17,7 @@
     <h3>Markets</h3>
     
     <div class="container">
-        {#each markets as market}
+        {#each $market_list as market}
             <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market  === $current_market}">
                 {market.name}
             </div>

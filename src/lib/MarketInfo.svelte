@@ -1,8 +1,5 @@
 <script lang="ts">
-	import VerticalList from "$lib/VerticalList.svelte"
     import {shop_list, current_market} from "$lib/db"
-    
-    export let shops: any[]
 
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
