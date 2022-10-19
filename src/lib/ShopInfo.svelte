@@ -1,17 +1,23 @@
-<script>
+<script lang="ts">
 	import VerticalList from "./VerticalList.svelte";
-
+    
+    export let current_shop = {}
+    export let item_list = []
 </script>
-<div class="container element--border--primary">
-    <div class="body">
-        <h3>Hats</h3>
-        <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
-    </div>
-    <div class="list">
-        <VerticalList/>
-    </div>
-</div>
 
+
+
+{#if current_shop !== {} }
+    <div class="container element--border--primary">
+        <div class="body">
+            <h3>Hats</h3>
+            <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
+        </div>
+        <div class="list">
+            <VerticalList/>
+        </div>
+    </div>
+{/if}
 
 <style>
     .container {

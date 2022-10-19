@@ -1,15 +1,23 @@
-<div class="container element--border--primary">
-    <div class="title">
-        <h3>Baseball hat</h3> 
+<script lang="ts">
+    export let current_item = {}
+     
+</script>
+
+
+{#if current_item !== {} } 
+    <div class="container element--border--primary">
+        <div class="title">
+            <h3>{current_item.name}</h3> 
+        </div>
+        <div class="description">{current_item.description}</div>
+        <div class="buy">
+            Buy <br> 
+            {current_item.price} Coins
+        </div>
     </div>
-    <div class="description">
-        A fairly standard baseball hat
-    </div>
-    <div class="buy">
-        Buy <br> 
-        20 Coins
-    </div>
-</div>
+{/if}
+
+
 
 <style>
     .container {

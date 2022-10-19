@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HorizontalList from "./HorizontalList.svelte";
 
     export let markets

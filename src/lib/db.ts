@@ -22,13 +22,19 @@ export let current_shop_id = writable(0)
 export let current_item_id = writable(0)
 
 let empty: any[] | undefined = []
+let emptyA = {}
+
+export let current_market = writable(emptyA)
+export let current_shop = writable(emptyA)
+export let current_item = writable(emptyA)
+
 export let current_markets = writable(empty)
 export let current_shops = writable(empty)
 export let current_items = writable(empty)
 
-export let markets_list = writable(empty)
-export let shops_list = writable(empty)
-export let items_list = writable(empty)
+export let market_list = writable(empty)
+export let shop_list = writable(empty)
+export let item_list = writable(empty)
 export let patron_list = writable(empty)
 
 
