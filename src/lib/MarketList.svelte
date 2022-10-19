@@ -10,7 +10,7 @@
         console.log(market)
         console.log(active_market)
         if ( market == active_market) {
-            currenr_market.set({})
+            current_market.set({})
         } else {
             current_market.set(market)
         }
