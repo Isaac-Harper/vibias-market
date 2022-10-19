@@ -1,6 +1,13 @@
 <script lang="ts">
 
+    import {current_market} from "$lib/db"
+
     export let elements = []
+    
+    function open_market(market) {
+        current_market.set(market)
+    }
+    
 </script>
 
 
@@ -8,7 +15,7 @@
 
 
     {#each elements as element}
-        <div class="item element--border--primary">
+        <div on:click={() => open_market(element)} class="item element--border--primary">
             {element.name}
         </div>
     
