@@ -1,20 +1,39 @@
 <script lang="ts">
-	import VerticalList from "./VerticalList.svelte";
+[]
     
-    export let active_shop = {}
-    export let item_list = []
+    
+    import {item_list, current_shop, current_item} from "$lib/db"
+
+    
+    $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
+    
+    
+    
+    function toggle_item(item) {
+        if ( item == $current_item) {
+            current_item.set({})
+        } else {
+            current_item.set(item)
+        }
+    }
 </script>
 
 
 
-{#if Object.keys(active_shop).length !== 0 }
+{#if Object.keys($current_shop).length !== 0 }
     <div class="container element--border--primary">
         <div class="body">
             <h3>Hats</h3>
             <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
         </div>
+        
         <div class="list">
-            <VerticalList elements={item_list}/>
+            {#each current_items as item}
+                <div on:click={() => toggle_item(item)}  class="item element--border--primary" class:selected="{item  === $current_item}">
+                    {item.name}
+                </div>
+            
+            {/each}
         </div>
     </div>
 {/if}
@@ -41,7 +60,27 @@
         padding: 1rem;
     }
 
+    
     .list {
         grid-area: list;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+
+        padding: .5rem;
+        height: 100%;
+    }
+    .item {
+        flex: 0 0 5rem;
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        margin: .2rem 0;
+
+    }
+    
+    .selected {
+        background-color: var(--red);
     }
 </style>
