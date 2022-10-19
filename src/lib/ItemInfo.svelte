@@ -4,7 +4,7 @@
 </script>
 
 
-{#if active_item !== {} } 
+{#if active_item != {} } 
     <div class="container element--border--primary">
         <div class="title">
             <h3>{active_item.name}</h3> 
