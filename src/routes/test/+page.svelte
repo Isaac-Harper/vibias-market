@@ -89,6 +89,7 @@
         padding: 1rem;
         overscroll-behavior: contain;
         height: 100%;
+        width: 100%;
         display: grid;
         gap: .5rem;
         grid-template-rows: .5fr .5fr minmax(0, 2fr) minmax(0,6fr) minmax(0, 4fr) minmax(0, 2fr);
