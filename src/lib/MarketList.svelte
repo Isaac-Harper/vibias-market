@@ -21,7 +21,7 @@
     
     <div class="container">
         {#each markets as market}
-            <div on:click={() => toggle_market(market)} class="item element--border--primary">
+            <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market  === $current_market}">
                 {market.name}
             </div>
         {/each}
@@ -61,5 +61,9 @@
         align-items: center;
         margin: 0 .2rem;
 
+    }
+    
+    .selected {
+        background-color: var(--red);
     }
 </style>
