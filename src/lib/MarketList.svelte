@@ -3,13 +3,8 @@
     import {current_market} from "$lib/db"
     
     export let markets
-    export let active_market
-    
     
     function toggle_market(market) {
-        console.log(market)
-        console.log(active_market)
-        console.log($current_market)
         if ( market == $current_market) {
             current_market.set({})
         } else {
@@ -25,11 +20,10 @@
     <h3>Markets</h3>
     
     <div class="container">
-        {#each markets as element}
+        {#each markets as market}
             <div on:click={() => toggle_market(element)} class="item element--border--primary">
-                {element.name}
+                {market.name}
             </div>
-    
         {/each}
     </div>
 </div>

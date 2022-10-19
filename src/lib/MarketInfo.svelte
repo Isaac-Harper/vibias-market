@@ -1,19 +1,21 @@
 <script lang="ts">
 	import VerticalList from "$lib/VerticalList.svelte"
+    import {current_market} from "$lib/db"
+    
     export let shops: any[]
 
-    export let active_market: any[]
+    
 
 </script>
 
 
-{#if Object.keys(active_market).length !== 0 }
+{#if Object.keys($current_market).length !== 0 }
     <div class="container element--border--primary"> 
         <div class="title">
-            <h3>Ader</h3>
+            <h3>{$current_market.title}</h3>
         </div>
         <div class="body">
-            <p>Welcome to Ader one of the largest citys in the world. Here you can find any item you need if you know where to look.</p>
+            <p>{$current_market.description}</p>
         </div>
         <div class="list">
             <VerticalList elements={shops}/>
