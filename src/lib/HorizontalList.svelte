@@ -38,7 +38,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 .2rem;
+        margin: 0 .f2rem;
 
     }
 </style>
