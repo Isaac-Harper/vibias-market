@@ -36,7 +36,6 @@
     <div class="grid" style="height: {innerHeight}px; width: {innerWidth}px;">
         <UserInfo/>
         {#await init() then}
-        a
             <MarketList/>
             <MarketInfo/>
             <ShopInfo/>
