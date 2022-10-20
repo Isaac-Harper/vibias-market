@@ -19,7 +19,7 @@
 
 <button on:click={() => auth.signOut()} class="logout element--border--primary" >Sign out</button>
 
-<div class="settings element--border--primary">
+<div on:click{init} class="settings element--border--primary">
   setting
 </div>
 
