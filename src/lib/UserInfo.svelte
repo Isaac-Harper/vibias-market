@@ -3,11 +3,12 @@
     
     
     async function init() {
+        console.log("a")
         market_list.set(await getMarkets())
         shop_list.set(await getShops())
         item_list.set(await getItems())
         patron_list.set(await getPatrons())
- 
+        console.log("b")
     }
 </script>
 
