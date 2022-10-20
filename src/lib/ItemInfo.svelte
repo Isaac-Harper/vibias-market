@@ -2,7 +2,7 @@
      
      import {current_item} from "$lib/db"
      
-     $: console.log(active_item)
+
 </script>
 
 

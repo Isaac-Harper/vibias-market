@@ -1,5 +1,5 @@
 <script>
-    import { user, auth, market_list, shop_list, item_list, patron_list, getMarkets, grtShops, getItems, getPatrons } from '$lib/db'
+    import { user, auth, market_list, shop_list, item_list, patron_list, getMarkets, getShops, getItems, getPatrons } from '$lib/db'
     
     
     async function init() {
