@@ -25,6 +25,9 @@
                 {market.name}
             </div>
         {/each}
+        
+        <div class="modifier element--border--primary">New</div> 
+        <div class="modifier element--border--primary">Join</div> 
     </div>
 </div>
 
@@ -62,6 +65,15 @@
         margin: 0 .2rem;
 
     }
+    
+    .modifier {
+        height: 100%;
+        flex: 0 0 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 .2rem;
+    } 
     
     .selected {
         background-color: var(--red);
