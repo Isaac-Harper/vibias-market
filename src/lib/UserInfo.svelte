@@ -21,7 +21,7 @@
 
 <button on:click{init} class="settings element--border--primary">
   setting
-</div>
+</button>
 
 <style>
     .container {
