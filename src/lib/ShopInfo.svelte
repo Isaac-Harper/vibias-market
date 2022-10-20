@@ -23,8 +23,8 @@
 {#if Object.keys($current_shop).length !== 0 }
     <div class="container element--border--primary">
         <div class="body">
-            <h3>Hats</h3>
-            <p>Any hat you can think of we will have. Pick one hat, 10 hats, any hat you want.</p>
+            <h3>{$current_shop.name}</h3>
+            <p>{$current_shop.description}</p>
         </div>
         
         <div class="list">

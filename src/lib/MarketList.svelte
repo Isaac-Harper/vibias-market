@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {current_market, market_list} from "$lib/db"
+    import {current_market, current_shop, current_item, market_list} from "$lib/db"
     
     function toggle_market(market) {
         if ( market == $current_market) {
@@ -7,6 +7,9 @@
         } else {
             current_market.set(market)
         }
+        
+        current_item.set({})
+        current_shop.set({})
     }
 </script>
 

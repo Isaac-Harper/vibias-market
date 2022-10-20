@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {shop_list, current_market, current_shop} from "$lib/db"
+    import {shop_list, current_market, current_shop, current_item} from "$lib/db"
 
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
@@ -12,6 +12,8 @@
         } else {
             current_shop.set(shop)
         }
+        
+        current_item.set({})
     }
 </script>
 
