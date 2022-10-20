@@ -1,7 +1,4 @@
 <script lang="ts">
-[]
-    
-    
     import {item_list, current_shop, current_item} from "$lib/db"
 
     

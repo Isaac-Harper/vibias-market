@@ -1,20 +1,20 @@
 <script lang="ts">
-    export let active_item = {}
      
+     import {current_item} from "$lib/db"
      
      $: console.log(active_item)
 </script>
 
 
-{#if Object.keys(active_item).length !== 0} 
+{#if Object.keys($current_item).length !== 0} 
     <div class="container element--border--primary">
         <div class="title">
-            <h3>{active_item.name}</h3> 
+            <h3>{$current_item.name}</h3> 
         </div>
-        <div class="description">{active_item.description}</div>
+        <div class="description">{$current_item.description}</div>
         <div class="buy">
             Buy <br> 
-            {active_item.price} Coins
+            {$current_item.price} Coins
         </div>
     </div>
 {/if}

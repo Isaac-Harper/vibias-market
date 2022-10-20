@@ -5,20 +5,11 @@
 	import MarketList from "$lib/MarketList.svelte";
 	import ShopInfo from "$lib/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
-	import Auth from "$lib/Auth.svelte";
-	import { user, auth, getMarkets, getShops, getItems, current_market_id, current_shop_id, current_item_id, current_market, current_shop, current_item, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
+	import Auth from "$lib/Auth.svelte"
+	import { user, getMarkets, getShops, getItems, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
     
     $: innerHeight = 0
     $: innerWidth = 0
-
-    let markets:any[]
-    let shops:Shop_type[]
-    let items:any[]
-    let patrons: any[]
-    
-    let active_market
-    let active_shop
-    let active_item
     
 
     export async function reload() {
@@ -26,35 +17,6 @@
         shops = await getShops()
         items = await getItems()
     }
-
-
-    market_list.subscribe(value => {
-        markets = value
-    })
-
-    shop_list.subscribe(value => {
-        shops = value
-    })
-
-    item_list.subscribe(value => {
-        items = value
-    })
-
-    patron_list.subscribe(value => {
-        patrons = value
-    })
-
-    current_market.subscribe(v => {
-        active_market = v
-    }) 
-    
-    current_shop.subscribe(v => {
-        active_shop = v
-    }) 
-    
-    current_item.subscribe(v => {
-        active_item = v
-    }) 
 
     async function init() {
         market_list.set(await getMarkets())
@@ -76,8 +38,8 @@
         {#await init() then}
             <MarketList/>
             <MarketInfo/>
-            <ShopInfo {items} {active_shop}/>
-            <ItemInfo {active_item}/>
+            <ShopInfo/>
+            <ItemInfo/>
         {/await}
     </div>
 {:else}
