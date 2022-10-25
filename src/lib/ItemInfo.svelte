@@ -49,17 +49,8 @@
         overflow: hidden;
         
         grid-area: itemI;
-    }
+        margin-left: 3rem;
 
-    .title {
-        grid-area: title;
-        padding: 0 .5rem;
-        
-    }
-
-    .delete {
-        width: 3ch;
-        background-color: var(--red);
     }
 
     .description {

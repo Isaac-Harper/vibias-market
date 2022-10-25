@@ -49,14 +49,16 @@
     <div class="container element--border--primary">
         <div class="body">
             {#if creating_new_item}
-                <h4>Creating New Item</h4>
-                <p>Item Name:</p>
-                <input type="text" bind:value={new_item_name}>
-                <p>Item Descriptiion:</p>
-                <input type="text" bind:value={new_item_description}>
-                <p>Item Price:</p>
-                <input type="number" bind:value={new_item_price}>
-                <button class="settings element--border--primary" on:click={createNewItem}>Create!</button>
+                <div style="display: flex; flex-direction: column;">
+                    <h4>Creating New Item</h4>
+                    <p>Item Name:</p>
+                    <input type="text" bind:value={new_item_name}>
+                    <p>Item Descriptiion:</p>
+                    <input type="text" bind:value={new_item_description}>
+                    <p>Item Price:</p>
+                    <input type="number" bind:value={new_item_price}>
+                    <button class="create element--border--primary" on:click={createNewItem}>Create!</button>
+                </div>
             {:else}
                 <h3>
                     {$current_shop.name}
@@ -92,22 +94,21 @@
 <style>
     .container {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr auto;
         grid-template-areas: "body  list";
         
-        height: 100%;
+        max-height: 18rem;
         
         grid-area: shopI;
+
+        margin-left: 2rem;
+
     }
 
-    .delete {
-        width: 3ch;
-        background-color: var(--red);
+    input {
+        max-width: 10rem;
     }
-    .settings {
-        width: 3ch;
-        background-color: var(--red);
-    }
+
     .newItem {
         background-color: var(--blue);
         flex: 0 0 3rem;
@@ -127,6 +128,7 @@
 
         padding: .5rem;
         height: 100%;
+        width: 12rem;
     }
     .item {
         flex: 0 0 5rem;
@@ -136,6 +138,11 @@
         align-items: center;
         margin: .2rem 0;
 
+    }
+
+    .create {
+        background-color: var(--blue);
+        width: 6rem;
     }
     
     .selected {

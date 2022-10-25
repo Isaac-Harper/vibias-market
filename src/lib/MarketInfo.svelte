@@ -52,7 +52,7 @@
                 <input type="text" bind:value={new_shop_name}>
                 <p>Shop Descriptiion:</p>
                 <input type="text" bind:value={new_shop_description}>
-                <button class="settings element--border--primary" on:click={createNewShop}>Create!</button>
+                <button class="create element--border--primary" on:click={createNewShop}>Create!</button>
             </div>
                 
             {:else}
@@ -95,13 +95,14 @@
 
 <style>
     .container {
-        height: 100%;
+        max-height: 18rem;
         display: grid;
         grid-template-columns: 1fr auto;
         grid-template-areas: "body      list";
                              
         grid-area: marketI;   
 
+        margin-left: 1rem;
     }
 
     input {
@@ -115,10 +116,6 @@
         width: 100%;
     }
 
-    .delete {
-        width: 3ch;
-        background-color: var(--red);
-    }
  
     
     .list {
@@ -129,7 +126,7 @@
 
         padding: .5rem;
         height: 100%;
-        width: 6rem;
+        width: 12rem;
     }
     .item {
         flex: 0 0 5rem;
@@ -147,6 +144,11 @@
     .settings {
         width: 3ch;
         background-color: var(--red);
+    }
+
+    .create {
+        background-color: var(--blue);
+        width: 6rem;
     }
     
     .selected {

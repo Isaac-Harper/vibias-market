@@ -40,8 +40,6 @@ html, body {
   font-weight: var(--wght);
 }
 body {
-  position: fixed;
-  overflow: hidden;
   
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;

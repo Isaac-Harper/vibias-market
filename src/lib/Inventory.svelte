@@ -31,7 +31,10 @@
 
 <style>
     .container {
-        grid-area: 5 / 1 / 7 / 3;
+        grid-area: 5 / 1 / 8 / 3;
         padding: 1rem;
+
+        margin-left: 2rem;
+
     }
 </style>

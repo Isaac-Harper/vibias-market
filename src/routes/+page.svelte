@@ -8,10 +8,7 @@
 	import Auth from "$lib/Auth.svelte"
 	import { user, getMarkets, getShops, getItems, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
 	import Inventory from "$lib/Inventory.svelte";
-    
-    $: innerHeight = 0
-    $: innerWidth = 0
-    
+ 
 
     export async function init() {
         market_list.set(await getMarkets())
@@ -23,12 +20,10 @@
 </script>
 
 
-<svelte:window bind:innerHeight bind:innerWidth/>
-
 
 
 {#if $user}
-    <div class="grid" style="height: {innerHeight}px; width: {innerWidth}px;">
+    <div class="grid">
         <UserInfo/>
         {#await init() then}
             <MarketList/>
@@ -46,11 +41,8 @@
 <style>
     .grid {
         padding: 1rem;
-        height: 100%;
-        width: 100;
         display: grid;
         gap: .5rem;
-        grid-template-rows: .5fr .5fr minmax(0, 2fr) minmax(0,6fr) minmax(0, 6fr) minmax(0, 2fr);
         grid-template-columns: 5fr 2fr;
 
         grid-template-areas: 
