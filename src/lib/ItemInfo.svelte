@@ -24,7 +24,7 @@
         {#if $user.id === $current_market.creator_id}
             <button class="delete_button element--border--primary" on:click={deleteI}>x</button>
             <button class="settings_button element--border--primary">⚙</button>
-        {:else
+        {:else}
             <div class="buy_button element--border--primary" on:click={buyI}>Buy</div>
         {/if} 
     </div>
