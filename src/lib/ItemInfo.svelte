@@ -40,7 +40,6 @@
         overflow: hidden;
         
         grid-area: itemI;
-        margin-left: 3rem;
 
         padding: 1rem;
     }

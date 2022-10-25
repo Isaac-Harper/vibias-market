@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .delete_button{
   text-decorations: none;
-  width: 6rem;
+  width: 5rem;
   padding: .5rem;
   background-color: var(--red);
   
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .settings_button{
   text-decorations: none;
-  width: 6rem;
+  width: 5rem;
   padding: .5rem;
   background-color: var(--blue);
   
