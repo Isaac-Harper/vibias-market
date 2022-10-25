@@ -60,17 +60,16 @@
                     <button class="create element--border--primary" on:click={createNewItem}>Create!</button>
                 </div>
             {:else}
-                <h3>
-                    {$current_shop.name}
-                    {#if $user.id === $current_shop.creator_id}
-                        <button class="delete_button element--border--primary" on:click={() => deleteS()}>x</button>
-                        <button class="settings_button element--border--primary">⚙</button>
-                    {/if}
-                </h3>
+                <h3>{$current_shop.name}</h3>
                 
                 <p>{$current_shop.description}</p>
 
-                
+                {#if $user.id === $current_shop.creator_id}
+                    <div class="flex">
+                        <button class="delete_button element--border--primary" on:click={() => deleteS()}>Delete</button>
+                        <button class="settings_button element--border--primary">Edit</button>
+                    </div>
+                {/if}
             {/if}
         </div>
         
@@ -128,7 +127,7 @@
 
         padding: .5rem;
         height: 100%;
-        width: 12rem;
+        width: 8rem;
     }
     .item {
         flex: 0 0 5rem;
