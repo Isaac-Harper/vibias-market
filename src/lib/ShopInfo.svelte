@@ -100,8 +100,6 @@
         
         grid-area: shopI;
 
-        margin-left: 2rem;
-
     }
 
     input {
