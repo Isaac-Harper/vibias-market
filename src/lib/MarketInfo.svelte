@@ -56,21 +56,17 @@
             </div>
                 
             {:else}
-                <h3>
-                    {$current_market.name}
-                    
-                    {#if $user.id === $current_market.creator_id}
-                        <button class="delete_button element--border--primary" on:click={() => deleteM()}>x</button>
-                        <button class="settings_button element--border--primary">⚙</button>
-                    {/if}
-                </h3>
-                {#if $user.id !== $current_market.creator_id}
-                    Coins: {current_patron.coins}
-                {/if}
+                <h3>{$current_market.name}</h3>
+
                 
                 <p>{$current_market.description}</p> 
 
-                
+               {#if $user.id === $current_market.creator_id}
+                    <div class="flex">
+                        <button class="delete_button element--border--primary" on:click={() => deleteM()}>Delete</button>
+                        <button class="settings_button element--border--primary">Edit</button>
+                    </div>
+                {/if} 
             {/if}
         </div>
         
@@ -126,7 +122,7 @@
 
         padding: .5rem;
         height: 100%;
-        width: 12rem;
+        width: 8rem;
     }
     .item {
         flex: 0 0 5rem;
