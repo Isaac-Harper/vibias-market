@@ -18,8 +18,8 @@
 {#if $current_item.id !== 0} 
     <div class="container element--border--primary">
         <h3>{$current_item.name}</h3>  
-        {$current_item.price} Coins
-        {$current_item.description}
+        <p>{$current_item.price} Coins</p>
+        <p>{$current_item.description}</p>
                 
         {#if $user.id === $current_market.creator_id}
             <button class="delete_button element--border--primary" on:click={deleteI}>x</button>

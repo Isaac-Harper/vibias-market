@@ -72,14 +72,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .delete_button{
-  width: 3ch;
+  text-decorations: none;
+  width: 6rem;
+  padding: .5rem;
   background-color: var(--red);
+  
+    
+  display: flex;
+  justify-content: center;
 }
 
 .settings_button{
-  min-width: 6rem;
+  text-decorations: none;
+  width: 6rem;
   padding: .5rem;
   background-color: var(--blue);
+  
+    
+  display: flex;
+  justify-content: center;
 }
 
 .buy_button{
