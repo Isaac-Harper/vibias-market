@@ -46,7 +46,6 @@
 <style>
     .grid {
         padding: 1rem;
-        overscroll-behavior: contain;
         height: 100%;
         width: 100;
         display: grid;
