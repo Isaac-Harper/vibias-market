@@ -22,8 +22,10 @@
         <p>{$current_item.description}</p>
                 
         {#if $user.id === $current_market.creator_id}
-            <button class="delete_button element--border--primary" on:click={deleteI}>x</button>
-            <button class="settings_button element--border--primary">⚙</button>
+            <div class="flex">
+                <button class="delete_button element--border--primary" on:click={deleteI}>x</button>
+                <button class="settings_button element--border--primary">⚙</button>
+            </div>
         {:else}
             <div class="buy_button element--border--primary" on:click={buyI}>Buy</div>
         {/if} 
@@ -41,6 +43,11 @@
         margin-left: 3rem;
 
         padding: 1rem;
+    }
+    
+    .flex {
+        display: flex;
+        gap: 2rem;
     }
 
     
