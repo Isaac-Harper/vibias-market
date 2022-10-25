@@ -72,3 +72,13 @@ h1, h2, h3, h4, h5, h6 {
   border: solid black 1px;
   border-radius: 1rem;
 }
+
+.delete_button{
+  width: 3ch;
+  background-color: var(--red);
+}
+
+.settings_button{
+  width: 3ch;
+  background-color: var(--blue);
+}

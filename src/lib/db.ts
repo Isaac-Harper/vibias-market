@@ -17,20 +17,13 @@ export let user = readable(supabase.auth.user(), set => {
   })
 })
 
-export let current_market_id = writable(0)
-export let current_shop_id = writable(0)
-export let current_item_id = writable(0)
-
 let empty: any[] | undefined = []
 let emptyA = {}
 
-export let current_market = writable(emptyA)
-export let current_shop = writable(emptyA)
-export let current_item = writable(emptyA)
+export let current_market = writable({id: 0, creator_id: "", patrons: [], name: "", description: ""})
+export let current_shop = writable({id: 0, creator_id: "", market_id: "", name: "", description: ""})
+export let current_item = writable({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
 
-export let current_markets = writable(empty)
-export let current_shops = writable(empty)
-export let current_items = writable(empty)
 
 export let market_list = writable(empty)
 export let shop_list = writable(empty)
@@ -38,9 +31,16 @@ export let item_list = writable(empty)
 export let patron_list = writable(empty)
 
 
-
-
 export const auth = supabase.auth
+
+
+
+export async function init() {
+  market_list.set(await getMarkets())
+  shop_list.set(await getShops())
+  item_list.set(await getItems())
+  patron_list.set(await getPatrons())
+}
 
 
 ///////////////////////////////////////
@@ -98,9 +98,9 @@ export async function newMarket(name:string, description:string, creator_id: str
     throw new Error(error.message)    
   }
 
-  current_markets.set(await getMarkets())
-  current_shops.set(await getShops())
-  current_items.set(await getItems())
+  market_list.set(await getMarkets())
+  shop_list.set(await getShops())
+  item_list.set(await getItems())
 }
 
 export async function newShop(name:string, description:string, creator_id: string, market_id: number) {
@@ -114,8 +114,8 @@ export async function newShop(name:string, description:string, creator_id: strin
     throw new Error(error.message)    
   }
 
-  current_shops.set(await getShops())
-  current_items.set(await getItems())
+  shop_list.set(await getShops())
+  item_list.set(await getItems())
 }
 
 export async function newItem(name:string, description:string, price:number, creator_id: string, shop_id: number) {
@@ -129,7 +129,7 @@ export async function newItem(name:string, description:string, price:number, cre
     throw new Error(error.message)    
   }
 
-  current_items.set(await getItems())
+  item_list.set(await getItems())
 }
 
 ///////////////////////////////////////
@@ -145,7 +145,11 @@ export async function deleteMarket(id:number) {
     .eq('id', id)
   
 
-  current_markets.set(await getMarkets())
+  market_list.set(await getMarkets())
+
+  current_market.set({id: 0, creator_id: "", patrons: [], name: "", description: ""})
+  current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
+  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
 }
 
 export async function deleteShop(id:number) {
@@ -159,7 +163,10 @@ export async function deleteShop(id:number) {
     
   }
 
-  current_shops.set(await getShops())
+  shop_list.set(await getShops())
+
+  current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
+  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
 }
 
 export async function deleteItem(id:number) {
@@ -173,11 +180,78 @@ export async function deleteItem(id:number) {
     
   }
 
-  current_items.set(await getItems())
+  item_list.set(await getItems())
+
+  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
 }
 
 
+async function getItemPrice(item_id:number) {
+  const {data, error } = await supabase
+    .from('items')
+    .select('price')
+    .eq('id', item_id)
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message) 
+  }
+  console.log(data[0].price)
+  return data
+}
 
+async function getItem(item_id:number) {
+  const {data, error } = await supabase
+    .from('items')
+    .select('*')
+    .eq('id', item_id)
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message) 
+  }
+  console.log(data[0].price)
+  return data
+}
+
+async function getPatronsCoins(patrons_id:number) {
+  const {data, error } = await supabase
+    .from('patrons')
+    .select('coins')
+    .eq('id', patrons_id)
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message) 
+  }
+  return data
+}
+
+async function getPatronsInventory(patrons_id:number) {
+  const {data, error } = await supabase
+    .from('patrons')
+    .select('inventory_ids')
+    .eq('id', patrons_id)
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message) 
+  }
+  return data
+}
+
+async function addItemToInventory(item:object, patron_id:number) {
+  const a = await getPatronsInventory(patron_id)
+
+  let inv = a[0].inventory_ids
+
+  inv.push(item)
+
+  console.log(inv)
+
+  await supabase
+    .from('patrons')
+    .update({inventory_ids: inv})
+    .eq('id', patron_id)
+
+  patron_list.set(await getPatrons())
+}
 
 ///////////////////////////////////////
 //
@@ -185,9 +259,28 @@ export async function deleteItem(id:number) {
 //
 ///////////////////////////////////////
 
-//export async function buyItem(item_id: number) {
-//  const {data, error } = await supabase {
-//    .from()
-//
-//  }
-//}
+export async function buyItem( item_id:number, patrons_id:number ) {
+  
+  const a = await getItemPrice(item_id)
+  const c = await getItem(item_id)
+  const b = await getPatronsCoins(patrons_id)
+
+
+  const item = c[0]
+  const price = a[0].price
+  const coins = b[0].coins
+
+  let new_coins = coins
+  if (coins >= price) {
+    new_coins = coins - price
+    addItemToInventory(item, patrons_id)
+  }
+
+  await supabase
+    .from('patrons')
+    .update({coins: new_coins})
+    .eq('id', patrons_id)
+
+
+  patron_list.set(await getPatrons())
+}

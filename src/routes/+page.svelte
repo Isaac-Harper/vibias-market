@@ -7,18 +7,13 @@
 	import UserInfo from "$lib/UserInfo.svelte";
 	import Auth from "$lib/Auth.svelte"
 	import { user, getMarkets, getShops, getItems, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
+	import Inventory from "$lib/Inventory.svelte";
     
     $: innerHeight = 0
     $: innerWidth = 0
     
 
-    export async function reload() {
-        
-        shops = await getShops()
-        items = await getItems()
-    }
-
-    async function init() {
+    export async function init() {
         market_list.set(await getMarkets())
         shop_list.set(await getShops())
         item_list.set(await getItems())
@@ -38,6 +33,7 @@
         {#await init() then}
             <MarketList/>
             <MarketInfo/>
+            <Inventory/>
             <ShopInfo/>
             <ItemInfo/>
         {/await}
@@ -55,7 +51,7 @@
         width: 100;
         display: grid;
         gap: .5rem;
-        grid-template-rows: .5fr .5fr minmax(0, 2fr) minmax(0,6fr) minmax(0, 4fr) minmax(0, 2fr);
+        grid-template-rows: .5fr .5fr minmax(0, 2fr) minmax(0,6fr) minmax(0, 6fr) minmax(0, 2fr);
         grid-template-columns: 5fr 2fr;
 
         grid-template-areas: 
