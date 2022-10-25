@@ -59,9 +59,9 @@
             <button on:click={() => createNew(new_market_name, new_market_description)}>Create</button>
         </div>
     {:else}
-        <div class="container" >
+        <div class="horizontal_list" >
             {#each $market_list as market}
-                <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market  === $current_market}">
+                <div on:click={() => toggle_market(market)} class="market_list_itsm element--border--primary" class:selected="{market  === $current_market}">
                     {market.name}
                 </div>
             {/each}
@@ -91,32 +91,10 @@
     h3 {
         padding: 0 .5rem;
     }
-    
-    .container {
-        display: flex;
-        overflow-x: scroll;
-        padding: 0;
-        padding: 0 .3rem .5rem;
-
-        height: 100%;
-
-        grid-area: 2 / 1 / 3 / 4;
-    }
 
     .new_input{ 
         grid-area: 2 / 1 / 3 / 4;
-    }
-
-    .item {
-        height: 100%;
-        flex: 0 0 8rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 .2rem;
-
-    }
-    
+    } 
     .modifier {
         height: 2rem;
         width: 4rem;
