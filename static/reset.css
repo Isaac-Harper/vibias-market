@@ -77,6 +77,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .settings_button{
-  width: 3ch;
+  min-width: 6rem;
+  padding: .5rem;
   background-color: var(--blue);
+}
+
+.buy_button{
+  text-decorations: none;
+  min-width: 6rem;
+  padding: .5rem;
+  background-color: var(--green);
 }
