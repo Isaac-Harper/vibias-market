@@ -97,8 +97,6 @@
         grid-template-areas: "body      list";
                              
         grid-area: marketI;   
-
-        margin-left: 1rem;
     }
 
     input {
