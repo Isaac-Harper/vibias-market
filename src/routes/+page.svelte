@@ -1,9 +1,9 @@
 <script lang="ts">
 
-	import ItemInfo from "$lib/ItemInfo.svelte";
-	import MarketInfo from "$lib/MarketInfo.svelte";
-	import MarketList from "$lib/MarketList.svelte";
-	import ShopInfo from "$lib/ShopInfo.svelte";
+	import ItemInfo from "$lib/ITEMS/ItemInfo.svelte";
+	import MarketInfo from "$lib/MARTKETS/MarketInfo.svelte";
+	import MarketList from "$lib/MARTKETS/MarketList.svelte";
+	import ShopInfo from "$lib/SHOPS/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
 	import Auth from "$lib/Auth.svelte"
 	import { user, getMarkets, getShops, getItems, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
@@ -28,9 +28,9 @@
         {#await init() then}
             <MarketList/>
             <MarketInfo/>
-            <Inventory/>
             <ShopInfo/>
             <ItemInfo/>
+            <Inventory/>
         {/await}
     </div>
 {:else}
@@ -41,17 +41,9 @@
 <style>
     .grid {
         padding: 1rem;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: .5rem;
-        grid-template-columns: 5fr 2fr;
-
-        grid-template-areas: 
-            "user       logout"
-            "user       settings"
-            "marketL    marketL"
-            "marketI    marketI"
-            "shopI      shopI"
-            "itemI      itemI";
     }
 
 </style>

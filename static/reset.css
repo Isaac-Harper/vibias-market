@@ -15,6 +15,8 @@
   
   --white: #F8F3D7;
   --red: #B77647;
+  --light-red: #C48F68;
+  --lighter-red: #D1A88A;
   --green: #C2BD46;
   --blue: #BFC8D3;
 }
@@ -113,23 +115,33 @@ h1, h2, h3, h4, h5, h6 {
 .horizontal_list {
   display: flex;
   overflow-x: scroll;
-  padding: 0;
-  padding: 0 .3rem .5rem;
-
+  padding: 0 .5rem;
+  margin: 0 -.5rem;
+  gap: .5rem;
   height: 100%;
-
-  grid-area: 2 / 1 / 3 / 4; 
+ 
+  scrollbar-width: none;
 }
 
 .horizontal_list_item {
-    height: 100%;
-    flex: 0 0 8rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    min-width: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 .2rem;
+    padding: 1rem;
 }
     
 .selected {
   background-color: var(--red);
+}
+
+input, textarea{
+  border: none;
+  background-color: #e8eeef;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  outline: 0;
+  resize:none;
+  overflow: auto;
 }
