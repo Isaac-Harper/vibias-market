@@ -7,7 +7,7 @@
 	import UserInfo from "$lib/UserInfo.svelte";
 	import Auth from "$lib/Auth.svelte"
 	import { user, getMarkets, getShops, getItems, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
-	import Inventory from "$lib/Inventory.svelte";
+	import Inventory from "$lib/MARTKETS/Inventory.svelte";
  
 
     export async function init() {
@@ -30,7 +30,7 @@
             <MarketInfo/>
             <ShopInfo/>
             <ItemInfo/>
-            <Inventory/>
+            
         {/await}
     </div>
 {:else}

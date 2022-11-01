@@ -1,3 +1,4 @@
+
 <script lang="ts">
     import { user, newShop, current_market } from "../db";
 	import TextArea from "../TextArea.svelte";

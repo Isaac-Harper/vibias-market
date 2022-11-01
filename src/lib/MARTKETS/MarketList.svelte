@@ -3,6 +3,7 @@
     import {current_market, market_list, newMarket, user, resetMarket, resetShop, joinMarket} from "$lib/db"
 	import TextArea from "../TextArea.svelte";
 	import ToggleText from '../ToggleText.svelte';
+	import Inventory from '$lib/MARTKETS/Inventory.svelte';
 
 
     function toggle_market(market) {
@@ -83,6 +84,8 @@
             <div><button on:click={() => joinNew(join_id)}>Join</button></div>
         </div>
     {/if}
+
+    <Inventory/>
 </div>
 
 

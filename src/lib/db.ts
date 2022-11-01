@@ -20,7 +20,7 @@ export let user = readable(supabase.auth.user(), set => {
 let empty: any[] | undefined = []
 let emptyA = {}
 
-export let current_market = writable({id: 0, creator_id: "", patrons: [], name: "", description: "", join_id: ""})
+export let current_market = writable({id: 0, creator_id: "", patrons: [], name: "", description: "", join_id: "", starting_coins: 0})
 export let current_shop = writable({id: 0, creator_id: "", market_id: "", name: "", description: ""})
 export let current_item = writable({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
 export let current_patron = writable({id: 0, player_id: "", market_id: 0, name: "", coins: 0, inventory_ids: []})
@@ -43,7 +43,7 @@ export async function init() {
 }
 
 export async function resetMarket() {
-  current_market.set({id: 0, creator_id: "", patrons: [], name: "", description: "", join_id: ""})
+  current_market.set({id: 0, creator_id: "", patrons: [], name: "", description: "", join_id: "", starting_coins: 0})
   current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
   current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
   current_patron.set({id: 0, player_id: "", market_id: 0, name: "", coins: 0, inventory_ids: []})
@@ -75,6 +75,20 @@ export async function joinMarket(joinid) {
   shop_list.set(await getShops())
   item_list.set(await getItems())
 }
+
+export async function updateMarket(market) {
+  const { data, error } = await supabase
+    .from('markets')
+    .update({name: market.name, description: market.description, starting_coins: market.starting_coins})
+    .eq('id', market.id)
+
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message)    
+  }
+  return data
+}
+
 
 ///////////////////////////////////////
 //
@@ -180,9 +194,7 @@ export async function deleteMarket(id:number) {
 
   market_list.set(await getMarkets())
 
-  current_market.set({id: 0, creator_id: "", patrons: [], name: "", description: ""})
-  current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
-  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
+  resetMarket()
 }
 
 export async function deleteShop(id:number) {
@@ -198,8 +210,7 @@ export async function deleteShop(id:number) {
 
   shop_list.set(await getShops())
 
-  current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
-  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
+  resetShop()
 }
 
 export async function deleteItem(id:number) {
@@ -215,7 +226,7 @@ export async function deleteItem(id:number) {
 
   item_list.set(await getItems())
 
-  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
+  resetItem()
 }
 
 
