@@ -10,13 +10,19 @@ import { current_market, current_patron, current_shop, user, patron_list, update
 
     console.log(new_market)
     let new_name = ""
+    
+    
+    function setValues() {
+        let new_market = get(current_market)
+    
+    }
 </script>
 
 
 {#if $current_market.id !== 0}
     <div class="container element--border--primary">
         {#if $user.id === $current_market.creator_id}
-            <details>
+            <details on:click={setValues}>
                 <summary><h3>Market Setting</h3></summary>
                 <TextInput bind:value={new_market.name} title="Name"/>
                 <p>New patrons starting gold:</p>

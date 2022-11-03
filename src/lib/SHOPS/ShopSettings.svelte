@@ -1,9 +1,10 @@
 <script lang="ts">
+      import { get } from 'svelte/store'
       import {user, current_shop, updateShop} from "$lib/db"
       import TextInput from "$lib/TextInput.svelte"
       import TextArea from "$lib/TextArea.svelte"
       
-      
+      let new_shop = get(current_shop)
 
 </script>
 
