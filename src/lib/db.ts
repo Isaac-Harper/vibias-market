@@ -148,6 +148,7 @@ export async function updateMarket(market) {
   }
   
   init()
+  current_market.set(market)
   
   return data
 }
