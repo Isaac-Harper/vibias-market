@@ -32,8 +32,6 @@
                         <button class="delete_button element--border--primary" on:click={() => deleteM()}>Delete</button>
                         <button class="settings_button element--border--primary">Edit</button> 
                     </div>
-                    
-                    <ShopSettings/>
                 {/if} 
             {/if}
         </div>

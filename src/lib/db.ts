@@ -146,6 +146,9 @@ export async function updateMarket(market) {
     alert(error.message)
     throw new Error(error.message)    
   }
+  
+  init()
+  
   return data
 }
 
