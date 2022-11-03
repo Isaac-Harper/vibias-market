@@ -2,7 +2,7 @@
 	import ShopList from '../SHOPS/ShopList.svelte';
     import {shop_list, current_market, deleteMarket, user } from "$lib/db"
 	import ShopCreation from '../SHOPS/ShopCreation.svelte'
-	import ShopSettings from "$lib/ShopSettings.svelte"
+	import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
