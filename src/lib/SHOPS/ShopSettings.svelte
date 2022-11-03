@@ -8,7 +8,7 @@
 </script>
 
 
-{#if $current_shop.creator_id !== $user.id }
+{#if $current_shop.creator_id === $user.id }
       <details>
             <summary>
                   <h3>Shop Settings:</h3>

@@ -1,7 +1,7 @@
 <script lang="ts">
     import {item_list, current_shop, current_item, deleteShop, user, newItem} from "$lib/db"
     
-    import ShopSettings from "./ShopSettings.svelte"
+    import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
