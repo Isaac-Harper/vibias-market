@@ -9,7 +9,7 @@
 
 
 <div class="container element--border--primary">
-    ▼<slot name="title"></slot>
+    <slot name="title" on:click={toggle}></slot>
     
     {#if toggled}
         <slot name="body">body</slot>
