@@ -4,7 +4,7 @@
 	import TextArea from "../TextArea.svelte";
 	import ToggleText from '../ToggleText.svelte';
 	import Inventory from '$lib/MARTKETS/Inventory.svelte';
-
+	import HorizontalList from '$lib/MARTKETS/HorizontalList.svelte';
 
     function toggle_market(market) {
         if ( market == $current_market) {
@@ -60,14 +60,8 @@
             <ToggleText value={joiningNew} on="Cancel" off="Join"/>
         </div> 
     </div>
-    
-    <div class="horizontal_list aa" >
-        {#each $market_list as market}
-            <div on:click={() => toggle_market(market)} class="horizontal_list_item element--border--primary" class:selected="{market  === $current_market}">
-                {market.name}
-            </div>
-        {/each}
-    </div>
+
+    <HorizontalList/>
     
     
     {#if creatingNew} 

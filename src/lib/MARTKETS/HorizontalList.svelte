@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { user, current_market } from "$lib/db"
+    import { user, current_market, market_list } from "$lib/db"
 
     function toggle_market(market) {
         if ( market == $current_market) {
@@ -46,4 +46,4 @@
         padding: 1rem;
     }
     
-</style> 
+</style>
