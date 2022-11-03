@@ -1,12 +1,10 @@
 <script lang="ts">
-    import { user, current_market, market_list } from "$lib/db"
+    import { user, current_market, market_list, resetShop, resetMarket} from "$lib/db"
 
     function toggle_market(market) {
         if ( market == $current_market) {
             resetMarket()
         } else {
-            creatingNew = false
-            joiningNew = false
             current_market.set(market)
             resetShop()
         }
