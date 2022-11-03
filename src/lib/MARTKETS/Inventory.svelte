@@ -6,6 +6,7 @@ import { current_market, current_patron, current_shop, user, patron_list, update
 
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
  
+    let new_market = get(current_market)
 
     console.log(new_market)
     let new_name = ""
@@ -17,15 +18,15 @@ import { current_market, current_patron, current_shop, user, patron_list, update
         {#if $user.id === $current_market.creator_id}
             <details>
                 <summary><h3>Market Setting</h3></summary>
-                <TextInput bind:value={$current_market.name} title="Name"/>
+                <TextInput bind:value={new_market.name} title="Name"/>
                 <p>New patrons starting gold:</p>
-                <input type="number" bind:value={$current_market.starting_coins}>
+                <input type="number" bind:value={new_market.starting_coins}>
                 <p>Your join ID is:</p>
-                <p style="font-size: small;">{$current_market.join_id}</p>
+                <p style="font-size: small;">{new_market.join_id}</p>
                 {#each markets_patrons as patron}
                     {patron.id}
                 {/each}
-                <button on:click={() => updateMarket($current_market)}>Apply</button>
+                <button on:click={() => updateMarket(new_market)}>Apply</button>
             </details>
         {:else}
 
