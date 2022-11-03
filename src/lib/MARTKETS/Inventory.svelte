@@ -18,7 +18,7 @@ import { current_market, current_patron, current_shop, user, patron_list, update
         {#if $user.id === $current_market.creator_id}
             <details>
                 <summary><h3>Market Setting</h3></summary>
-                <TextInput bind:value={$new_market.name} title="Name"/>
+                <TextInput bind:value={$current_market.name} title="Name"/>
                 <p>New patrons starting gold:</p>
                 <input type="number" bind:value={$current_market.starting_coins}>
                 <p>Your join ID is:</p>
