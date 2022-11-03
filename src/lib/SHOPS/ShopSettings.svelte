@@ -15,8 +15,8 @@
 
 
 {#if $current_shop.creator_id === $user.id }
-      
-      <Dropdown class="container">
+   <div class="container"> 
+      <Dropdown>
          <h3 slot="title">Shop Settings:</h3>
          <div slot="body">
             <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
@@ -24,7 +24,7 @@
             <button on:click={() => updateShop(new_shop)}>Apply</button>
          </div>
       </Dropdown>
-
+   </div>
 {/if}
 
 
