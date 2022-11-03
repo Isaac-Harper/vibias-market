@@ -163,6 +163,10 @@ export async function updateShop(shop) {
     alert(error.message)
     throw new Error(error.message)    
   }
+  
+  init()
+  current_shop.set(shop)
+  
   return data
 }
 
@@ -177,6 +181,10 @@ export async function updateItem(item) {
     alert(error.message)
     throw new Error(error.message)    
   }
+  
+  init()
+  current_item.set(item)
+   
   return data
 }
 
