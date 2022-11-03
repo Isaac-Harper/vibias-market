@@ -1,5 +1,7 @@
 <script lang="ts">
     import {item_list, current_shop, current_item, deleteShop, user, newItem} from "$lib/db"
+    
+    import ShopSettings from "./ShopSettings.svelte"
 
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
@@ -69,6 +71,7 @@
                         <button class="delete_button element--border--primary" on:click={() => deleteS()}>Delete</button>
                         <button class="settings_button element--border--primary">Edit</button>
                     </div>
+                    <ShopSettings/>
                 {/if}
             {/if}
         </div>

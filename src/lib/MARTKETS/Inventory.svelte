@@ -58,13 +58,5 @@ import { current_market, current_patron, current_shop, user, patron_list, update
     .container {
         padding: 1rem;
     }
-    
-    summary { 
-        cursor: pointer;
-        
-    }
 
-    summary > * {
-        display: inline;
-    }
 </style>

@@ -145,3 +145,11 @@ input, textarea{
   resize:none;
   overflow: auto;
 }
+
+summary { 
+    cursor: pointer;
+}
+
+summary > * {
+    display: inline;
+}

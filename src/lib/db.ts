@@ -20,10 +20,37 @@ export let user = readable(supabase.auth.user(), set => {
 let empty: any[] | undefined = []
 let emptyA = {}
 
-export let current_market = writable({id: 0, creator_id: "", patrons: [], name: "", description: "", join_id: "", starting_coins: 0})
-export let current_shop = writable({id: 0, creator_id: "", market_id: "", name: "", description: ""})
-export let current_item = writable({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
-export let current_patron = writable({id: 0, player_id: "", market_id: 0, name: "", coins: 0, inventory_ids: []})
+export let current_market = writable({id: 0, 
+                                      creator_id: "", 
+                                      patrons: [], 
+                                      name: "", 
+                                      description: "", 
+                                      join_id: "", 
+                                      starting_coins: 0
+                                      })
+                                      
+export let current_shop = writable({  id: 0, 
+                                      creator_id: "", 
+                                      market_id: "", 
+                                      name: "", 
+                                      description: ""
+                                      })
+                                      
+export let current_item = writable({  id: 0, 
+                                      creator_id: "", 
+                                      shop_id: "", 
+                                      name: "", 
+                                      description: "", 
+                                      price: 0
+                                      })
+                                      
+export let current_patron = writable({id: 0, 
+                                      player_id: "", 
+                                      market_id: 0, 
+                                      name: "", 
+                                      coins: 0, 
+                                      inventory_ids: []
+                                      })
 
 export let market_list = writable(empty)
 export let shop_list = writable(empty)
@@ -52,41 +79,39 @@ export async function resetMarket() {
                       starting_coins: 0
                       })
                       
+  resetShop()
+                      
+  resetPatron()
+}
+
+export async function resetShop() {
   current_shop.set({  id: 0, 
                       creator_id: "", 
                       market_id: "", 
                       name: "", 
                       description: ""
                       })
-                      
-  current_item.set({  id: 0, 
-                      creator_id: "", 
-                      shop_id: "", 
-                      name: "", 
-                      description: "", 
-                      price: 0
-                      })
-                      
-  current_patron.set({id: 0, 
-                      player_id: "", 
-                      market_id: 0, 
-                      name: "", 
-                      coins: 0, 
-                      inventory_ids: []
-                      })
-}
-
-export async function resetShop() {
-  current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
-  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
+  resetItem()
 }
 
 export async function resetItem() {
-  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
+  current_item.set({  id: 0, 
+                      creator_id: "", 
+                      shop_id: "", 
+                      name: "",
+                      description: "", 
+                      price: 0
+                      })
 }
 
 export async function resetPatron() {
-  current_patron.set({id: 0, player_id: "", market_id: 0, name: "", coins: 0, inventory_ids: []})
+  current_patron.set({  id: 0, 
+                        player_id: "", 
+                        market_id: 0, 
+                        name: "", 
+                        coins: 0, 
+                        inventory_ids: []
+                        })
 }
 
 
