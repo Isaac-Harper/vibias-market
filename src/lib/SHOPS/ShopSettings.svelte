@@ -28,7 +28,11 @@
       
       <Dropdown>
          <h3 slot="title">Shop Settings:</h3>
-         <p slot="body">elllllllo</p>
+         <div slot="body">
+            <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
+            <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
+            <button on:click={() => updateShop(new_shop)}>Apply</button>
+         </div>
       </Dropdown>
 
 {/if}
