@@ -1,5 +1,4 @@
 <script>
-	import { bind } from "svelte/internal";
 	import { get } from "svelte/store";
 import { current_market, current_patron, current_shop, user, patron_list, updateMarket } from "../db";
 	import TextInput from "../TextInput.svelte";
@@ -13,7 +12,7 @@ import { current_market, current_patron, current_shop, user, patron_list, update
     
     
     function setValues() {
-        let new_market = get(current_market)
+        new_market = get(current_market)
         console.log(new_market)
     }
 </script>

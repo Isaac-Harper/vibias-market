@@ -7,7 +7,7 @@
       let new_shop = get(current_shop)
       
       function setValues() {
-         let new_shop = get(current_shop)
+         new_shop = get(current_shop)
       }
 
 </script>
