@@ -91,14 +91,9 @@
 
 <style>
     .holder {
-        height: 100%;
         display: grid;
         gap: .5rem;
         padding: .5rem;
-    }
-
-    h3 {
-        width: 40%;
     }
 
     .title {
