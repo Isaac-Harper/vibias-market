@@ -43,10 +43,37 @@ export async function init() {
 }
 
 export async function resetMarket() {
-  current_market.set({id: 0, creator_id: "", patrons: [], name: "", description: "", join_id: "", starting_coins: 0})
-  current_shop.set({id: 0, creator_id: "", market_id: "", name: "", description: ""})
-  current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
-  current_patron.set({id: 0, player_id: "", market_id: 0, name: "", coins: 0, inventory_ids: []})
+  current_market.set({id: 0, 
+                      creator_id: "", 
+                      patrons: [], 
+                      name: "", 
+                      description: "", 
+                      join_id: "", 
+                      starting_coins: 0
+                      })
+                      
+  current_shop.set({  id: 0, 
+                      creator_id: "", 
+                      market_id: "", 
+                      name: "", 
+                      description: ""
+                      })
+                      
+  current_item.set({  id: 0, 
+                      creator_id: "", 
+                      shop_id: "", 
+                      name: "", 
+                      description: "", 
+                      price: 0
+                      })
+                      
+  current_patron.set({id: 0, 
+                      player_id: "", 
+                      market_id: 0, 
+                      name: "", 
+                      coins: 0, 
+                      inventory_ids: []
+                      })
 }
 
 export async function resetShop() {
@@ -76,6 +103,14 @@ export async function joinMarket(joinid) {
   item_list.set(await getItems())
 }
 
+
+///////////////////////////////////////
+//
+//        UPDATE
+//
+///////////////////////////////////////
+
+
 export async function updateMarket(market) {
   const { data, error } = await supabase
     .from('markets')
@@ -89,6 +124,32 @@ export async function updateMarket(market) {
   return data
 }
 
+export async function updateShop(shop) {
+  const { data, error } = await supabase
+    .from('shops')
+    .update({name: shop.name, description: shop.description})
+    .eq('id', shop.id)
+
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message)    
+  }
+  return data
+}
+
+
+export async function updateItem(item) {
+  const { data, error } = await supabase
+    .from('items')
+    .update({name: item.name, description: item.description, price: item.price})
+    .eq('id', item.id)
+
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message)    
+  }
+  return data
+}
 
 ///////////////////////////////////////
 //
