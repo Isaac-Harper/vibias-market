@@ -126,7 +126,6 @@
         overflow-y: scroll;
 
         padding: .5rem;
-        height: 100%;
         max-height: 18rem;
         width: 8rem;
     }
