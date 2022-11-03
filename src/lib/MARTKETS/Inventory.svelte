@@ -5,8 +5,7 @@ import { current_market, current_patron, current_shop, user, patron_list, update
 	import TextInput from "../TextInput.svelte";
 
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
-
-    let new_market = get(current_market)
+ 
 
     console.log(new_market)
     let new_name = ""
