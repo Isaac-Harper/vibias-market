@@ -1,7 +1,8 @@
 <script lang="ts">
 	import ShopList from '../SHOPS/ShopList.svelte';
     import {shop_list, current_market, deleteMarket, user } from "$lib/db"
-	import ShopCreation from '../SHOPS/ShopCreation.svelte';
+	import ShopCreation from '../SHOPS/ShopCreation.svelte'
+	import ShopSettings from "$lib/ShopSettings.svelte"
 
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
@@ -29,8 +30,10 @@
                {#if $user.id === $current_market.creator_id}
                     <div class="flex">
                         <button class="delete_button element--border--primary" on:click={() => deleteM()}>Delete</button>
-                        <button class="settings_button element--border--primary">Edit</button>
+                        <button class="settings_button element--border--primary">Edit</button> 
                     </div>
+                    
+                    <ShopSettings/>
                 {/if} 
             {/if}
         </div>
