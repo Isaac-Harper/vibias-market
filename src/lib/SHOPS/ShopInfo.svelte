@@ -71,7 +71,7 @@
                         <button class="delete_button element--border--primary" on:click={() => deleteS()}>Delete</button>
                         <button class="settings_button element--border--primary">Edit</button>
                     </div>
-                    <ShopSettings/>
+                    
                 {/if}
             {/if}
         </div>
@@ -90,6 +90,8 @@
                 </div>
             {/each}
         </div>
+        
+        <ShopSettings/>
     </div>
 {/if}
 
@@ -97,9 +99,8 @@
     .container {
         display: grid;
         grid-template-columns: 1fr auto;
-        grid-template-areas: "body  list";
-        
-        max-height: 18rem;
+        grid-template-areas: "body  list"
+                             "sets  sets";
 
 
     }
@@ -127,6 +128,7 @@
 
         padding: .5rem;
         height: 100%;
+        max-height: 18rem;
         width: 8rem;
     }
     .item {

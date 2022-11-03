@@ -14,7 +14,7 @@
 
 
 {#if $current_shop.creator_id === $user.id }
-      <details on:click={setValues}>
+      <details class="container" on:click={setValues}>
             <summary>
                   <h3>Shop Settings:</h3>
             </summary>
@@ -26,3 +26,11 @@
       </details>
 
 {/if}
+
+
+<style>
+   .container {
+      grid-area: sets;
+   } 
+
+</style>
