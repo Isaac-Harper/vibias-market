@@ -15,18 +15,8 @@
 
 
 {#if $current_shop.creator_id === $user.id }
-      <details class="container" on:click={setValues}>
-            <summary>
-                  <h3>Shop Settings:</h3>
-            </summary>
-        
-        
-            <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
-            <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
-            <button on:click={() => updateShop(new_shop)}>Apply</button>
-      </details>
       
-      <Dropdown>
+      <Dropdown class="container">
          <h3 slot="title">Shop Settings:</h3>
          <div slot="body">
             <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
