@@ -3,6 +3,7 @@
       import {user, current_shop, updateShop} from "$lib/db"
       import TextInput from "$lib/TextInput.svelte"
       import TextArea from "$lib/TextArea.svelte"
+      import Dropdown from "$lib/Dropdown.svelte"
       
       let new_shop = get(current_shop)
       
@@ -24,6 +25,11 @@
             <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
             <button on:click={() => updateShop(new_shop)}>Apply</button>
       </details>
+      
+      <Dropdown>
+         <h3 slot="title">Shop Settings:</h3>
+         <p slot="body">elllllllo</p>
+      </Dropdown>
 
 {/if}
 

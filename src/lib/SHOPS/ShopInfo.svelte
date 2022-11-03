@@ -90,7 +90,6 @@
                 </div>
             {/each}
         </div>
-        
         <ShopSettings/>
     </div>
 {/if}
