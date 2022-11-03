@@ -14,7 +14,7 @@ import { current_market, current_patron, current_shop, user, patron_list, update
     
     function setValues() {
         let new_market = get(current_market)
-    
+        console.log(new_market)
     }
 </script>
 
