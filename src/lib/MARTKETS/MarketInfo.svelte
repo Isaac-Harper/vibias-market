@@ -3,6 +3,7 @@
     import {shop_list, current_market, deleteMarket, user } from "$lib/db"
 	import ShopCreation from '../SHOPS/ShopCreation.svelte'
 	import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
+	import Inventory from '$lib/MARTKETS/Inventory.svelte';
 
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
@@ -38,6 +39,8 @@
         
         
         <ShopList current_shops={current_shops} bind:creating_new_shop={creating_new_shop}/>
+        
+        <Inventory/>
     </div>
 {/if}
 
@@ -46,7 +49,9 @@
     .container {
         display: grid;
         grid-template-columns: 1fr auto;
-        grid-template-areas: "body      list";
+        grid-template-areas: "body      list"
+                             "sets      sets";
+        
  
     }
 
