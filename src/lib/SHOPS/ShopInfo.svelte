@@ -100,6 +100,8 @@
         grid-template-columns: 1fr auto;
         grid-template-areas: "body  list"
                              "sets  sets";
+        gap: 1rem;
+        padding: 1rem;  
 
 
     }
@@ -115,7 +117,6 @@
 
     .body {
         grid-area: body;
-        padding: 1rem;
     }
 
     
@@ -124,8 +125,6 @@
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
-
-        padding: .5rem;
         max-height: 18rem;
         width: 8rem;
     }
