@@ -85,9 +85,12 @@
 
 <style>
     .holder {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: .5rem;
         padding: .5rem;
+        
+        background-color: green;
     }
 
     .title {
