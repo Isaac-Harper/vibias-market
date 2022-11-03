@@ -79,7 +79,6 @@
         </div>
     {/if}
 
-    <Inventory/>
 </div>
 
 

@@ -47,7 +47,6 @@
         overflow-y: scroll;
 
         padding: .5rem;
-        height: 100%;
         width: 8rem;
     }
     .item {
