@@ -148,7 +148,7 @@ export async function updateMarket(market) {
   }
   
   init()
-  current_market.set(market)
+  resetMarket()
   
   return data
 }
@@ -165,7 +165,7 @@ export async function updateShop(shop) {
   }
   
   init()
-  current_shop.set(shop)
+  resetShop()
   
   return data
 }
@@ -183,7 +183,7 @@ export async function updateItem(item) {
   }
   
   init()
-  current_item.set(item)
+  resetItem()
    
   return data
 }
