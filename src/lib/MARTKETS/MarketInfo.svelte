@@ -51,14 +51,13 @@
         grid-template-columns: 1fr auto;
         grid-template-areas: "body      list"
                              "sets      sets";
+        gap: 1rem;
+        padding: 1rem;
         
  
     }
 
     .body {
         grid-area: body;
-        padding: 1rem;
-        max-width: 100%;
-        
     }
 </style>

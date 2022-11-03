@@ -62,6 +62,7 @@ import { current_market, current_patron, current_shop, user, patron_list, update
 <style>
     .container {
         padding: 1rem;
+        grid-area: sets;
     }
 
 </style>
