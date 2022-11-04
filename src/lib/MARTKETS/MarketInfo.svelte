@@ -30,7 +30,7 @@
 
                {#if $user.id === $current_market.creator_id}
                     <div class="flex">
-                        <button class="delete_button element--border--primary" on:click={() => deleteM()}>Delete</button>
+                        <button class="delete_button element--border--primary" on:click={() => deleteM()}>Delete!</button>
                         <button class="settings_button element--border--primary">Edit</button> 
                     </div>
                 {/if} 
