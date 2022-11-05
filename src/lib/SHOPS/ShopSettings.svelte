@@ -21,7 +21,7 @@
 {#if $current_shop.creator_id === $user.id }
    <div class="container"> 
       <Dropdown>
-         <h3 slot="title">Shop Settings:</h3>
+         <span slot="title">Shop Settings:</span>
          <div slot="body">
             <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
             <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
@@ -36,7 +36,6 @@
 <style>
    .container {
       grid-area: sets;
-      
    } 
 
 </style>

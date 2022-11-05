@@ -1,4 +1,7 @@
 <script lang="ts">
+	import ToggleText from '$lib/ToggleText.svelte';
+    import { slide } from 'svelte/transition';
+
     let toggled = false
     
     function toggle() {
@@ -8,12 +11,15 @@
 
 
 
-<div class="container element--border--primary">
-    <div on:click={toggle}>
-        <slot name="title"></slot>
+<div class="container element--border--primary" >
+    <div class="title" on:click={toggle} class:hovered={toggled}>
+        <h3><ToggleText value={toggled} on="▼" off="▶"/> <slot name="title"></slot></h3>
     </div>
     {#if toggled}
-        <slot name="body">body</slot>
+        <div class="body" transition:slide|local>
+            <slot name="body">body</slot>
+        </div>
+        
     {/if}
 </div>
 
@@ -22,5 +28,18 @@
 <style>
     .container {
         width: 100%;
+
     }
+
+    .title {
+        cursor: pointer;
+        padding: 1rem;
+        z-index: 20 ;
+    }
+
+    .body {
+        padding: 1rem;
+    }
+
+
 </style>

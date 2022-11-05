@@ -22,17 +22,17 @@
 
 </script>
 
-<div class="list">
+<div class="list element--border--primary">
     {#if $user.id === $current_market.creator_id}
         {#if creating_new_shop}
-            <button on:click={toggleNewShop} class="newItem element--border--primary">Cancel New Shop</button>
+            <button on:click={toggleNewShop} class="newItem item element--border--primary">Cancel New Shop</button>
         {:else}
-            <button on:click={toggleNewShop} class="newItem element--border--primary">New Shop</button>
+            <button on:click={toggleNewShop} class="newItem item element--border--primary">New Shop</button>
         {/if}
     {/if}
 
     {#each current_shops as shop}
-        <div on:click={() => toggle_shop(shop)}  class="item element--border--primary" class:selected="{shop  === $current_shop}">
+        <div on:click={() => toggle_shop(shop)}  class="item element--border--primary" class:selected="{shop.id  === $current_shop.id}">
             {shop.name}
         </div>        
     {/each}
@@ -45,9 +45,10 @@
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
-
+        max-height: 18rem;
         padding: .5rem;
         width: 8rem;
+        gap: 1rem;
     }
     .item {
         flex: 0 0 5rem;
@@ -55,7 +56,6 @@
         
         justify-content: center;
         align-items: center;
-        margin: .2rem 0;
 
     }
     .newItem {

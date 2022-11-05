@@ -4,7 +4,7 @@
 	import ShopCreation from '../SHOPS/ShopCreation.svelte'
 	import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import Inventory from '$lib/MARTKETS/Inventory.svelte';
-
+    import { slide } from 'svelte/transition';
     
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
 
@@ -18,7 +18,7 @@
 
 
 {#if $current_market.id !== 0 }
-    <div class="container element--border--primary"> 
+    <div class="container element--border--primary" transition:slide|local> 
         <div class="body">
             {#if creating_new_shop}
                 <ShopCreation bind:creating_new_shop={creating_new_shop}/>
@@ -27,13 +27,6 @@
 
                 
                 <p>{$current_market.description}</p> 
-
-               {#if $user.id === $current_market.creator_id}
-                    <div class="flex">
-                        <button class="delete_button element--border--primary" on:click={() => deleteM()}>Delete!</button>
-                        <button class="settings_button element--border--primary">Edit</button> 
-                    </div>
-                {/if} 
             {/if}
         </div>
         

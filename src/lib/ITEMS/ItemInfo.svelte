@@ -1,6 +1,8 @@
 <script lang="ts">
      
     import {buyItem, current_item, current_market, deleteItem, user, patron_list} from "$lib/db"
+	import ItemSettings from "./ItemSettings.svelte";
+    import { slide } from 'svelte/transition';
     
     function deleteI() {
     deleteItem($current_item.id)
@@ -16,19 +18,16 @@
 
 
 {#if $current_item.id !== 0} 
-    <div class="container element--border--primary">
+    <div class="container element--border--primary" transition:slide|local>
         <h3>{$current_item.name}</h3>  
-        <p>{$current_item.price} Coins</p>
+        <p><b>{$current_item.price} Coins</b></p>
         <p>{$current_item.description}</p>
                 
-        {#if $user.id === $current_market.creator_id}
-            <div class="flex">
-                <button class="delete_button element--border--primary" on:click={deleteI}>Delete</button>
-                <button class="settings_button element--border--primary">Edit</button>
-            </div>
-        {:else}
+        {#if $user.id !== $current_market.creator_id}
             <div class="buy_button element--border--primary" on:click={buyI}>Buy</div>
         {/if} 
+
+        <ItemSettings/>
     </div>
 {/if}
 

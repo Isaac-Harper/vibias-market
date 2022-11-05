@@ -1,7 +1,8 @@
 <script lang="ts">
     import {item_list, current_shop, current_item, deleteShop, user, newItem} from "$lib/db"
-    
+    import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
+	import ItemList from "$lib/ITEMS/ItemList.svelte";
 
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
@@ -48,7 +49,7 @@
 
 
 {#if $current_shop.id !== 0 }
-    <div class="container element--border--primary">
+    <div class="container element--border--primary" transition:slide|local>
         <div class="body">
             {#if creating_new_item}
                 <div style="display: flex; flex-direction: column;">
@@ -68,21 +69,10 @@
             {/if}
         </div>
         
-        <div class="list">
-            {#if $user.id === $current_shop.creator_id}
-                {#if creating_new_item}
-                    <button on:click={toggleNewItem} class="newItem element--border--primary">Cancel New Item</button>
-                {:else}
-                    <button on:click={toggleNewItem} class="newItem element--border--primary">New Item</button>
-                {/if}
-            {/if}
-            {#each current_items as item}
-                <div on:click={() => toggle_item(item)}  class="item element--border--primary" class:selected="{item  === $current_item}">
-                    {item.name}
-                </div>
-            {/each}
-        </div>
-        <ShopSettings/>
+
+
+        <ItemList current_items={current_items} bind:creating_new_item={creating_new_item}/>
+        <ShopSettings/> 
     </div>
 {/if}
 

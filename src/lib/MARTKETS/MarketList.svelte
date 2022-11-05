@@ -1,21 +1,11 @@
 <script lang="ts">
 	import TextInput from '../TextInput.svelte';
-    import {current_market, market_list, newMarket, user, resetMarket, resetShop, joinMarket} from "$lib/db"
+    import { newMarket, user, resetMarket, joinMarket, current_patron} from "$lib/db"
 	import TextArea from "../TextArea.svelte";
 	import ToggleText from '../ToggleText.svelte';
-	import Inventory from '$lib/MARTKETS/Inventory.svelte';
 	import HorizontalList from '$lib/MARTKETS/HorizontalList.svelte';
 
-    function toggle_market(market) {
-        if ( market == $current_market) {
-            resetMarket()
-        } else {
-            creatingNew = false
-            joiningNew = false
-            current_market.set(market)
-            resetShop()
-        }
-    }
+
 
     function toggleCreate() {
         joiningNew = false
@@ -45,6 +35,9 @@
     let new_market_name = ""
     let new_market_description = ""
     let join_id = ""
+
+
+    console.log($current_patron)
 </script>
 
 

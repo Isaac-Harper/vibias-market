@@ -52,6 +52,9 @@ export let current_patron = writable({id: 0,
                                       inventory_ids: []
                                       })
 
+export let inventory = writable([])
+
+
 export let market_list = writable(empty)
 export let shop_list = writable(empty)
 export let item_list = writable(empty)
@@ -129,6 +132,32 @@ export async function joinMarket(joinid) {
 }
 
 
+export async function createPatron(name) {
+  let tempUser;
+  user.subscribe(value => {
+		tempUser = value;
+	});
+
+  let tempMarket;
+  current_market.subscribe(value => {
+		tempMarket = value;
+	});
+
+
+  const { data, error } = await supabase
+  .from('patrons')
+  .insert([
+    { name: name, player_id: tempUser.id, market_id: tempMarket.id },
+  ])
+  if (error) {
+    alert(error.message)
+    throw new Error(error.message)    
+  }
+
+  init()
+  current_patron.set(data[0])
+}
+
 ///////////////////////////////////////
 //
 //        UPDATE
@@ -148,7 +177,7 @@ export async function updateMarket(market) {
   }
   
   init()
-  resetMarket()
+  current_market.set(data[0])
   
   return data
 }
@@ -165,7 +194,7 @@ export async function updateShop(shop) {
   }
   
   init()
-  resetShop()
+  current_shop.set(data[0])
   
   return data
 }
@@ -183,8 +212,7 @@ export async function updateItem(item) {
   }
   
   init()
-  resetItem()
-   
+  current_item.set(data[0])   
   return data
 }
 
@@ -337,7 +365,6 @@ async function getItemPrice(item_id:number) {
     alert(error.message)
     throw new Error(error.message) 
   }
-  console.log(data[0].price)
   return data
 }
 
@@ -350,7 +377,6 @@ async function getItem(item_id:number) {
     alert(error.message)
     throw new Error(error.message) 
   }
-  console.log(data[0].price)
   return data
 }
 
@@ -385,13 +411,17 @@ async function addItemToInventory(item:object, patron_id:number) {
 
   inv.push(item)
 
+
   console.log(inv)
+
+  inventory.set(inv)
 
   await supabase
     .from('patrons')
     .update({inventory_ids: inv})
     .eq('id', patron_id)
 
+  
   patron_list.set(await getPatrons())
 }
 
@@ -403,13 +433,18 @@ async function addItemToInventory(item:object, patron_id:number) {
 
 export async function buyItem( item_id:number, patrons_id:number ) {
   
-  const a = await getItemPrice(item_id)
   const c = await getItem(item_id)
   const b = await getPatronsCoins(patrons_id)
 
 
+  let tempPatron;
+  current_patron.subscribe(value => {
+		tempPatron = value;
+	});
+
+
   const item = c[0]
-  const price = a[0].price
+  const price = item.price
   const coins = b[0].coins
 
   let new_coins = coins
@@ -423,6 +458,11 @@ export async function buyItem( item_id:number, patrons_id:number ) {
     .update({coins: new_coins})
     .eq('id', patrons_id)
 
+  
 
   patron_list.set(await getPatrons())
+
+  tempPatron.inventory_ids.push(item)
+  tempPatron.coins = coins - price
+  current_patron.set(tempPatron)
 }
