@@ -36,8 +36,8 @@
     .container {
       display: flex;
       overflow-x: scroll;
-      padding: 0 .5rem;
-      margin: 0 -.5rem;
+      padding: 0 1rem;
+      margin: 0 -1rem;
       gap: .5rem;
       height: 100%;
      
