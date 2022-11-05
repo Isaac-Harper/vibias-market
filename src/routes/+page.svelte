@@ -1,26 +1,12 @@
 <script lang="ts">
-
 	import ItemInfo from "$lib/ITEMS/ItemInfo.svelte";
 	import MarketInfo from "$lib/MARTKETS/MarketInfo.svelte";
 	import MarketList from "$lib/MARTKETS/MarketList.svelte";
 	import ShopInfo from "$lib/SHOPS/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
 	import Auth from "$lib/Auth.svelte"
-	import { user, getMarkets, getShops, getItems, patron_list, getPatrons, market_list, shop_list, item_list } from '$lib/db'
-	import Inventory from "$lib/MARTKETS/Inventory.svelte";
- 
-
-    export async function init() {
-        market_list.set(await getMarkets())
-        shop_list.set(await getShops())
-        item_list.set(await getItems())
-        patron_list.set(await getPatrons())
- 
-    }
+	import { user, init } from '$lib/db'
 </script>
-
-
-
 
 {#if $user}
     <div class="grid">
@@ -30,7 +16,6 @@
             <MarketInfo/>
             <ShopInfo/>
             <ItemInfo/>
-            
         {/await}
     </div>
 {:else}
@@ -40,10 +25,10 @@
 
 <style>
     .grid {
-        padding: 1rem;
+        padding: var(--med-space);
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: var(--med-space);
     }
 
 </style>

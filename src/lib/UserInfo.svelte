@@ -35,7 +35,7 @@
 <style>
     .container {
         grid-area: user;
-        padding: 0 .5rem;
+        padding: var(--med-space);
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -48,7 +48,7 @@
         display: grid;
         grid-template-areas: "user logout"
                              "user settings";
-        gap: .5rem;
+        gap: var(--med-space);
     }
     
     .logout {

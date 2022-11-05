@@ -2,7 +2,7 @@
     export let current_items
     export let creating_new_item
     
-    import { user, current_market, current_item, resetShop, resetItem } from "../db"
+    import { user, current_market, current_item, resetItem } from "../db"
 
 
 
@@ -10,6 +10,7 @@
         if ( item == $current_item) {
             resetItem()
         } else {
+            
             current_item.set(item)
         }
     }
@@ -45,9 +46,9 @@
         flex-direction: column;
         overflow-y: scroll;
         max-height: 18rem;
-        padding: .5rem;
-        width: 8rem;
-        gap: 1rem;
+        padding: var(--med-space);
+        width: 12rem;
+        gap: var(--med-space);
     }
     .item {
         flex: 0 0 5rem;

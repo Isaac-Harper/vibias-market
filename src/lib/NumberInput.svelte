@@ -1,28 +1,23 @@
 <script lang="ts">
-    export let value = ""
+    export let value = 0
     export let title = "No Title"
-    export let maxlength = 150
 </script>
 
 
-
-
 <div class="container element--border--primary">
-    <h4>{title} </h4>
-    <p>{value.length}/{maxlength}</p>
-    <textarea class="element--border--primary" type="text" bind:value maxlength={maxlength}></textarea>
+    <h4>{title}</h4>
+    <input class="element--border--primary" type="number" bind:value >
 </div>
+
 
 
 <style>
     .container {
-        height: 12rem;
         padding: var(--med-space);
         display: grid;
-        grid-template-rows: auto 1fr;
         grid-template-columns: 1fr auto;
     }
-    textarea {
+    input {
         width: 100%;
         padding: var(--med-space);
         grid-area: 2 / 1 / 3 / 3;

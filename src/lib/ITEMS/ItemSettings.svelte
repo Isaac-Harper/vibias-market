@@ -1,41 +1,40 @@
 <script lang="ts">
-    import { get } from 'svelte/store'
-    import {user, current_item, updateItem, deleteItem } from "$lib/db"
+	import NumberInput from './../NumberInput.svelte';
+    import {user, current_item  } from "$lib/db"
     import TextInput from "$lib/TextInput.svelte"
     import TextArea from "$lib/TextArea.svelte"
     import Dropdown from "$lib/Dropdown.svelte"
+	import DeleteButton from '$lib/DeleteButton.svelte';
+	import ApplyButton from '$lib/ApplyButton.svelte';
     
-    let new_item = get(current_item)
-    
-    function setValues() {
-        new_item = get(current_item)
-    }
-    
-    function deleteI() {
-        deleteItem($current_item.id)
-    }
-
+    $: new_item = $current_item
 </script>
 
 
 {#if $current_item.creator_id === $user.id }
- <div class="container"> 
-    <Dropdown>
-       <span slot="title">Item Settings:</span>
-       <div slot="body">
-          <TextInput title="Item Name" bind:value={new_item.name}></TextInput>
-          <TextArea title="Item Description" bind:value={new_item.description}></TextArea>
-          <button on:click={() => updateItem(new_item)}>Apply</button>
-          <button class="delete_button element--border--primary" on:click={() => deleteI()}>Delete</button>
-       </div>
-    </Dropdown>
- </div>
+    <div class="container"> 
+        <Dropdown>
+        <span slot="title">Item Settings:</span>
+        <div slot="body" class="body">
+            <TextInput title="Item Name" bind:value={new_item.name}></TextInput>
+            <TextArea title="Item Description" bind:value={new_item.description}></TextArea>
+            <NumberInput title="Price" bind:value={new_item.price}/>
+            <ApplyButton type="item" obj={new_item}/>
+            <DeleteButton type="item" id={$current_item.id}/>
+        </div>
+        </Dropdown>
+    </div>
 {/if}
 
 
 <style>
- .container {
-    grid-area: sets;
- } 
+    .container {
+        grid-area: sets;
+    } 
 
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 </style>

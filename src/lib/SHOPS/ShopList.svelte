@@ -46,9 +46,9 @@
         flex-direction: column;
         overflow-y: scroll;
         max-height: 18rem;
-        padding: .5rem;
-        width: 8rem;
-        gap: 1rem;
+        padding: var(--med-space);
+        width: 12rem;
+        gap: var(--med-space);
     }
     .item {
         flex: 0 0 5rem;

@@ -1,20 +1,12 @@
 <script lang="ts">
-      import { get } from 'svelte/store'
-      import {user, current_shop, updateShop, deleteShop } from "$lib/db"
-      import TextInput from "$lib/TextInput.svelte"
-      import TextArea from "$lib/TextArea.svelte"
-      import Dropdown from "$lib/Dropdown.svelte"
-      
-      let new_shop = get(current_shop)
-      
-      function setValues() {
-         new_shop = get(current_shop)
-      }
-      
-      function deleteS() {
-        deleteShop($current_shop.id)
-      }
-
+   import {user, current_shop  } from "$lib/db"
+   import TextInput from "$lib/TextInput.svelte"
+   import TextArea from "$lib/TextArea.svelte"
+   import Dropdown from "$lib/Dropdown.svelte"
+   import DeleteButton from '$lib/DeleteButton.svelte';
+	import ApplyButton from '$lib/ApplyButton.svelte';
+   
+   $: new_shop = $current_shop
 </script>
 
 
@@ -22,11 +14,11 @@
    <div class="container"> 
       <Dropdown>
          <span slot="title">Shop Settings:</span>
-         <div slot="body">
+         <div slot="body" class="body">
             <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
             <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
-            <button on:click={() => updateShop(new_shop)}>Apply</button>
-            <button class="delete_button element--border--primary" on:click={() => deleteS()}>Delete</button>
+            <ApplyButton type="shop" obj={new_shop}/>
+            <DeleteButton type="shop" id={$current_shop.id}/>
          </div>
       </Dropdown>
    </div>
@@ -36,6 +28,11 @@
 <style>
    .container {
       grid-area: sets;
-   } 
+   }
 
+   .body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--med-space);
+    }
 </style>

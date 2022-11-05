@@ -79,18 +79,18 @@
     .holder {
         display: flex;
         flex-direction: column;
-        gap: .5rem;
-        padding: .5rem;
+        gap: var(--med-space);
+        padding: var(--med-space);
     }
 
     .title {
         display: flex;
-        gap: .5rem;
+        gap: var(--med-space);
     }
 
     .new_input{
         display: grid;
-        gap: .5rem;
+        gap: var(--med-space);
     } 
 
     .modifier {
@@ -102,9 +102,5 @@
         background-color: var(--blue);
         
     } 
-    
-    .selected {
-        background-color: var(--red);
-    }
     
 </style>

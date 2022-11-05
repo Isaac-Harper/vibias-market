@@ -15,13 +15,13 @@
 
 <style>
     .container {
-        padding: .5rem;
+        padding: var(--med-space);
         display: grid;
         grid-template-columns: 1fr auto;
     }
     input {
         width: 100%;
-        padding: .5rem;
+        padding: var(--med-space);
         grid-area: 2 / 1 / 3 / 3;
     }
 </style>

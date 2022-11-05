@@ -147,7 +147,7 @@ export async function createPatron(name) {
   const { data, error } = await supabase
   .from('patrons')
   .insert([
-    { name: name, player_id: tempUser.id, market_id: tempMarket.id },
+    { name: name, player_id: tempUser.id, market_id: tempMarket.id, coins: tempMarket.starting_coins },
   ])
   if (error) {
     alert(error.message)
@@ -451,6 +451,10 @@ export async function buyItem( item_id:number, patrons_id:number ) {
   if (coins >= price) {
     new_coins = coins - price
     addItemToInventory(item, patrons_id)
+
+    tempPatron.inventory_ids.push(item)
+    tempPatron.coins = coins - price
+    current_patron.set(tempPatron)
   }
 
   await supabase
@@ -462,7 +466,5 @@ export async function buyItem( item_id:number, patrons_id:number ) {
 
   patron_list.set(await getPatrons())
 
-  tempPatron.inventory_ids.push(item)
-  tempPatron.coins = coins - price
-  current_patron.set(tempPatron)
+  
 }

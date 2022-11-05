@@ -1,13 +1,9 @@
 <script lang="ts">
      
-    import {buyItem, current_item, current_market, deleteItem, user, patron_list} from "$lib/db"
+    import {buyItem, current_item, current_market, user, patron_list} from "$lib/db"
 	import ItemSettings from "./ItemSettings.svelte";
     import { slide } from 'svelte/transition';
     
-    function deleteI() {
-    deleteItem($current_item.id)
-    }
-
     function buyI() {
         buyItem( $current_item.id, current_patron.id )
     }
@@ -39,10 +35,6 @@
         overflow: hidden;
         width: 100%;
 
-        padding: 1rem;
+        padding: var(--med-space)
     }
-    
-    
-
-    
 </style>

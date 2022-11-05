@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {item_list, current_shop, current_item, deleteShop, user, newItem} from "$lib/db"
+    import {item_list, current_shop, user, newItem} from "$lib/db"
     import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import ItemList from "$lib/ITEMS/ItemList.svelte";
@@ -7,19 +7,6 @@
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
     
-    
-    
-    function toggle_item(item) {
-        if ( item == $current_item) {
-            current_item.set({id: 0, creator_id: "", shop_id: "", name: "", description: "", price: 0})
-        } else {
-            current_item.set(item)
-        }
-    }
-
-    function deleteS() {
-        deleteShop($current_shop.id)
-    }
 
     function toggleNewItem() {
         creating_new_item = !creating_new_item
@@ -82,42 +69,15 @@
         grid-template-columns: 1fr auto;
         grid-template-areas: "body  list"
                              "sets  sets";
-        gap: 1rem;
-        padding: 1rem;  
-
-
+        gap: var(--med-space);
+        padding: var(--med-space);
     }
 
     input {
         max-width: 10rem;
     }
-
-    .newItem {
-        background-color: var(--blue);
-        flex: 0 0 3rem;
-    }
-
     .body {
         grid-area: body;
-    }
-
-    
-    .list {
-        grid-area: list;
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        max-height: 18rem;
-        width: 8rem;
-    }
-    .item {
-        flex: 0 0 5rem;
-        display: flex;
-        
-        justify-content: center;
-        align-items: center;
-        margin: .2rem 0;
-
     }
 
     .create {
@@ -125,7 +85,4 @@
         width: 6rem;
     }
     
-    .selected {
-        background-color: var(--red);
-    }
 </style>
