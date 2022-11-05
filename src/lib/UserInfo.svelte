@@ -30,7 +30,7 @@
     .holder {
         display: grid;
         grid-template-areas: "user logout";
-        grid-template-columns: auto 15rem;
+        grid-template-columns: auto 1fr;
         gap: var(--med-space);
     }
     
