@@ -22,10 +22,18 @@
                 <p>Your join ID is:</p>
                 <p style="font-size: small;">{new_market.join_id}</p>
                 {#each markets_patrons as patron}
-                    {patron.id}
+                    <div class="flex">
+                        {patron.name}
+                        {patron.coins}
+                        <button>Remove Player</button>
+                        <button>Change coins</button>
+                    </div>
                 {/each}
-                <ApplyButton type="market" obj={new_market}/>
-                <DeleteButton type="market" id={$current_market.id}/>
+                <div class="flex">
+                    <ApplyButton type="market" obj={new_market}/>
+                    <DeleteButton type="market" id={$current_market.id}/>
+                </div>
+                
             </div>
         </Dropdown>
     </div>
@@ -41,5 +49,9 @@
         display: flex;
         flex-direction: column;
         gap: var(--med-space);
+    }
+
+    .flex {
+        display: flex;
     }
 </style>

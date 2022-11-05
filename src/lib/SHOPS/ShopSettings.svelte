@@ -17,8 +17,11 @@
          <div slot="body" class="body">
             <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
             <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
-            <ApplyButton type="shop" obj={new_shop}/>
-            <DeleteButton type="shop" id={$current_shop.id}/>
+            <div class="flex">
+               <ApplyButton type="shop" obj={new_shop}/>
+               <DeleteButton type="shop" id={$current_shop.id}/>
+            </div>
+            
          </div>
       </Dropdown>
    </div>
@@ -31,8 +34,12 @@
    }
 
    .body {
-        display: flex;
-        flex-direction: column;
-        gap: var(--med-space);
-    }
+      display: flex;
+      flex-direction: column;
+      gap: var(--med-space);
+   }
+
+   .flex {
+      display: flex;
+   }
 </style>

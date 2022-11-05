@@ -19,8 +19,10 @@
             <TextInput title="Item Name" bind:value={new_item.name}></TextInput>
             <TextArea title="Item Description" bind:value={new_item.description}></TextArea>
             <NumberInput title="Price" bind:value={new_item.price}/>
-            <ApplyButton type="item" obj={new_item}/>
-            <DeleteButton type="item" id={$current_item.id}/>
+            <div class="flex">
+                <ApplyButton type="item" obj={new_item}/>
+                <DeleteButton type="item" id={$current_item.id}/>
+            </div>
         </div>
         </Dropdown>
     </div>
@@ -36,5 +38,9 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .flex {
+        display: flex;
     }
 </style>
