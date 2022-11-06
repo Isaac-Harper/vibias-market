@@ -24,7 +24,7 @@
 
 <div class="container" >
     {#each $market_list as market}
-        <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market.id  === $current_market.id}">
+        <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market.id  === $current_market.id}" class:unselected="{market.id  !== $current_market.id}">
             {market.name}
         </div>
     {/each}

@@ -43,6 +43,10 @@
                              "sets      sets";
         gap: var(--med-space);
         padding: var(--med-space);
+
+        background-color: var(--card-dark);
+        color: var(--normal-font-dark);
+        box-shadow: var(--card-border-shadow);
     }
 
     .body {

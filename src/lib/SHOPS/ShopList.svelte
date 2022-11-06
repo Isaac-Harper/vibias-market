@@ -32,7 +32,7 @@
     {/if}
 
     {#each current_shops as shop}
-        <div on:click={() => toggle_shop(shop)}  class="item element--border--primary" class:selected="{shop.id  === $current_shop.id}">
+        <div on:click={() => toggle_shop(shop)}  class="item element--border--primary" class:selected="{shop.id  === $current_shop.id}" class:unselected="{shop.id  !== $current_shop.id}">
             {shop.name}
         </div>        
     {/each}

@@ -9,6 +9,10 @@
         <p>{$user.email}</p>
     </div>
 
+    <div class="middle">
+
+    </div>
+
     <button on:click={() => auth.signOut()} class="logout element--border--primary" >Sign out</button>
 
 </div>
@@ -17,31 +21,33 @@
 
 <style>
     .container {
-        grid-area: user;
         padding: var(--med-space);
         display: flex;
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
 
-        background: #C2BD46;
+        background: var(--oc-grape-8);
+        color: var(--oc-gray-1);
     }
 
     .holder {
-        display: grid;
-        grid-template-areas: "user logout";
-        grid-template-columns: auto 1fr;
+        display: flex;
         gap: var(--med-space);
+        
+    }
+
+    .middle {
+        flex-grow: 1;
     }
     
     .logout {
-        grid-area: logout;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
-        background-color: var(--red);
+        padding: var(--med-space);
+        background-color: var(--oc-red-8);
+        color: var(--oc-gray-1);
     }
     
 </style>

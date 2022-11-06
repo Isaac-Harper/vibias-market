@@ -1,3 +1,5 @@
+@import '/node_modules/open-color/open-color.css';
+
 @font-face {
   font-family: recursive;
   src: url("/Recursive_VF_1.084.woff2");
@@ -21,6 +23,26 @@
   --lighter-red: #D1A88A;
   --green: #C2BD46;
   --blue: #BFC8D3;
+
+
+
+  --background-dark: var(--oc-gray-9);
+  --card-dark: var(--oc-gray-8);
+  --title-font-dark: var(--oc-gray-1);
+  --normal-font-dark: var(--oc-gray-4);
+
+  --input-background-dark: var(--oc-gray-3);
+  --input-font-dark: var(--oc-gray-9);
+
+  --apply-button: var(--oc-blue-4);
+
+  --delete-button: var(--oc-red-4);
+
+  --card-border-dark: var(--oc-gray-7);
+
+  --card-border-shadow: 0rem 0rem .5rem 0 var(--oc-gray-8);
+
+  --list-item: ;
 }
 
 
@@ -48,7 +70,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   
-  background-color: var(--white);
+  background-color: var(--background-dark);
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -64,30 +86,22 @@ p, h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--bold-wght);
+  color: var(--title-font-dark);
 }
+
 #root, #__next {
   isolation: isolate;
 }
 
 
 .element--border--primary {
-  border: solid black 1px;
+  border: solid var(--card-border-dark) 1px;
   border-radius: 1rem;
 }
 
-.delete_button{
-  text-decorations: none;
-  width: 5rem;
-  padding: .5rem;
-  background-color: var(--red);
-  
-    
-  display: flex;
-  justify-content: center;
-}
+
 
 .settings_button{
-  text-decorations: none;
   width: 5rem;
   padding: .5rem;
   background-color: var(--blue);
@@ -98,7 +112,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .buy_button{
-  text-decorations: none;
   width: 6rem;
   padding: .5rem;
   background-color: var(--green);
@@ -136,12 +149,16 @@ h1, h2, h3, h4, h5, h6 {
 }
     
 .selected {
-  background-color: var(--red);
+  background-color: var(--oc-teal-8);
+}
+.unselected {
+  background-color: var(--oc-cyan-8);
 }
 
 input, textarea{
   border: none;
-  background-color: #e8eeef;
+  background-color: var(--input-background-dark);
+  color: var(--input-font-dark);
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
   outline: 0;
   resize:none;

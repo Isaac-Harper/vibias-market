@@ -32,7 +32,7 @@
     {/if}
 
     {#each current_items as item}
-        <div on:click={() => toggle_item(item)}  class="item element--border--primary" class:selected="{item.id === $current_item.id}">
+        <div on:click={() => toggle_item(item)}  class="item element--border--primary" class:selected="{item.id === $current_item.id}" class:unselected="{item.id  !== $current_item.id}">
             {item.name}
         </div>        
     {/each}

@@ -33,12 +33,12 @@
 
     .title {
         cursor: pointer;
-        padding: 1rem;
+        padding: var(--med-space);
         z-index: 20 ;
     }
 
     .body {
-        padding: 1rem;
+        padding: var(--med-space);
     }
 
 

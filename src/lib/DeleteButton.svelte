@@ -18,7 +18,7 @@
     .delete_button{
         width: 8rem;
         padding: var(--med-space);
-        background-color: var(--red);
+        background-color: var(--delete-button);
         
             
         display: flex;

@@ -18,7 +18,7 @@
     .apply_button{
         width: 8rem;
         padding: var(--med-space);
-        background-color: var(--blue);
+        background-color: var(--apply-button);
         
             
         display: flex;
