@@ -59,17 +59,13 @@
         
 		<HorizontalList content={current_items} list="item"/>
 
-        <ItemList current_items={current_items} bind:creating_new_item={creating_new_item}/>
         <ShopSettings/> 
     </div>
 {/if}
 
 <style>
     .container {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "body  list"
-                             "sets  sets";
+        display: flex;
         gap: var(--med-space);
         padding: var(--med-space);
 

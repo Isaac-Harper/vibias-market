@@ -28,7 +28,6 @@
         </div>
         
         
-        <ShopList current_shops={current_shops} bind:creating_new_shop={creating_new_shop}/>
         <HorizontalList content={current_shops} list="shop"/>
         <Inventory/>
         <MarketSettings />
