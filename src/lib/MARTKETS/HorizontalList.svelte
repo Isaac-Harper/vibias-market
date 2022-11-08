@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { user, current_market, market_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory} from "$lib/db"
+    import { user, current_market, market_list, shop_list, item_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop} from "$lib/db"
 
+    export let list = "none"
 
 
     function toggle_market(market) {
@@ -19,15 +20,48 @@
             resetShop()
         }
     }
+
+    function toggle_shop(shop) {
+        if ( shop == $current_shop) {
+            resetShop()
+        } else {
+            current_shop.set(shop)
+            resetItem()
+        }
+    }
+
+    function toggle_item(item) {
+        if ( item == $current_item) {
+            resetItem()
+        } else {
+            current_item.set(item)
+        }
+    }
 </script>
 
 
 <div class="container" >
-    {#each $market_list as market}
-        <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market.id  === $current_market.id}" class:unselected="{market.id  !== $current_market.id}">
-            {market.name}
-        </div>
-    {/each}
+    
+    
+    {#if list === "market"}
+        {#each $market_list as market}
+            <div on:click={() => toggle_market(market)} class="item element--border--primary" class:selected="{market.id  === $current_market.id}" class:unselected="{market.id  !== $current_market.id}">
+                {market.name}
+            </div>
+        {/each}
+    {:else if list === "shop"}
+        {#each $shop_list as shop}
+            <div on:click={() => toggle_shop(shop)} class="item element--border--primary" class:selected="{shop.id  === $current_shop.id}" class:unselected="{shop.id  !== $current_shop.id}">
+                {shop.name}
+            </div>
+        {/each}
+    {:else if list === "item"}
+        {#each $item_list as item}
+            <div on:click={() => toggle_item(item)} class="item element--border--primary" class:selected="{item.id  === $current_item.id}" class:unselected="{item.id  !== $current_item.id}">
+                {item.name}
+            </div>
+        {/each}
+    {/if}
 </div>
     
     

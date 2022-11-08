@@ -37,10 +37,8 @@
 
 <style>
     .container {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "body      list"
-                             "sets      sets";
+        display: flex;
+        flex-direction: column;
         gap: var(--med-space);
         padding: var(--med-space);
 

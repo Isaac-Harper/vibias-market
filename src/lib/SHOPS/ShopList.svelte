@@ -1,4 +1,6 @@
 <script lang="ts">
+	import HorizontalList from "$lib/MARTKETS/HorizontalList.svelte";
+
     export let current_shops
     export let creating_new_shop
     
@@ -38,21 +40,21 @@
     {/each}
 </div>
 
+<HorizontalList list="shop"/>
 
 <style> 
     .list {
-        grid-area: list;
         display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
+        flex-direction: row;
+        overflow-x: scroll;
         max-height: 18rem;
         padding: var(--med-space);
-        width: 12rem;
         gap: var(--med-space);
     }
     .item {
-        flex: 0 0 5rem;
+        flex: 0 0 10rem;
         display: flex;
+        height: 2rem;
         
         justify-content: center;
         align-items: center;
@@ -60,7 +62,7 @@
     }
     .newItem {
         background-color: var(--blue);
-        flex: 0 0 3rem;
+        flex: 0 0 12rem;
     }
 
 </style>

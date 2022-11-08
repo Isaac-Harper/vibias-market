@@ -54,7 +54,7 @@
         </div> 
     </div>
 
-    <HorizontalList/>
+    <HorizontalList list="market"/>
     
     
     {#if creatingNew} 
