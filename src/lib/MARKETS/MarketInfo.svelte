@@ -11,6 +11,10 @@
 
 
     let creating_new_shop = false
+	
+	function toggleNewShop() {
+        creating_new_shop = !creating_new_shop
+    }
 </script>
 
 
@@ -21,9 +25,9 @@
                 <ShopCreation bind:creating_new_shop={creating_new_shop}/>
             {:else}
                 <h3>{$current_market.name}</h3>
-
-                
                 <p>{$current_market.description}</p> 
+				<button on:click={toggleNewShop}>Create new Shop</button>
+				
             {/if}
         </div>
         
