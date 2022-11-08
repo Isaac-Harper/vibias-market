@@ -40,7 +40,7 @@
     {/each}
 </div>
 
-<HorizontalList content={current_shops} list="shop"/>
+
 
 <style> 
     .list {
