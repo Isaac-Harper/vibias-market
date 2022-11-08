@@ -27,10 +27,10 @@
                 <h3>{$current_market.name}</h3>
                 <p>{$current_market.description}</p> 
 				<button on:click={toggleNewShop}>Create new Shop</button>
-				
+				<i class="ri-admin-line"></i>
+
             {/if}
-        </div>
-        
+        </div> 
         
         <HorizontalList content={current_shops} list="shop"/>
         <Inventory/>

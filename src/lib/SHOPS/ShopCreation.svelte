@@ -23,6 +23,10 @@
     }
 </script>
 
+<div class="new_shop">
+	<button on:click={toggleNewShop}>Create new Shop</button>
+</div>
+
 <div class="container">
     <h3>Creating New Shop</h3>
     <TextInput title="Shop Name:" bind:value={new_shop_name}/>
