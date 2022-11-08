@@ -56,7 +56,7 @@
             {/if}
         </div>
         
-
+		<HorizontalList content={current_items} list="item"/>
 
         <ItemList current_items={current_items} bind:creating_new_item={creating_new_item}/>
         <ShopSettings/> 

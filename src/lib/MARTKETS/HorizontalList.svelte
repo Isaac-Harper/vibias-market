@@ -58,7 +58,7 @@
             </div>
         {/each}
     {:else if list === "item"}
-        {#each $item_list as item}
+        {#each content as item}
             <div on:click={() => toggle_item(item)} class="item element--border--primary" class:selected="{item.id  === $current_item.id}" class:unselected="{item.id  !== $current_item.id}">
                 {item.name}
             </div>
