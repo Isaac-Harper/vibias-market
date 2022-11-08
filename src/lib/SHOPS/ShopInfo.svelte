@@ -66,6 +66,7 @@
 <style>
     .container {
         display: flex;
+		flex-direction: column;
         gap: var(--med-space);
         padding: var(--med-space);
 
