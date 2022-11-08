@@ -3,6 +3,7 @@
     import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import ItemList from "$lib/ITEMS/ItemList.svelte";
+	import HorizontalList from "$lib/MARKETS/HorizontalList.svelte";
 
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
@@ -56,19 +57,16 @@
             {/if}
         </div>
         
+		<HorizontalList content={current_items} list="item"/>
 
-
-        <ItemList current_items={current_items} bind:creating_new_item={creating_new_item}/>
         <ShopSettings/> 
     </div>
 {/if}
 
 <style>
     .container {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "body  list"
-                             "sets  sets";
+        display: flex;
+		flex-direction: column;
         gap: var(--med-space);
         padding: var(--med-space);
 

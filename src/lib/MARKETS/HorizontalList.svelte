@@ -2,8 +2,10 @@
     import { user, current_market, market_list, shop_list, item_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop} from "$lib/db"
 
     export let list = "none"
+	export let content = []
+	
 
-
+	
     function toggle_market(market) {
         if ( market == $current_market) {
             resetMarket()
@@ -50,13 +52,13 @@
             </div>
         {/each}
     {:else if list === "shop"}
-        {#each $shop_list as shop}
+        {#each content as shop}
             <div on:click={() => toggle_shop(shop)} class="item element--border--primary" class:selected="{shop.id  === $current_shop.id}" class:unselected="{shop.id  !== $current_shop.id}">
                 {shop.name}
             </div>
         {/each}
     {:else if list === "item"}
-        {#each $item_list as item}
+        {#each content as item}
             <div on:click={() => toggle_item(item)} class="item element--border--primary" class:selected="{item.id  === $current_item.id}" class:unselected="{item.id  !== $current_item.id}">
                 {item.name}
             </div>
