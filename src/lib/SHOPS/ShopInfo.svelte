@@ -3,6 +3,7 @@
     import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import ItemList from "$lib/ITEMS/ItemList.svelte";
+	import HorizontalList from "$lib/MARKETS/HorizontalList.svelte"
 
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
