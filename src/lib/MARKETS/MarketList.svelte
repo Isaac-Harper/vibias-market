@@ -3,7 +3,7 @@
     import { newMarket, user, resetMarket, joinMarket, current_patron} from "$lib/db"
 	import TextArea from "../TextArea.svelte";
 	import ToggleText from '../ToggleText.svelte';
-	import HorizontalList from '$lib/MARTKETS/HorizontalList.svelte';
+	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
 
 
 

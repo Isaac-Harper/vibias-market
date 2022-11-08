@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ItemInfo from "$lib/ITEMS/ItemInfo.svelte";
-	import MarketInfo from "$lib/MARTKETS/MarketInfo.svelte";
-	import MarketList from "$lib/MARTKETS/MarketList.svelte";
+	import MarketInfo from "$lib/MARKETS/MarketInfo.svelte";
+	import MarketList from "$lib/MARKETS/MarketList.svelte";
 	import ShopInfo from "$lib/SHOPS/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
 	import Auth from "$lib/Auth.svelte"

@@ -2,7 +2,7 @@
 	import ShopList from '../SHOPS/ShopList.svelte';
     import {shop_list, current_market } from "$lib/db"
 	import ShopCreation from '../SHOPS/ShopCreation.svelte'
-	import Inventory from '$lib/MARTKETS/Inventory.svelte';
+	import Inventory from '$lib/MARKETS/Inventory.svelte';
     import { slide } from 'svelte/transition';
 	import MarketSettings from './MarketSettings.svelte';
     import HorizontalList from "$lib/MARKETS/HorizontalList.svelte";
