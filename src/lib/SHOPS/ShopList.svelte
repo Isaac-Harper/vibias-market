@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HorizontalList from "$lib/MARTKETS/HorizontalList.svelte";
+	import HorizontalList from "$lib/MARKETS/HorizontalList.svelte";
 
     export let current_shops
     export let creating_new_shop
