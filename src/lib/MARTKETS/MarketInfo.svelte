@@ -5,7 +5,8 @@
 	import Inventory from '$lib/MARTKETS/Inventory.svelte';
     import { slide } from 'svelte/transition';
 	import MarketSettings from './MarketSettings.svelte';
-    
+    import HorizontalList from "$lib/MARKETS/HorizontalList.svelte"
+	
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
 
 
