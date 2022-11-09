@@ -21,7 +21,7 @@
 
 {#if $current_market.id !== 0 }
     <div class="container element--border--primary" transition:slide|local> 
-        {#if setting_open}
+        {#if !setting_open}
 			<div class="body">
 				{#if creating_new_shop}
 					<ShopCreation bind:creating_new_shop={creating_new_shop}/>
