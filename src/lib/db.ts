@@ -27,7 +27,7 @@ export let state = writable({
 	edit_shop_open: false,
 	edit_item_open: false,
 	
-	join_market_open; false,
+	join_market_open: false,
 	
 	create_market_open: false,
 	create_shop_open: false,
