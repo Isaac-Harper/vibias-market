@@ -12,8 +12,7 @@
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
 	
 	function toggleSettings() {
-		setting_open = !setting_open
-		$state.edit_market_open
+		$state.edit_market_open =! $state.edit_market_open
 	}
 </script>
 
