@@ -10,23 +10,19 @@
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
 
 	let setting_open
-
-    let creating_new_shop = false
 	
 	function toggleNewShop() {
-        creating_new_shop = !creating_new_shop
 		$state.create_shop_open = !$state.create_shop_open
-		console.log($state)
     }
 </script>
 
 
-{#if $current_market.id !== 0 }
+{#if $state.market_open }
     <div class="container element--border--primary" transition:slide|local> 
-        {#if !setting_open}
+        {#if !$state.edit_market_open}
 			<div class="body">
 				{#if $state.create_shop_open}
-					<ShopCreation bind:creating_new_shop={creating_new_shop}/>
+					<ShopCreation/>
 				{:else}
 					<h3>{$current_market.name}</h3>
 					<p>{$current_market.description}</p> 
@@ -37,7 +33,7 @@
 			<HorizontalList content={current_shops} list="shop"/>
 			<Inventory/>
 		{/if}
-        <MarketSettings bind:setting_open />
+        <MarketSettings />
     </div>
 {/if}
 

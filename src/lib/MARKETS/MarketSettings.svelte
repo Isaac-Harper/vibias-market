@@ -1,19 +1,19 @@
 <script>
 	import ApplyButton from "$lib/ApplyButton.svelte";
-    import {user, current_market, patron_list } from "$lib/db"
+    import {user, current_market, patron_list, state } from "$lib/db"
 	import DeleteButton from "$lib/DeleteButton.svelte";
 	import Dropdown from "$lib/Dropdown.svelte";
 	import NumberInput from "$lib/NumberInput.svelte";
 	import TextArea from "$lib/TextArea.svelte";
 	import TextInput from "$lib/TextInput.svelte";
 	
-	export let setting_open = false
 
     $: new_market = $current_market
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
 	
 	function toggleSettings() {
 		setting_open = !setting_open
+		$state.edit_market_open
 	}
 </script>
 

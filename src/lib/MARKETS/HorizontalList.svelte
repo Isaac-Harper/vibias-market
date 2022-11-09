@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { user, current_market, market_list, shop_list, item_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop} from "$lib/db"
+    import { user, current_market, market_list, shop_list, item_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop, state} from "$lib/db"
 
     export let list = "none"
 	export let content = []
@@ -8,6 +8,7 @@
 	
     function toggle_market(market) {
         if ( market == $current_market) {
+			$state.market_open = false
             resetMarket()
             resetPatron()
         } else {
@@ -20,6 +21,7 @@
                 resetPatron()
             }
             resetShop()
+			$state.market_open = true
         }
     }
 

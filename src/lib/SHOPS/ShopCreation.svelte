@@ -7,8 +7,6 @@
     let new_shop_name = ""
     let new_shop_description = ""
 
-    export let creating_new_shop
-
     function toggleNewShop() {
 		$state.create_shop_open = !$state.create_shop_open
     }
