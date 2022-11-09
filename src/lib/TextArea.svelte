@@ -7,7 +7,7 @@
 
 
 
-<div class="container element--border--primary">
+<div class="container">
     <h4>{title} </h4>
     <p>{value.length}/{maxlength}</p>
     <textarea class="element--border--primary" type="text" bind:value maxlength={maxlength}></textarea>
@@ -17,7 +17,6 @@
 <style>
     .container {
         height: 12rem;
-        padding: var(--med-space);
         display: grid;
         grid-template-rows: auto 1fr;
         grid-template-columns: 1fr auto;

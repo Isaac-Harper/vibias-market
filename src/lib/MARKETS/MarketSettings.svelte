@@ -41,6 +41,7 @@
 				<div class="flex">
 					<ApplyButton type="market" obj={new_market}/>
 					<DeleteButton type="market" id={$current_market.id}/>
+					<button class="ri-settings-line" on:click={toggleSettings}></button>>
 				</div>
 			</div>
 		</div>
