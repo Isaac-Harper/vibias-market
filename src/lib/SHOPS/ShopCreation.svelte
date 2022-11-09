@@ -1,6 +1,6 @@
 
 <script lang="ts">
-    import { user, newShop, current_market } from "../db";
+    import { user, newShop, current_market, state } from "../db";
 	import TextArea from "../TextArea.svelte";
 	import TextInput from "../TextInput.svelte";
 
@@ -10,7 +10,7 @@
     export let creating_new_shop
 
     function toggleNewShop() {
-        creating_new_shop = !creating_new_shop
+		$state.create_shop_open = !$state.create_shop_open
     }
 
     function createNewShop() {
