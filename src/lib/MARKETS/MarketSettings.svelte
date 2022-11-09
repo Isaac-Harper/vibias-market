@@ -7,7 +7,7 @@
 	import TextArea from "$lib/TextArea.svelte";
 	import TextInput from "$lib/TextInput.svelte";
 	
-	let setting_open = false
+	export let setting_open = false
 
     $: new_market = $current_market
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)

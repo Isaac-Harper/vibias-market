@@ -4,7 +4,7 @@
 </script>
 
 
-<div class="container element--border--primary">
+<div class="container">
     <h4>{title}</h4>
     <input class="element--border--primary" type="number" bind:value >
 </div>
@@ -12,8 +12,7 @@
 
 
 <style>
-    .container {
-        padding: var(--med-space);
+    .container {;
         display: grid;
         grid-template-columns: 1fr auto;
     }
