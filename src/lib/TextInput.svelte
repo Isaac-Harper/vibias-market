@@ -5,7 +5,7 @@
 </script>
 
 
-<div class="container element--border--primary">
+<div class="container">
     <h4>{title}</h4>
     <p>{value.length}/{maxlength}</p>
     <input class="element--border--primary" type="text" bind:value maxlength={maxlength}>
@@ -15,7 +15,6 @@
 
 <style>
     .container {
-        padding: var(--med-space);
         display: grid;
         grid-template-columns: 1fr auto;
     }
