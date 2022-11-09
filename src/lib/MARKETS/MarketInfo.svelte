@@ -25,7 +25,7 @@
     <div class="container element--border--primary" transition:slide|local> 
         {#if !setting_open}
 			<div class="body">
-				{#if creating_new_shop}
+				{#if $state.create_shop_open}
 					<ShopCreation bind:creating_new_shop={creating_new_shop}/>
 				{:else}
 					<h3>{$current_market.name}</h3>
