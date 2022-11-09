@@ -17,6 +17,25 @@ export let user = readable(supabase.auth.user(), set => {
   })
 })
 
+
+export let state = writable({
+	market_open: false,
+	shop_open: false,
+	item_open: false,
+	
+	edit_market_open: false,
+	edit_shop_open: false,
+	edit_item_open: false,
+	
+	join_market_open; false,
+	
+	create_market_open: false,
+	create_shop_open: false,
+	create_item_open: false,
+})
+
+
+
 let empty: any[] | undefined = []
 let emptyA = {}
 

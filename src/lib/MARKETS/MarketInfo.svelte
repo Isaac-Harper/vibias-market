@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ShopList from '../SHOPS/ShopList.svelte';
-    import {shop_list, current_market } from "$lib/db"
+    import {shop_list, current_market, state } from "$lib/db"
 	import ShopCreation from '../SHOPS/ShopCreation.svelte'
 	import Inventory from '$lib/MARKETS/Inventory.svelte';
     import { slide } from 'svelte/transition';
@@ -15,6 +15,8 @@
 	
 	function toggleNewShop() {
         creating_new_shop = !creating_new_shop
+		$state.create_shop_open = !$state.create_shop_open
+		console.log($state)
     }
 </script>
 
