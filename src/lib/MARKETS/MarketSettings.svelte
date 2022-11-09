@@ -20,7 +20,7 @@
 
 
 {#if $user.id === $current_market.creator_id}
-	{#if setting_open}
+	{#if $state.edit_market_open}
 		<div class="container">
 			<h3>Market Setting</h3>
 			<div class="body">
