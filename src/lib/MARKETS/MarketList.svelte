@@ -37,14 +37,14 @@
 
 
 
-<div class="holder element--border--primary" class:creating_new="{$state.create_market_open}">
+<div class="holder element--border--primary" class:creating_new="{$state.create_market_open === true}">
     <div class="title">
         <h3>Markets</h3>
         <button class="modifier element--border--primary" on:click={toggleCreate}>
-            <ToggleText value={creatingNew} on="Cancel" off="New"/>
+            <ToggleText value={$state.create_market_open} on="Cancel" off="New"/>
         </button> 
         <div class="modifier element--border--primary" on:click={toggleJoin}>
-            <ToggleText value={joiningNew} on="Cancel" off="Join"/>
+            <ToggleText value={$state.join_market_open} on="Cancel" off="Join"/>
         </div> 
     </div>
 

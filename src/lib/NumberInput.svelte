@@ -12,7 +12,7 @@
 
 
 <style>
-    .container {;
+    .container {
         display: grid;
         grid-template-columns: 1fr auto;
     }
