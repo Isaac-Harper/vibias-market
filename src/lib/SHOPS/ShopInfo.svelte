@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { state, openItemCreate, openShop item_list, current_shop, user, newItem} from "$lib/db"
+    import { state, openItemCreate, openShop, item_list, current_shop, user, newItem} from "$lib/db"
     import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import ItemList from "$lib/ITEMS/ItemList.svelte";
