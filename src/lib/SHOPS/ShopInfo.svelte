@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {item_list, current_shop, user, newItem} from "$lib/db"
+    import { state, openItemCreate, openShop item_list, current_shop, user, newItem} from "$lib/db"
     import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import ItemList from "$lib/ITEMS/ItemList.svelte";
@@ -10,7 +10,7 @@
     
 
     function toggleNewItem() {
-        creating_new_item = !creating_new_item
+		openItemCreate()
     }
 
     function createNewItem() {
@@ -20,7 +20,7 @@
         new_item_description = ""
         new_item_price = 0
 
-        toggleNewItem()
+        openShop()
     }
 
 
@@ -31,15 +31,14 @@
     let new_item_name = ""
     let new_item_description = ""
     let new_item_price = 0
-    let creating_new_item = false
 </script>
 
 
 
-{#if $current_shop.id !== 0 }
+{#if $state.shop_open }
     <div class="container element--border--primary" transition:slide|local>
         <div class="body">
-            {#if creating_new_item}
+            {#if $state.create_item_open }
                 <div style="display: flex; flex-direction: column;">
                     <h4>Creating New Item</h4>
                     <p>Item Name:</p>
@@ -54,6 +53,7 @@
                 <h3>{$current_shop.name}</h3>
                 
                 <p>{$current_shop.description}</p>
+				<button on:click={toggleNewItem}>Create</button>
             {/if}
         </div>
         
