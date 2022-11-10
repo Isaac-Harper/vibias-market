@@ -34,6 +34,204 @@ export let state = writable({
 	create_item_open: false,
 })
 
+export function resetState() {
+	state.set({
+		market_open: false,
+		shop_open: false,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openMarket() {
+	state.set({
+		market_open: true,
+		shop_open: false,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openShop() {
+	state.set({
+		market_open: true,
+		shop_open: true,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openItem() {
+	state.set({
+		market_open: true,
+		shop_open: true,
+		item_open: true,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openMarketEdit() {
+	state.set({
+		market_open: true,
+		shop_open: false,
+		item_open: false,
+		
+		edit_market_open: true,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openShopEdit() {
+	state.set({
+		market_open: true,
+		shop_open: true,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: true,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openItemEdit() {
+	state.set({
+		market_open: true,
+		shop_open: true,
+		item_open: true,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: true,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openMarketJoin() {
+	state.set({
+		market_open: false,
+		shop_open: false,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: true,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openMarketCreate() {
+	state.set({
+		market_open: false,
+		shop_open: false,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: true,
+		create_shop_open: false,
+		create_item_open: false,
+	})
+}
+
+export function openShopCreate() {
+	state.set({
+		market_open: true,
+		shop_open: false,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: true,
+		create_item_open: false,
+	})
+}
+
+export function openItemCreate() {
+	state.set({
+		market_open: true,
+		shop_open: true,
+		item_open: false,
+		
+		edit_market_open: false,
+		edit_shop_open: false,
+		edit_item_open: false,
+		
+		join_market_open: false,
+		
+		create_market_open: false,
+		create_shop_open: false,
+		create_item_open: true,
+	})
+}
+
 
 
 let empty: any[] | undefined = []

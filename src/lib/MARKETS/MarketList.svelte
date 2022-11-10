@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TextInput from '../TextInput.svelte';
-    import { newMarket, user, resetMarket, joinMarket, current_patron} from "$lib/db"
+    import { newMarket, user, resetMarket, joinMarket, current_patron, state, openMarket, openMarketJoin, openMarketCreate} from "$lib/db"
 	import TextArea from "../TextArea.svelte";
 	import ToggleText from '../ToggleText.svelte';
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
@@ -8,36 +8,30 @@
 
 
     function toggleCreate() {
-        joiningNew = false
-        creatingNew = !creatingNew
+		openMarketCreate()
         resetMarket()
     }
 
     function toggleJoin() {
-        creatingNew = false
-        joiningNew = !joiningNew
+		openMarketJoin()
         resetMarket()
     }
 
     
     function createNew(name, description) {
         newMarket(name, description, $user.id)
-        creatingNew = false
+        openMarket()
     }
 
     function joinNew(join_id) {
         joinMarket(join_id)
-        joiningNew = false
+        openMarket()
     }
 
-    let creatingNew = false
-    let joiningNew = false
+	
     let new_market_name = ""
     let new_market_description = ""
     let join_id = ""
-
-
-    console.log($current_patron)
 </script>
 
 
@@ -57,7 +51,7 @@
     <HorizontalList list="market"/>
     
     
-    {#if creatingNew} 
+    {#if $state.create_market_open} 
         <div class="new_input">
             <TextInput title="Name" bind:value={new_market_name}></TextInput>
             <TextArea title="Description" bind:value={new_market_description}></TextArea>
@@ -65,7 +59,7 @@
         </div>
     {/if}
 
-    {#if joiningNew} 
+    {#if $state.join_market_open} 
         <div class="new_input">
             <TextInput title="Join ID" bind:value={join_id}></TextInput>
             <div><button on:click={() => joinNew(join_id)}>Join</button></div>
