@@ -37,7 +37,7 @@
 
 
 
-<div class="holder element--border--primary" class:creating_new="{creatingNew === true}">
+<div class="holder element--border--primary" class:creating_new="{$state.create_market_open}">
     <div class="title">
         <h3>Markets</h3>
         <button class="modifier element--border--primary" on:click={toggleCreate}>
