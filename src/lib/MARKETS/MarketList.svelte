@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TextInput from '../TextInput.svelte';
-    import { newMarket, user, resetMarket, joinMarket, current_patron, state, openMarket, openMarketJoin, openMarketCreate} from "$lib/db"
+    import { resetState, newMarket, user, resetMarket, joinMarket, current_patron, state, openMarket, openMarketJoin, openMarketCreate} from "$lib/db"
 	import TextArea from "../TextArea.svelte";
 	import ToggleText from '../ToggleText.svelte';
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
@@ -8,13 +8,21 @@
 
 
     function toggleCreate() {
-		openMarketCreate()
-        resetMarket()
+		if ($state.create_market_open) {
+			resetState()
+		} else {
+			openMarketCreate()
+        	resetMarket()
+		}
     }
 
     function toggleJoin() {
-		openMarketJoin()
-        resetMarket()
+		if ($state.join_market_open) {
+			resetState()
+		} else {
+			openMarketJoin()
+			resetMarket()
+		}
     }
 
     
