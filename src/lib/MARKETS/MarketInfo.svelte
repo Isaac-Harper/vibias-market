@@ -21,14 +21,14 @@
     <div class="container element--border--primary" transition:slide|local> 
         {#if !$state.edit_market_open}
 			<div class="body">
-				{#if $state.create_shop_open}
-					<ShopCreation/>
-				{:else}
+				{#if !$state.create_shop_open}
 					<h3>{$current_market.name}</h3>
 					<p>{$current_market.description}</p> 
 					<button on:click={toggleNewShop}>Create new Shop</button>
 					<button class="ri-admin-line"></button>
 				{/if}
+				
+				<ShopCreation/>
 			</div> 
 			<HorizontalList content={current_shops} list="shop"/>
 			<Inventory/>

@@ -25,13 +25,14 @@
 	<button on:click={toggleNewShop}>Create new Shop</button>
 </div>
 
-<div class="container">
-    <h3>Creating New Shop</h3>
-    <TextInput title="Shop Name:" bind:value={new_shop_name}/>
-    <TextArea title="Shop Description:" bind:value={new_shop_description}/>
-    <button class="create element--border--primary" on:click={createNewShop}>Create!</button>
-</div>
-
+{#if $state.create_shop_open}
+	<div class="container">
+		<h3>Creating New Shop</h3>
+		<TextInput title="Shop Name:" bind:value={new_shop_name}/>
+		<TextArea title="Shop Description:" bind:value={new_shop_description}/>
+		<button class="create element--border--primary" on:click={createNewShop}>Create!</button>
+	</div>
+{/if}
 
 
 <style>

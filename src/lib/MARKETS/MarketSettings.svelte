@@ -1,6 +1,6 @@
 <script>
 	import ApplyButton from "$lib/ApplyButton.svelte";
-    import {user, current_market, patron_list, state } from "$lib/db"
+    import {user, current_market, patron_list, state, openMarketEdit } from "$lib/db"
 	import DeleteButton from "$lib/DeleteButton.svelte";
 	import Dropdown from "$lib/Dropdown.svelte";
 	import NumberInput from "$lib/NumberInput.svelte";
@@ -11,8 +11,8 @@
     $: new_market = $current_market
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
 	
-	function toggleSettings() {
-		$state.edit_market_open =! $state.edit_market_open
+	function openSettings() {
+		openMarketEdit()
 	}
 </script>
 

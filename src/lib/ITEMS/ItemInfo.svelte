@@ -1,6 +1,6 @@
 <script lang="ts">
      
-    import {buyItem, current_item, current_market, user, patron_list} from "$lib/db"
+    import { state, openItem, openShop, buyItem, current_item, current_market, user, patron_list} from "$lib/db"
 	import ItemSettings from "./ItemSettings.svelte";
     import { slide } from 'svelte/transition';
     
@@ -13,7 +13,7 @@
 </script>
 
 
-{#if $current_item.id !== 0} 
+{#if $state.item_open} 
     <div class="container element--border--primary" transition:slide|local>
         <h3>{$current_item.name}</h3>  
         <p><b>{$current_item.price} Coins</b></p>
