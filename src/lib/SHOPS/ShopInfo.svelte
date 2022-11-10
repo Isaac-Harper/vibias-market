@@ -22,6 +22,10 @@
 
         openShop()
     }
+	
+	function cancelCreate() {
+		openShop()
+	}
 
 
 
@@ -48,6 +52,7 @@
                     <p>Item Price:</p>
                     <input type="number" bind:value={new_item_price}>
                     <button class="create element--border--primary" on:click={createNewItem}>Create!</button>
+					<button class="create element--border--primary" on:click={cancelCreate}>Create!</button>
                 </div>
             {:else}
                 <h3>{$current_shop.name}</h3>
