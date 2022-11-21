@@ -1,29 +1,30 @@
 <script lang="ts">
-   import {user, current_shop  } from "$lib/db"
+   import {current_shop, state, openShop  } from "$lib/db"
    import TextInput from "$lib/TextInput.svelte"
    import TextArea from "$lib/TextArea.svelte"
-   import Dropdown from "$lib/Dropdown.svelte"
    import DeleteButton from '$lib/DeleteButton.svelte';
 	import ApplyButton from '$lib/ApplyButton.svelte';
    
    $: new_shop = $current_shop
+
+   function closeSettings() {
+      openShop()
+   }
 </script>
 
 
-{#if $current_shop.creator_id === $user.id }
+{#if $state.edit_shop_open}
    <div class="container"> 
-      <Dropdown>
-         <span slot="title">Shop Settings:</span>
-         <div slot="body" class="body">
-            <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
-            <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
-            <div class="flex">
-               <ApplyButton type="shop" obj={new_shop}/>
-               <DeleteButton type="shop" id={$current_shop.id}/>
-            </div>
-            
+      <h3 >Shop Settings:</h3>
+      <div  class="body">
+         <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
+         <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>
+         <div class="flex">
+            <ApplyButton type="shop" obj={new_shop}/>
+            <DeleteButton type="shop" id={$current_shop.id}/>
          </div>
-      </Dropdown>
+         <button on:click={closeSettings}>close settings</button>
+      </div>
    </div>
 {/if}
 

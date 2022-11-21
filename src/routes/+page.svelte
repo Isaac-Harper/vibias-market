@@ -12,10 +12,12 @@
     <div class="grid">
         <UserInfo/>
         {#await init() then}
-            <MarketList/>
-            <MarketInfo/>
-            <ShopInfo/>
-            <ItemInfo/>
+            <div class="container element--border--primary">
+                <MarketList/>
+                <MarketInfo/>
+                <ShopInfo/>
+                <ItemInfo/>
+            </div>
         {/await}
     </div>
 {:else}
@@ -29,6 +31,16 @@
         display: flex;
         flex-direction: column;
         gap: var(--med-space);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        background-color: var(--background-dark);
+
+        overflow: hidden;
     }
 
 </style>

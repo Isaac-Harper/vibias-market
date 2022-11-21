@@ -1,78 +1,41 @@
 <script lang="ts">
-	import TextInput from '../TextInput.svelte';
-    import { resetState, newMarket, user, resetMarket, joinMarket, current_patron, state, openMarket, openMarketJoin, openMarketCreate} from "$lib/db"
-	import TextArea from "../TextArea.svelte";
-	import ToggleText from '../ToggleText.svelte';
+    import { resetMarket, state, openMarketJoin, openMarketCreate} from "$lib/db"
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
+	import MarketCreation from './MarketCreation.svelte';
+	import MarketJoin from './MarketJoin.svelte';
 
 
-
-    function toggleCreate() {
-		if ($state.create_market_open) {
-			resetState()
-		} else {
-			openMarketCreate()
-        	resetMarket()
-		}
+    function openCreate() {
+        openMarketCreate()
+        resetMarket()
     }
 
-    function toggleJoin() {
-		if ($state.join_market_open) {
-			resetState()
-		} else {
-			openMarketJoin()
-			resetMarket()
-		}
+    function openJoin() {
+        openMarketJoin()
+        resetMarket()
     }
 
-    
-    function createNew(name, description) {
-        newMarket(name, description, $user.id)
-        openMarket()
-    }
 
-    function joinNew(join_id) {
-        joinMarket(join_id)
-        openMarket()
-    }
-
-	
-    let new_market_name = ""
-    let new_market_description = ""
-    let join_id = ""
 </script>
 
 
 
 
-<div class="holder element--border--primary" class:creating_new="{$state.create_market_open === true}">
-    <div class="title">
-        <h3>Markets</h3>
-        <button class="modifier element--border--primary" on:click={toggleCreate}>
-            <ToggleText value={$state.create_market_open} on="Cancel" off="New"/>
-        </button> 
-        <div class="modifier element--border--primary" on:click={toggleJoin}>
-            <ToggleText value={$state.join_market_open} on="Cancel" off="Join"/>
-        </div> 
-    </div>
-
-    <HorizontalList list="market"/>
+<div class="holder" class:creating_new="{$state.create_market_open === true}">
     
-    
-    {#if $state.create_market_open} 
-        <div class="new_input">
-            <TextInput title="Name" bind:value={new_market_name}></TextInput>
-            <TextArea title="Description" bind:value={new_market_description}></TextArea>
-            <div><button on:click={() => createNew(new_market_name, new_market_description)}>Create</button></div>
-        </div>
-    {/if}
 
-    {#if $state.join_market_open} 
-        <div class="new_input">
-            <TextInput title="Join ID" bind:value={join_id}></TextInput>
-            <div><button on:click={() => joinNew(join_id)}>Join</button></div>
+    {#if !$state.create_market_open && !$state.join_market_open}
+        <div class="title">
+            <h3>Markets</h3>
         </div>
+        <HorizontalList list="market"/>
+        <button on:click={openCreate}>Create market</button>
+        <button on:click={openJoin}>Join market</button>
     {/if}
+    
+    <MarketCreation/>
+
+    <MarketJoin/>
 
 </div>
 
@@ -93,19 +56,5 @@
         gap: var(--med-space);
     }
 
-    .new_input{
-        display: grid;
-        gap: var(--med-space);
-    } 
-
-    .modifier {
-        height: 2rem;
-        flex: 0 0 6rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--blue);
-        
-    } 
-    
+   
 </style>
