@@ -1,8 +1,7 @@
 <script>
 	import ApplyButton from "$lib/ApplyButton.svelte";
-    import {user, current_market, patron_list, state, openMarketEdit } from "$lib/db"
+    import {user, current_market, patron_list, state, openMarket } from "$lib/db"
 	import DeleteButton from "$lib/DeleteButton.svelte";
-	import Dropdown from "$lib/Dropdown.svelte";
 	import NumberInput from "$lib/NumberInput.svelte";
 	import TextArea from "$lib/TextArea.svelte";
 	import TextInput from "$lib/TextInput.svelte";
@@ -10,9 +9,9 @@
 
     $: new_market = $current_market
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
-	
-	function openSettings() {
-		openMarketEdit()
+
+	function closeSettings() {
+		openMarket()
 	}
 </script>
 
@@ -22,7 +21,7 @@
 {#if $user.id === $current_market.creator_id}
 	{#if $state.edit_market_open}
 		<div class="container">
-			<h3>Market Setting</h3>
+			<h3 class="title">Market Setting</h3>
 			<div class="body">
 				<TextInput bind:value={new_market.name} title="Name"/>
 				<TextArea title="Description" bind:value={new_market.description}></TextArea>
@@ -40,12 +39,11 @@
 				<div class="flex">
 					<ApplyButton type="market" obj={new_market}/>
 					<DeleteButton type="market" id={$current_market.id}/>
-					<button class="ri-settings-line" on:click={toggleSettings}></button>
+					
 				</div>
+				<button on:click={closeSettings}>close settings</button>
 			</div>
 		</div>
-	{:else}
-		<button class="ri-settings-line" on:click={toggleSettings}></button>
 	{/if}
 {/if}
 

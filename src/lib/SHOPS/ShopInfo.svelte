@@ -1,69 +1,43 @@
 <script lang="ts">
-    import { state, openItemCreate, openShop, item_list, current_shop, user, newItem} from "$lib/db"
+    import { state, openItemCreate, item_list, current_shop, user, resetItem, openShopEdit, current_market} from "$lib/db"
     import { slide } from 'svelte/transition';
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
-	import ItemList from "$lib/ITEMS/ItemList.svelte";
 	import HorizontalList from "$lib/MARKETS/HorizontalList.svelte";
+	import ItemCreation from "$lib/ITEMS/ItemCreation.svelte";
 
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
-    
 
-    function toggleNewItem() {
-		openItemCreate()
+    function openItemCreation() {
+        openItemCreate()
+        resetItem()
     }
 
-    function createNewItem() {
-        newItem(new_item_name, new_item_description, new_item_price, $user.id, $current_shop.id)
-
-        new_item_name = ""
-        new_item_description = ""
-        new_item_price = 0
-
-        openShop()
+    function openShopSettings() {
+        openShopEdit()
+        resetItem()
     }
-	
-	function cancelCreate() {
-		openShop()
-	}
-
-
-
-
-
-
-    let new_item_name = ""
-    let new_item_description = ""
-    let new_item_price = 0
 </script>
 
 
 
 {#if $state.shop_open }
-    <div class="container element--border--primary" transition:slide|local>
-        <div class="body">
-            {#if $state.create_item_open }
-                <div style="display: flex; flex-direction: column;">
-                    <h4>Creating New Item</h4>
-                    <p>Item Name:</p>
-                    <input type="text" bind:value={new_item_name}>
-                    <p>Item Descriptiion:</p>
-                    <input type="text" bind:value={new_item_description}>
-                    <p>Item Price:</p>
-                    <input type="number" bind:value={new_item_price}>
-                    <button class="create element--border--primary" on:click={createNewItem}>Create!</button>
-					<button class="create element--border--primary" on:click={cancelCreate}>Cancel!</button>
-                </div>
-            {:else}
-                <h3>{$current_shop.name}</h3>
-                
+    <div class="container" transition:slide|local>
+        {#if !$state.create_item_open && !$state.edit_shop_open}
+            <div class="body">                
+                <h3 class="title">{$current_shop.name}</h3>
                 <p>{$current_shop.description}</p>
-				<button on:click={toggleNewItem}>Create</button>
-            {/if}
-        </div>
-        
-		<HorizontalList content={current_items} list="item"/>
+            </div>
 
+            <HorizontalList content={current_items} list="item"/>
+
+            {#if $user.id === $current_market.creator_id}
+                <button on:click={openItemCreation}>create new item</button>
+                <button on:click={openShopSettings}>open settings</button>
+            {/if}
+        {/if}
+
+        <ItemCreation/>
         <ShopSettings/> 
     </div>
 {/if}
@@ -80,16 +54,8 @@
         box-shadow: var(--card-border-shadow);
     }
 
-    input {
-        max-width: 10rem;
-    }
     .body {
         grid-area: body;
     }
 
-    .create {
-        background-color: var(--blue);
-        width: 6rem;
-    }
-    
 </style>

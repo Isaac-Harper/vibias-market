@@ -1,6 +1,6 @@
 <script lang="ts">
      
-    import { state, openItem, openShop, buyItem, current_item, current_market, user, patron_list} from "$lib/db"
+    import { state, buyItem, current_item, current_market, user, patron_list, openItemEdit} from "$lib/db"
 	import ItemSettings from "./ItemSettings.svelte";
     import { slide } from 'svelte/transition';
     
@@ -10,18 +10,27 @@
 
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
     $: current_patron = markets_patrons.filter(v => v.player_id === $user.id)[0]
+
+    function openItemSettings() {
+        openItemEdit()
+    }
 </script>
 
 
 {#if $state.item_open} 
-    <div class="container element--border--primary" transition:slide|local>
-        <h3>{$current_item.name}</h3>  
-        <p><b>{$current_item.price} Coins</b></p>
-        <p>{$current_item.description}</p>
+    <div class="container" transition:slide|local>
+        {#if !$state.edit_item_open}
+            <h3 class="title">{$current_item.name}</h3>  
+            <p><b>{$current_item.price} Coins</b></p>
+            <p>{$current_item.description}</p>
                 
-        {#if $user.id !== $current_market.creator_id}
+        
             <div class="buy_button element--border--primary" on:click={buyI}>Buy</div>
-        {/if} 
+
+            {#if $user.id === $current_market.creator_id}
+                <button on:click={openItemSettings}>open settings</button>
+            {/if} 
+        {/if}
 
         <ItemSettings/>
     </div>
