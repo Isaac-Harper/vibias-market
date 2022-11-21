@@ -7,7 +7,7 @@
     import HorizontalList from "$lib/MARKETS/HorizontalList.svelte";
 	
     $: current_shops = $shop_list.filter(v => v.market_id === $current_market.id)
-
+ 
 
     function openShopCreation() {
         openShopCreate()
@@ -25,7 +25,7 @@
     <div class="container" transition:slide|local> 
         {#if !$state.edit_market_open && !$state.create_shop_open }
 			<div class="body">
-				<h3>{$current_market.name}</h3>
+				<h3 class="title">{$current_market.name}</h3>
 				<p>{$current_market.description}</p>
 			</div> 
 			<HorizontalList content={current_shops} list="shop"/>

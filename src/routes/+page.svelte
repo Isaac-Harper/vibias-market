@@ -9,16 +9,18 @@
 </script>
 
 {#if $user}
-    <div class="grid">
-        <UserInfo/>
-        {#await init() then}
-            <div class="container element--border--primary">
-                <MarketList/>
-                <MarketInfo/>
-                <ShopInfo/>
-                <ItemInfo/>
-            </div>
-        {/await}
+    <div class="box">
+        <div class="grid">
+            <UserInfo/>
+            {#await init() then}
+                <div class="container element--border--primary">
+                    <MarketList/>
+                    <MarketInfo/>
+                    <ShopInfo/>
+                    <ItemInfo/>
+                </div>
+            {/await}
+        </div>
     </div>
 {:else}
     <Auth/>
@@ -26,11 +28,18 @@
 
 
 <style>
+
+    .box {
+        display: flex;
+        justify-content: center;
+    }
     .grid {
         padding: var(--med-space);
         display: flex;
         flex-direction: column;
         gap: var(--med-space);
+        width: 100%;
+        max-width: 50rem;
     }
 
     .container {
@@ -38,7 +47,7 @@
         flex-direction: column;
         gap: 5px;
 
-        background-color: var(--background-dark);
+        background-color: #ba673d;
 
         overflow: hidden;
     }

@@ -15,7 +15,7 @@
 
 {#if $state.edit_shop_open}
    <div class="container"> 
-      <h3 >Shop Settings:</h3>
+      <h3 class="title">Shop Settings:</h3>
       <div  class="body">
          <TextInput title="Shop Name" bind:value={new_shop.name}></TextInput>
          <TextArea title="Shop Description" bind:value={new_shop.description}></TextArea>

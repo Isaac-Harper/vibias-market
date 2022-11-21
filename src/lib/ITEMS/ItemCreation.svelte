@@ -29,7 +29,7 @@ import { user, current_shop, state, openShop, newItem } from "../db";
 
 {#if $state.create_item_open}
 	<div class="container">
-		<h3>Creating New Item</h3>
+		<h3 class="title">Creating New Item</h3>
 		<TextInput title="Shop Name:" bind:value={new_item_name}/>
 		<TextArea title="Shop Description:" bind:value={new_item_description}/>
         <NumberInput title="Item Price:" bind:value={new_item_price}/>

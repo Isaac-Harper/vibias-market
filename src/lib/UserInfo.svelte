@@ -1,9 +1,20 @@
 <script>
     import { user, auth } from '$lib/db'
+
+    let path = "logo.png"
+
+    function togglePath() {
+        if (path === "logo.png") {
+            path = "logo_back.png"
+        } else {
+            path = "logo.png"
+        }
+    }
 </script>
 
 
 <div class="holder"> 
+    <img src={path} on:click={togglePath} class="logo" alt="vibia">
     <div class="container element--border--primary">
         <p>You are logged in as:</p>
         <p>{$user.email}</p>
@@ -27,8 +38,8 @@
         justify-content: center;
         flex-direction: column;
 
-        background: var(--oc-grape-8);
-        color: var(--oc-gray-1);
+        background: #ae823b;
+        color: #efeeec;
     }
 
     .holder {
@@ -41,13 +52,17 @@
         flex-grow: 1;
     }
     
+    .logo {
+        max-height: 7rem;
+    }
+
     .logout {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: var(--med-space);
-        background-color: var(--oc-red-8);
-        color: var(--oc-gray-1);
+        background-color: #8c869b;
+        color: #efeeec;
     }
     
 </style>

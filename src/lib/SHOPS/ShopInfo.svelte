@@ -25,8 +25,8 @@
     <div class="container" transition:slide|local>
         {#if !$state.create_item_open && !$state.edit_shop_open}
             <div class="body">                
-                    <h3>{$current_shop.name}</h3>
-                    <p>{$current_shop.description}</p>
+                <h3 class="title">{$current_shop.name}</h3>
+                <p>{$current_shop.description}</p>
             </div>
 
             <HorizontalList content={current_items} list="item"/>

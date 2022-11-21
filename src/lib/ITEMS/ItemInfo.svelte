@@ -20,7 +20,7 @@
 {#if $state.item_open} 
     <div class="container" transition:slide|local>
         {#if !$state.edit_item_open}
-            <h3>{$current_item.name}</h3>  
+            <h3 class="title">{$current_item.name}</h3>  
             <p><b>{$current_item.price} Coins</b></p>
             <p>{$current_item.description}</p>
                 

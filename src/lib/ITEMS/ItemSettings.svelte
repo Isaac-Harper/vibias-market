@@ -16,7 +16,7 @@
 
 {#if $state.edit_item_open }
     <div class="container"> 
-        <h3>Item Settings:</h3>
+        <h3 class="title">Item Settings:</h3>
         <div class="body">
             <TextInput title="Item Name" bind:value={new_item.name}></TextInput>
             <TextArea title="Item Description" bind:value={new_item.description}></TextArea>

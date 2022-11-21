@@ -18,11 +18,12 @@
 </script>
 
 {#if $state.create_market_open} 
+    <h3 class="title">Market Creation</h3>
     <div class="new_input">
         <TextInput title="Name" bind:value={new_market_name}></TextInput>
         <TextArea title="Description" bind:value={new_market_description}></TextArea>
-        <div><button on:click={() => createNew(new_market_name, new_market_description)}>Create</button></div>
-        <button on:click={closeCreate}>close Create</button>
+        <button class="button-74" on:click={() => createNew(new_market_name, new_market_description)}>Create</button>
+        <button class="button-74" on:click={closeCreate}>close Create</button>
     </div>
 {/if}
 

@@ -16,7 +16,8 @@
     let join_id = ""
 </script>
 
-{#if $state.join_market_open} 
+{#if $state.join_market_open}
+    <h3 class="title">Market Join</h3>
     <div class="new_input">
         <TextInput title="Join ID" bind:value={join_id}></TextInput>
         <div><button on:click={() => joinNew(join_id)}>Join</button></div>

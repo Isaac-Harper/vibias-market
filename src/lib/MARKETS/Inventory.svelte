@@ -6,7 +6,7 @@
     let new_name = ""
 
 </script>
-
+ 
 
 {#if $current_market.id !== 0}
     <div class="container">

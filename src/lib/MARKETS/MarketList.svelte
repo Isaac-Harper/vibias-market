@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { resetMarket, state, openMarketJoin, openMarketCreate} from "$lib/db"
+    import Button from "$lib/Button.svelte";
+import { resetMarket, state, openMarketJoin, openMarketCreate} from "$lib/db"
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
 	import MarketCreation from './MarketCreation.svelte';
 	import MarketJoin from './MarketJoin.svelte';
@@ -15,7 +16,7 @@
         resetMarket()
     }
 
-
+ 
 </script>
 
 
@@ -25,12 +26,11 @@
     
 
     {#if !$state.create_market_open && !$state.join_market_open}
-        <div class="title">
-            <h3>Markets</h3>
-        </div>
+        <h3 class="title">Markets</h3>
         <HorizontalList list="market"/>
-        <button on:click={openCreate}>Create market</button>
-        <button on:click={openJoin}>Join market</button>
+        <button class="button-74" on:click={openCreate}>Create market</button>
+        <button class="button-74" on:click={openJoin}>Join market</button>
+        <Button func={openCreate} text="Create Market"  />
     {/if}
     
     <MarketCreation/>
@@ -51,10 +51,9 @@
         box-shadow: var(--card-border-shadow);
     }
 
-    .title {
-        display: flex;
-        gap: var(--med-space);
-    }
+
+
+
 
    
 </style>

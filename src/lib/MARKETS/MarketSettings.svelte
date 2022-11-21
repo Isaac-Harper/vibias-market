@@ -21,7 +21,7 @@
 {#if $user.id === $current_market.creator_id}
 	{#if $state.edit_market_open}
 		<div class="container">
-			<h3>Market Setting</h3>
+			<h3 class="title">Market Setting</h3>
 			<div class="body">
 				<TextInput bind:value={new_market.name} title="Name"/>
 				<TextArea title="Description" bind:value={new_market.description}></TextArea>
