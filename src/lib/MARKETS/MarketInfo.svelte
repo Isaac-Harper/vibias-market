@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Primary from '$lib/Buttons/Primary.svelte';
     import {user, shop_list, current_market, state, openShopCreate, openMarketEdit, resetShop } from "$lib/db"
 	import ShopCreation from '../SHOPS/ShopCreation.svelte'
 	import Inventory from '$lib/MARKETS/Inventory.svelte';
@@ -32,8 +33,8 @@
 			<Inventory/>
 
             {#if $user.id === $current_market.creator_id}
-                <button on:click={openShopCreation}>create new shop</button>
-                <button on:click={openMarketSettings}>open settings</button>
+                <Primary text="create new shop" func={openShopCreation}/>
+                <Primary text="open settings" func={openMarketSettings}/>
             {/if}
 
             

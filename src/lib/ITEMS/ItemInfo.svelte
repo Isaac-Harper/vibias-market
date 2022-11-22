@@ -3,7 +3,8 @@
     import { state, buyItem, current_item, current_market, user, patron_list, openItemEdit} from "$lib/db"
 	import ItemSettings from "./ItemSettings.svelte";
     import { slide } from 'svelte/transition';
-    
+    import Primary from '$lib/Buttons/Primary.svelte';
+
     function buyI() {
         buyItem( $current_item.id, current_patron.id )
     }
@@ -24,11 +25,12 @@
             <p><b>{$current_item.price} Coins</b></p>
             <p>{$current_item.description}</p>
                 
-        
-            <div class="buy_button element--border--primary" on:click={buyI}>Buy</div>
+            
 
             {#if $user.id === $current_market.creator_id}
-                <button on:click={openItemSettings}>open settings</button>
+                <Primary text="open settings" func={openItemSettings}/>
+            {:else}
+                <Primary text="Buy" func={buyI}/>
             {/if} 
         {/if}
 
@@ -40,13 +42,15 @@
 
 <style>
     .container {
+        display: flex;
+        flex-direction: column;
         height: 100%;
         overflow: hidden;
-        width: 100%;
-
+        
         padding: var(--med-space);
 
         background-color: var(--card-dark);
+        
         color: var(--normal-font-dark);
         box-shadow: var(--card-border-shadow);
     }

@@ -4,7 +4,7 @@
     import ShopSettings from "$lib/SHOPS/ShopSettings.svelte"
 	import HorizontalList from "$lib/MARKETS/HorizontalList.svelte";
 	import ItemCreation from "$lib/ITEMS/ItemCreation.svelte";
-
+    import Primary from '$lib/Buttons/Primary.svelte';
     
     $: current_items = $item_list.filter(v => v.shop_id === $current_shop.id)
 
@@ -32,8 +32,8 @@
             <HorizontalList content={current_items} list="item"/>
 
             {#if $user.id === $current_market.creator_id}
-                <button on:click={openItemCreation}>create new item</button>
-                <button on:click={openShopSettings}>open settings</button>
+                <Primary text="create new item" func={openItemCreation}/>
+                <Primary text="open settings" func={openShopSettings}/>
             {/if}
         {/if}
 

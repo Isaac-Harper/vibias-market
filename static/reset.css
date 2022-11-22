@@ -16,15 +16,32 @@
   --CRSV: "CRSV" 0.5;
 
   --bold-wght: 700;
-  
-  --white: #F8F3D7;
-  --red: #B77647;
-  --light-red: #C48F68;
-  --lighter-red: #D1A88A;
-  --green: #C2BD46;
-  --blue: #BFC8D3;
+
+  --hamlet-red: #994F4E;
+  --k-gold: #AE823B;
+  --stone-tim-sage: #989F87;
+  --illahs-plum: #3B1F30;
+  --gorange-ornage: #BA673D;
+  --moss-green: #586B4D;
+  --field-lavendar: #8C869B;
+  --twilight-blue: #3E4C67;
+  --skelton-navy: #0C142F;
+  --bone-white: #EFEEEC;
+  --wanju-teal: #4C7B7C;
 
 
+  --primary-button-background: var(--stone-tim-sage);
+  --primary-button-border: var(--moss-green);
+  --primary-button-text: var(--bone-white);
+
+  --secondary-button-background: var(--gorange-ornage);
+  --secondary-button-border: var(--hamlet-red);
+  --secondary-button-text: var(--bone-white);
+
+  --selectable-button-background: var(--field-lavendar);
+  --selectable-button-background-active : var(--wanju-teal);
+  --selectable-button-border: var(--skelton-navy);
+  --selectable-button-text: var(--bone-white);
 
   --background-dark: #3b1f30;
   --card-dark: #3e4c67;
