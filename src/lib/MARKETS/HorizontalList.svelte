@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { resetState, openMarket, openShop, openItem, user, current_market, market_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop} from "$lib/db"
+    import Selectable from "$lib/Buttons/Selectable.svelte";
+import { resetState, openMarket, openShop, openItem, user, current_market, market_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop} from "$lib/db"
 
     export let list = "none"
 	export let content = []
@@ -53,21 +54,15 @@
     
     {#if list === "market"}
         {#each $market_list as market}
-            <div on:click={() => toggle_market(market)} class="item element--border--primary button-74" class:selected="{market.id  === $current_market.id}" class:unselected="{market.id  !== $current_market.id}">
-                {market.name}
-            </div>
+            <Selectable text={market.name} func={() => toggle_market(market)} active={$current_market.id  === market.id}/>
         {/each}
     {:else if list === "shop"}
         {#each content as shop}
-            <div on:click={() => toggle_shop(shop)} class="item element--border--primary button-74" class:selected="{shop.id  === $current_shop.id}" class:unselected="{shop.id  !== $current_shop.id}">
-                {shop.name}
-            </div>
+            <Selectable text={shop.name} func={() => toggle_shop(shop)} active={$current_shop.id  === shop.id}/>
         {/each}
     {:else if list === "item"}
         {#each content as item}
-            <div on:click={() => toggle_item(item)} class="item element--border--primary button-74" class:selected="{item.id  === $current_item.id}" class:unselected="{item.id  !== $current_item.id}">
-                {item.name}
-            </div>
+            <Selectable text={item.name} func={() => toggle_item(item)} active={$current_item.id  === item.id}/>
         {/each}
     {/if}
 </div>
@@ -92,7 +87,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: var(--med-space);
+        
     }
     
 </style>
