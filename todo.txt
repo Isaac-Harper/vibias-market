@@ -1,0 +1,11 @@
+[ ] - make description of buttons, then make them into components
+        - List 
+        - List selected
+        - Signout 
+        - Open Create - primary
+        - Create
+        - Open Join
+        - Join
+        - Open settings
+        - delete
+        - Apply

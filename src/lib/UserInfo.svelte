@@ -1,5 +1,7 @@
 <script>
     import { user, auth } from '$lib/db'
+	import { text } from 'svelte/internal';
+	import Secondary from './Buttons/Secondary.svelte';
 
     let path = "logo.png"
 
@@ -24,7 +26,8 @@
 
     </div>
 
-    <button on:click={() => auth.signOut()} class="logout element--border--primary" >Sign out</button>
+
+    <Secondary text="Sign Out" func={() => auth.signOut()}/>
 
 </div>
 
@@ -40,6 +43,7 @@
 
         background: #ae823b;
         color: #efeeec;
+        display: none;
     }
 
     .holder {
@@ -55,7 +59,7 @@
     .logo {
         max-height: 7rem;
     }
-
+ 
     .logout {
         display: flex;
         align-items: center;

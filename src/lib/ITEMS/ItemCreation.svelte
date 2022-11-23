@@ -4,6 +4,8 @@
 import { user, current_shop, state, openShop, newItem } from "../db";
 	import TextArea from "../TextArea.svelte";
 	import TextInput from "../TextInput.svelte";
+    import Primary from "$lib/Buttons/Primary.svelte";
+	import Secondary from "$lib/Buttons/Secondary.svelte";
 
     let new_item_name = ""
     let new_item_description = ""
@@ -33,8 +35,8 @@ import { user, current_shop, state, openShop, newItem } from "../db";
 		<TextInput title="Shop Name:" bind:value={new_item_name}/>
 		<TextArea title="Shop Description:" bind:value={new_item_description}/>
         <NumberInput title="Item Price:" bind:value={new_item_price}/>
-		<button class="create element--border--primary" on:click={createNewItem}>Create!</button>
-        <button on:click={closeItemCreation}>Cancel create</button>
+        <Primary text="Create" func={createNewItem} />
+        <Secondary text="Cancel" func={closeItemCreation}/>
 	</div>
 {/if}
 
@@ -45,11 +47,7 @@ import { user, current_shop, state, openShop, newItem } from "../db";
         display: flex;
         flex-direction: column;
         width: 100%;
-    }
-    
-    .create {
-        background-color: var(--blue);
-        width: 6rem;
+        gap: var(--med-space);
     }
     
 </style>

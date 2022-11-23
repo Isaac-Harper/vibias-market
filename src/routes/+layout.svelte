@@ -1,5 +1,7 @@
 <script lang="ts">
 	import 'remixicon/fonts/remixicon.css'
+
+    
 </script>
 
 <svelte:head>
