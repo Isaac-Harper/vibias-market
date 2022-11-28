@@ -33,6 +33,7 @@
 		"@supabase/supabase-js": "^1.35.7",
 		"open-color": "^1.9.1",
 		"remixicon": "^2.5.0",
+		"svelte-cloudinary": "^0.2.5",
 		"swiper": "^8.4.4"
 	}
 }
