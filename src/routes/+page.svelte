@@ -23,6 +23,7 @@
         </div>
     </div>
 {:else}
+    <p> Welcome to Vibias Market. Enter your email below to login/create an account and begin.</p>
     <Auth/>
 {/if}
 
