@@ -38,6 +38,8 @@
     .box {
         display: flex;
         justify-content: center;
+		height: 100%;
+		background-color: green;
 	}
 	
     .grid {
