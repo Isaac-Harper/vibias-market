@@ -24,7 +24,8 @@
 {:else}
 	<div class="grid landing">
 		<h1>Vibia's Market</h1>
-    	<p> Welcome to Vibias Market. Enter your email below to login/create an account and begin.</p>
+		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
+    	<p>Enter your email below to login/create an account and begin.</p>
     	<Auth/>
 	</div>
 {/if}	

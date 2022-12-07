@@ -23,13 +23,17 @@
   }
 </script>
 
-<form on:submit|preventDefault={handleLogin}>
-  <div>
-      <div>
-          <input type="email" placeholder="Your email" bind:value={email}/>
-      </div>
-      <div>
-          <input type="submit" value={loading ? "Loading" : "Send magic link"} disabled={loading} />
-      </div>
-  </div>
+<form class="container" on:submit|preventDefault={handleLogin}>
+    <input class="email" type="email" placeholder="Your email" bind:value={email}/>
+    <input class="submit" type="submit" value={loading ? "Loading" : "Send magic link"} disabled={loading} />
 </form>
+
+<style>
+	.container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	
+</style>
