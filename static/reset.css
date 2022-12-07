@@ -6,7 +6,7 @@
 }
   
 * {
-
+  --small-space: .5rem;
   --med-space: 1rem;
 
   --mono: "MONO" 0;
