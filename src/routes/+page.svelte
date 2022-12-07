@@ -8,32 +8,35 @@
 	import { user, init } from '$lib/db'
 </script>
 
+<div class="box">
 {#if $user}
-        <div class="grid">
-            <UserInfo/>
-            {#await init() then}
-                <div class="container element--border--primary">
-                    <MarketList/>
-                    <MarketInfo/>
-                    <ShopInfo/>
-                    <ItemInfo/>
-                </div>
-            {/await}
-        </div>
+    <div class="grid">
+        <UserInfo/>
+        {#await init() then}
+            <div class="container element--border--primary">
+                <MarketList/>
+                <MarketInfo/>
+                <ShopInfo/>
+                <ItemInfo/>
+            </div>
+        {/await}
+    </div>
 {:else}
-	<div class="landing">
+	<div class="grid landing">
+		<h1>Vibia's Market</h1>
     	<p> Welcome to Vibias Market. Enter your email below to login/create an account and begin.</p>
     	<Auth/>
 	</div>
-{/if}
-
+{/if}	
+</div>
 
 <style>
 
     .box {
         display: flex;
         justify-content: center;
-    }
+	}
+	
     .grid {
         padding: var(--med-space);
         display: flex;
