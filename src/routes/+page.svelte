@@ -57,8 +57,8 @@
     }
 	
 	.landing {
-		padding: var(--med-space);
-		
+		align-items: center;
 	}
+
 
 </style>
