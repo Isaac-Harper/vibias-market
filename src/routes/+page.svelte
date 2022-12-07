@@ -9,7 +9,6 @@
 </script>
 
 {#if $user}
-    <div class="box">
         <div class="grid">
             <UserInfo/>
             {#await init() then}
@@ -21,10 +20,11 @@
                 </div>
             {/await}
         </div>
-    </div>
 {:else}
-    <p> Welcome to Vibias Market. Enter your email below to login/create an account and begin.</p>
-    <Auth/>
+	<div class="landing"/>
+    	<p> Welcome to Vibias Market. Enter your email below to login/create an account and begin.</p>
+    	<Auth/>
+	</div>
 {/if}
 
 
@@ -52,5 +52,9 @@
 
         overflow: hidden;
     }
+	
+	.landing {
+		
+	}
 
 </style>
