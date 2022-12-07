@@ -27,6 +27,8 @@
 		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
     	<p>Enter your email below to login/create an account and begin.</p>
     	<Auth/>
+		
+		<p class="sticky">Sticky</p>
 	</div>
 {/if}	
 </div>
@@ -59,6 +61,11 @@
 	
 	.landing {
 		align-items: center;
+	}
+	
+	.sticky {
+		position: sticky;
+		bottom: 0;
 	}
 
 
