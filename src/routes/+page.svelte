@@ -38,8 +38,7 @@
     .box {
         display: flex;
         justify-content: center;
-		height: 100%;
-		background-color: green;
+		
 	}
 	
     .grid {
@@ -63,6 +62,9 @@
 	
 	.landing {
 		align-items: center;
+		height: 100vh;
+		height: 100dvh;
+		background-color: green;
 	}
 	
 	.sticky {
