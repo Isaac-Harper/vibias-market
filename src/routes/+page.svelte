@@ -28,7 +28,7 @@
     	<p>Enter your email below to login/create an account and begin.</p>
     	<Auth/>
 		<div class="grow"></div>
-		<p>Sticky</p>
+		<p>Created by <a href="https://www.IsaacHarper.dev">Isaac Harper</a></p>
 	</div>
 {/if}	
 </div>
