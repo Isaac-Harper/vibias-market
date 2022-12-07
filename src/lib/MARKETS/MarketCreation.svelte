@@ -1,5 +1,7 @@
 <script>
-	import { state, user, newMarket, openMarket, resetState } from "$lib/db";
+	import Primary from "$lib/Buttons/Primary.svelte";
+	import Secondary from "$lib/Buttons/Secondary.svelte";
+import { state, user, newMarket, openMarket, resetState } from "$lib/db";
 	import TextArea from "$lib/TextArea.svelte";
 	import TextInput from "$lib/TextInput.svelte";
 
@@ -22,8 +24,8 @@
     <div class="new_input">
         <TextInput title="Name" bind:value={new_market_name}></TextInput>
         <TextArea title="Description" bind:value={new_market_description}></TextArea>
-        <button class="button-74" on:click={() => createNew(new_market_name, new_market_description)}>Create</button>
-        <button class="button-74" on:click={closeCreate}>close Create</button>
+        <Primary text="Create" func={() => createNew(new_market_name, new_market_description)} />
+        <Secondary text="Cancel" func={closeCreate}/>
     </div>
 {/if}
 

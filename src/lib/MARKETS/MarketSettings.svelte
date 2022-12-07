@@ -1,6 +1,9 @@
 <script>
 	import ApplyButton from "$lib/ApplyButton.svelte";
-    import {user, current_market, patron_list, state, openMarket } from "$lib/db"
+	import Double from "$lib/Buttons/Double.svelte";
+	import Primary from "$lib/Buttons/Primary.svelte";
+	import Secondary from "$lib/Buttons/Secondary.svelte";
+    import {user, current_market, patron_list, state, openMarket, deleteMarket, resetState, updateMarket } from "$lib/db"
 	import DeleteButton from "$lib/DeleteButton.svelte";
 	import NumberInput from "$lib/NumberInput.svelte";
 	import TextArea from "$lib/TextArea.svelte";
@@ -11,6 +14,16 @@
     $: markets_patrons = $patron_list.filter(v => v.market_id === $current_market.id)
 
 	function closeSettings() {
+		openMarket()
+	}
+
+	function deleteM() {
+		deleteMarket($current_market.id)
+		resetState()
+	}
+
+	function applySettings() {
+		updateMarket(new_market)
 		openMarket()
 	}
 </script>
@@ -36,12 +49,9 @@
 						<button>Change coins</button>
 					</div>
 				{/each}
-				<div class="flex">
-					<ApplyButton type="market" obj={new_market}/>
-					<DeleteButton type="market" id={$current_market.id}/>
-					
-				</div>
-				<button on:click={closeSettings}>close settings</button>
+				<Primary text="Apply" func={applySettings}/>
+				<Double text="Delete" second_text="Are you sure?" func={deleteM}/>
+				<Secondary text="Close Settings" func={closeSettings}/>
 			</div>
 		</div>
 	{/if}

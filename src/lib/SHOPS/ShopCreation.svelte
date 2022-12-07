@@ -3,6 +3,8 @@
     import { user, newShop, current_market, state, openMarket } from "../db";
 	import TextArea from "../TextArea.svelte";
 	import TextInput from "../TextInput.svelte";
+    import Primary from "$lib/Buttons/Primary.svelte";
+	import Secondary from "$lib/Buttons/Secondary.svelte";
 
     let new_shop_name = ""
     let new_shop_description = ""
@@ -28,8 +30,8 @@
 		<h3 class="title">Creating New Shop</h3>
 		<TextInput title="Shop Name:" bind:value={new_shop_name}/>
 		<TextArea title="Shop Description:" bind:value={new_shop_description}/>
-		<button class="create element--border--primary" on:click={createNewShop}>Create!</button>
-        <button on:click={closeShopCreation}>Cancel create</button>
+        <Primary text="Create" func={createNewShop} />
+        <Secondary text="Cancel" func={closeShopCreation}/>
 	</div>
 {/if}
 
@@ -40,6 +42,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        gap: var(--med-space);
     }
     
     .create {

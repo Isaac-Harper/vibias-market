@@ -1,14 +1,27 @@
 <script lang="ts">
 	import NumberInput from './../NumberInput.svelte';
-    import {current_item, state, openItem  } from "$lib/db"
+    import {current_item, state, openItem, deleteItem, openShop, updateItem  } from "$lib/db"
     import TextInput from "$lib/TextInput.svelte"
     import TextArea from "$lib/TextArea.svelte"
 	import DeleteButton from '$lib/DeleteButton.svelte';
 	import ApplyButton from '$lib/ApplyButton.svelte';
-    
+    import Double from "$lib/Buttons/Double.svelte";
+	import Primary from "$lib/Buttons/Primary.svelte";
+	import Secondary from "$lib/Buttons/Secondary.svelte";
+
     $: new_item = $current_item
 
     function closeSettings() {
+		openItem()
+	}
+
+    function deleteShop() {
+		deleteItem($current_item.id)
+		openShop()
+	}
+
+	function applySettings() {
+		updateItem(new_item)
 		openItem()
 	}
 </script>
@@ -21,11 +34,9 @@
             <TextInput title="Item Name" bind:value={new_item.name}></TextInput>
             <TextArea title="Item Description" bind:value={new_item.description}></TextArea>
             <NumberInput title="Price" bind:value={new_item.price}/>
-            <div class="flex">
-                <ApplyButton type="item" obj={new_item}/>
-                <DeleteButton type="item" id={$current_item.id}/>
-            </div>
-            <button on:click={closeSettings}>close settings</button>
+            <Primary text="Apply" func={applySettings}/>
+            <Double text="Delete" second_text="Are you sure?" func={deleteShop}/>
+            <Secondary text="Close Settings" func={closeSettings}/>
         </div>
     </div>
 {/if}
