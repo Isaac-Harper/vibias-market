@@ -21,7 +21,7 @@
             {/await}
         </div>
 {:else}
-	<div class="landing"/>
+	<div class="landing">
     	<p> Welcome to Vibias Market. Enter your email below to login/create an account and begin.</p>
     	<Auth/>
 	</div>
@@ -54,6 +54,7 @@
     }
 	
 	.landing {
+		padding: var(--med-space);
 		
 	}
 
