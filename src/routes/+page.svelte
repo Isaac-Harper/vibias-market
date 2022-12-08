@@ -44,7 +44,7 @@
 	
 	.img {
 		width: 100%;
-		aspect-ratio: 16/9;
+		aspect-ratio: 1.5;
 	}
 	
     .grid {
