@@ -21,7 +21,7 @@
   --k-gold: #AE823B;
   --stone-tim-sage: #989F87;
   --illahs-plum: #3B1F30;
-  --gorange-ornage: #BA673D;
+  --gorange-orange: #BA673D;
   --moss-green: #586B4D;
   --field-lavendar: #8C869B;
   --twilight-blue: #3E4C67;
@@ -107,6 +107,27 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
 	color: var(--normal-font-dark)
+}
+
+
+a:link {
+	color: var(--gorange-orange);
+  	text-decoration: none;
+}
+
+a:visited {
+	color: var(--hamlet-red);
+  	text-decoration: none;
+}
+
+a:hover {
+	color: var(--k-gold);
+  	text-decoration: underline;
+}
+
+a:active {
+	color: var(--k-gold);
+  	text-decoration: underline;
 }
 
 #root, #__next {
