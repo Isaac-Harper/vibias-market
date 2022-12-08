@@ -25,7 +25,8 @@
 	<div class="grid landing">
 		<h1>Vibia's Market</h1>
 		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
-    	<p>Enter your email below to login/create an account and begin.</p>
+    	<img class="img" src="/images/image11.png"/>
+		<p>Enter your email below to login/create an account and begin.</p>
     	<Auth/>
 		<div class="grow"></div>
 		<p>Created by <a href="https://www.IsaacHarper.dev">Isaac Harper</a></p>
@@ -39,6 +40,10 @@
         display: flex;
         justify-content: center;
 		
+	}
+	
+	.img {
+		width: 100%;
 	}
 	
     .grid {
