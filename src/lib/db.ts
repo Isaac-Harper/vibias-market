@@ -444,6 +444,9 @@ export async function getMarkets() {
     .from('markets')
     .select()
   if (error) throw new Error(error.message)
+  if (data.length === 0) {
+  	joinMarket("5efd6fe9-e22e-4722-9531-6c9a6c78a2b1")
+  }	
   return data
 }
 
