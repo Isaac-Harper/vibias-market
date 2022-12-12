@@ -34,6 +34,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--med-space);
+		padding: var(--med-space);
+		background-color: var(--illahs-plum);
 	}
 	
 	.email {
