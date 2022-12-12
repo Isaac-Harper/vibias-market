@@ -36,6 +36,7 @@
 		gap: var(--med-space);
 		padding: var(--med-space);
 		background-color: var(--moss-green);
+		border-radius: var(--med-space);
 	}
 	
 	.email {
