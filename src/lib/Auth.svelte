@@ -35,7 +35,7 @@
 		flex-direction: column;
 		gap: var(--med-space);
 		padding: var(--med-space);
-		background-color: var(--illahs-plum);
+		background-color: var(--moss-green);
 	}
 	
 	.email {
