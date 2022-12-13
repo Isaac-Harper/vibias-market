@@ -7,11 +7,9 @@
 	import Auth from "$lib/Auth.svelte"
 	import { user, init } from '$lib/db'
 	
-	import {goto} from "$app/navigation"
+	import {goto} from '$app/navigation'
 	
-	$: if (!$user) {
-	    goto("/")
-	}
+	
 
 </script>
 
