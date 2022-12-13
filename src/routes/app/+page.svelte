@@ -1,12 +1,21 @@
 <script lang="ts">
-	import ItemInfo from "$lib/ITEMS/ItemInfo.svelte";
+    import ItemInfo from "$lib/ITEMS/ItemInfo.svelte";
 	import MarketInfo from "$lib/MARKETS/MarketInfo.svelte";
 	import MarketList from "$lib/MARKETS/MarketList.svelte";
 	import ShopInfo from "$lib/SHOPS/ShopInfo.svelte";
 	import UserInfo from "$lib/UserInfo.svelte";
 	import Auth from "$lib/Auth.svelte"
 	import { user, init } from '$lib/db'
+	
+	import {goto} from "$app/navigation"
+	
+	if (!$user) {
+	    goto("/")
+	}
+
 </script>
+
+
 
 <div class="box">
 {#if $user}
@@ -21,23 +30,9 @@
             </div>
         {/await}
     </div>
-{:else}
-	<div class="grid landing">
-		<h1>Vibia's Market</h1>
-		<div class="selector">
-			<div class="option">About</div>
-			<div class="option">FAQ</div>
-			<div class="option">Contact</div>
-		</div>
-		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
-    	<img class="img" src="/images/image11.png"/>
-		<p>Enter your email below to login/create an account and begin.</p>
-    	<Auth/>
-		<div class="grow"></div>
-		<p>Created by <a href="https://www.IsaacHarper.dev">Isaac Harper</a></p>
-	</div>
 {/if}	
-</	div>
+</div>
+
 
 <style>
 
@@ -45,11 +40,6 @@
         display: flex;
         justify-content: center;
 		
-	}
-	
-	.img {
-		width: 100%;
-		aspect-ratio: 1.5;
 	}
 	
     .grid {
@@ -70,32 +60,4 @@
 
         overflow: hidden;
     }
-	
-	.landing {
-		align-items: center;
-		height: 100vh;
-		height: 100dvh;
-	}
-	
-	.sticky {
-		position: sticky;
-		bottom: 0;
-	}
-	
-	.grow {
-		flex-grow: 1;
-	}
-	
-	.selector {
-		display: flex;
-		padding: var(--med-space);
-		justify-content: spacd-between;
-	}
-	
-	.option {
-		padding: var(--med-space);
-		background-color: var(--stone-tim-sage);
-	}
-
-
 </style>
