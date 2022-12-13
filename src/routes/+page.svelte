@@ -37,7 +37,7 @@
 		<p>Created by <a href="https://www.IsaacHarper.dev">Isaac Harper</a></p>
 	</div>
 {/if}	
-</	div>
+</div>
 
 <style>
 
