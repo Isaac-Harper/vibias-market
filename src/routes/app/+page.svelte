@@ -9,7 +9,7 @@
 	
 	import {goto} from "$app/navigation"
 	
-	if (!$user) {
+	$: if (!$user) {
 	    goto("/")
 	}
 
