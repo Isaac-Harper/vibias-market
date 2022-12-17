@@ -23,11 +23,21 @@
     </div>
 
     <div class="middle">
-
+        <a href="/">
+            <h1>Vibia's Market</h1>
+        </a>
+        {#if $user}
+            <p>{$user.email}</p>
+        {:else}
+            <p>&nbsp;</p>
+        {/if}
     </div>
 
 
-    <Secondary text="Sign Out" func={() => auth.signOut()}/>
+    {#if $user}
+        <Secondary text="Sign Out" func={() => auth.signOut()}/>
+    {/if}
+    
 
 </div>
 
@@ -54,6 +64,10 @@
 
     .middle {
         flex-grow: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .logo {

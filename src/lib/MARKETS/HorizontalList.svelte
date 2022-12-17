@@ -1,93 +1,115 @@
 <script lang="ts">
-    import Selectable from "$lib/Buttons/Selectable.svelte";
-import { resetState, openMarket, openShop, openItem, user, current_market, market_list, patron_list, resetShop, resetMarket, resetPatron, current_patron, inventory, resetItem, current_item, current_shop} from "$lib/db"
+	import Selectable from '$lib/Buttons/Selectable.svelte';
+	import {
+		resetState,
+		openMarket,
+		openShop,
+		openItem,
+		user,
+		current_market,
+		market_list,
+		patron_list,
+		resetShop,
+		resetMarket,
+		resetPatron,
+		current_patron,
+		inventory,
+		resetItem,
+		current_item,
+		current_shop
+	} from '$lib/db';
 
-    export let list = "none"
-	export let content = []
-	
+	export let list = 'none';
+	export let content = [];
 
-	
-    function toggle_market(market) {
-        if ( market == $current_market) {
-			resetState()
-            resetMarket()
-            resetPatron()
-        } else {
-            current_market.set(market)
-            let filtered = $patron_list.filter(v => (v.player_id === $user.id) && (v.market_id === $current_market.id) ) 
-            if (filtered.length !== 0) {
-                current_patron.set(filtered[0])
-                inventory.set($current_patron.inventory_ids)
-            } else {
-                resetPatron()
-            }
-            resetShop()
-			openMarket()
-        }
-    }
+	function toggle_market(market) {
+		if (market == $current_market) {
+			resetState();
+			resetMarket();
+			resetPatron();
+		} else {
+			current_market.set(market);
+			let filtered = $patron_list.filter(
+				(v) => v.player_id === $user.id && v.market_id === $current_market.id
+			);
+			if (filtered.length !== 0) {
+				current_patron.set(filtered[0]);
+				inventory.set($current_patron.inventory_ids);
+			} else {
+				resetPatron();
+			}
+			resetShop();
+			openMarket();
+		}
+	}
 
-    function toggle_shop(shop) {
-        if ( shop == $current_shop) {
-			openMarket()
-            resetShop()
-        } else {
-            current_shop.set(shop)
-            resetItem()
-			openShop()
-        }
-    }
+	function toggle_shop(shop) {
+		if (shop == $current_shop) {
+			openMarket();
+			resetShop();
+		} else {
+			current_shop.set(shop);
+			resetItem();
+			openShop();
+		}
+	}
 
-    function toggle_item(item) {
-        if ( item == $current_item) {
-			openShop()
-            resetItem()
-        } else {
-            current_item.set(item)
-			openItem()
-        }
-    }
+	function toggle_item(item) {
+		if (item == $current_item) {
+			openShop();
+			resetItem();
+		} else {
+			current_item.set(item);
+			openItem();
+		}
+	}
 </script>
 
-
-<div class="container" >
-    
-    
-    {#if list === "market"}
-        {#each $market_list as market}
-            <Selectable text={market.name} func={() => toggle_market(market)} active={$current_market.id  === market.id}/>
-        {/each}
-    {:else if list === "shop"}
-        {#each content as shop}
-            <Selectable text={shop.name} func={() => toggle_shop(shop)} active={$current_shop.id  === shop.id}/>
-        {/each}
-    {:else if list === "item"}
-        {#each content as item}
-            <Selectable text={item.name} func={() => toggle_item(item)} active={$current_item.id  === item.id}/>
-        {/each}
-    {/if}
+<div class="container">
+	{#if list === 'market'}
+		{#each $market_list as market}
+			<Selectable
+				text={market.name}
+				func={() => toggle_market(market)}
+				active={$current_market.id === market.id}
+			/>
+		{/each}
+	{:else if list === 'shop'}
+		{#each content as shop}
+			<Selectable
+				text={shop.name}
+				func={() => toggle_shop(shop)}
+				active={$current_shop.id === shop.id}
+			/>
+		{/each}
+	{:else if list === 'item'}
+		{#each content as item}
+			<Selectable
+				text={item.name}
+				func={() => toggle_item(item)}
+				active={$current_item.id === item.id}
+			/>
+		{/each}
+	{/if}
 </div>
-    
-    
+
 <style>
+	.container {
+		display: flex;
+		overflow-x: scroll;
+		padding: 1rem 1rem;
+		margin: 0 -1rem;
+		gap: 0.5rem;
 
-    .container {
-      display: flex;
-      overflow-x: scroll;
-      padding: 1rem 1rem;
-      margin: 0 -1rem;
-      gap: .5rem;
-     
-      scrollbar-width: none;
-    }
+		scrollbar-width: none;
+	}
 
-    .item {
-        height: 2rem;
-        flex: 0 0 auto;
-        min-width: 8rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    
+	.item {
+		height: 2rem;
+		flex: 0 0 auto;
+		min-width: 8rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 </style>

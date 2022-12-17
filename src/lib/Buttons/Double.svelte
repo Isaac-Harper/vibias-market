@@ -1,65 +1,54 @@
 <script lang="ts">
+	export let func;
+	export let text;
+	export let second_text;
 
-    export let func
-    export let text
-    export let second_text
+	let clicked = false;
 
-
-    let clicked = false
-
-    function click() {
-        if (clicked) {
-            func()
-        } else {
-            clicked = true
-        }
-
-
-    }
+	function click() {
+		if (clicked) {
+			func();
+		} else {
+			clicked = true;
+		}
+	}
 </script>
 
-
-<button on:click={click} >
-        {#if clicked}
-            {second_text}
-        {:else}
-            {text}
-        {/if}
-    </button>
-
+<button on:click={click}>
+	{#if clicked}
+		{second_text}
+	{:else}
+		{text}
+	{/if}
+</button>
 
 <style>
-    /* CSS */
-    button {
-        background-color: var(--selectable-button-background);
-        box-shadow: var(--selectable-button-border) 4px 4px 0 0;
-        border: 2px solid var(--selectable-button-border);
-        color: var(--selectable-button-text);
+	/* CSS */
+	button {
+		background-color: var(--selectable-button-background);
+		box-shadow: var(--selectable-button-border) 4px 4px 0 0;
+		border: 2px solid var(--selectable-button-border);
+		color: var(--selectable-button-text);
+		border-radius: 3rem;
+		cursor: pointer;
+		font-weight: var(--bold-wght);
+		font-size: 18px;
 
-        border-radius: 3rem;        
+		text-decoration: none;
+		user-select: none;
 
-        cursor: pointer;
-        
-        font-weight: var(--bold-wght);
-        
-        font-size: 18px;
+		flex: 0 0 auto;
+		min-width: 8rem;
+		padding: 0 var(--med-space);
+	}
 
-        text-decoration: none;
-        user-select: none;
+	button:hover {
+		box-shadow: var(--selectable-button-border) 3px 3px 0 0;
+		transform: translate(1px, 1px);
+	}
 
-        flex: 0 0 auto;
-        min-width: 8rem;
-        padding: 0 var(--med-space);
-    }
-
-
-    button:hover {
-        box-shadow: var(--selectable-button-border) 3px 3px 0 0;
-        transform: translate(1px, 1px);
-    }
-
-    button:active {
-        box-shadow: var(--selectable-button-border) 1px 1px 0 0;
-        transform: translate(3px, 3px);
-    }
+	button:active {
+		box-shadow: var(--selectable-button-border) 1px 1px 0 0;
+		transform: translate(3px, 3px);
+	}
 </style>

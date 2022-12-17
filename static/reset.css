@@ -52,15 +52,6 @@
   --input-background-dark: var(--oc-gray-3);
   --input-font-dark: var(--oc-gray-9);
 
-  --apply-button: var(--oc-blue-4);
-
-  --delete-button: var(--oc-red-4);
-
-  --card-border-dark: var(--oc-gray-7);
-
-  --card-border-shadow: 0rem 0rem .5rem 0 var(--oc-gray-8);
-
-  --list-item: ;
 }
 
 

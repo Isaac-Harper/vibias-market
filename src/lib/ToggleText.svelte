@@ -1,12 +1,11 @@
 <script lang="ts">
-    export let value
-    export let on = "on"
-    export let off = "off"
+	export let value;
+	export let on = 'on';
+	export let off = 'off';
 </script>
 
-
 {#if value}
-    {on}
+	{on}
 {:else}
-    {off}
+	{off}
 {/if}
