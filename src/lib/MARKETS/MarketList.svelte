@@ -1,8 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/Button.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
-	import Secondary from '$lib/Buttons/Secondary.svelte';
-	import Selectable from '$lib/Buttons/Selectable.svelte';
 	import { resetMarket, state, openMarketJoin, openMarketCreate } from '$lib/db';
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
 	import MarketCreation from './MarketCreation.svelte';

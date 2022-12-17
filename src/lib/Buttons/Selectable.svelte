@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let func;
-	export let text;
+	export let func: Function;
+	export let text: string;
 
 	export let active = false;
 

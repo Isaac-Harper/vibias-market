@@ -1,5 +1,4 @@
 <script>
-	import ApplyButton from '$lib/ApplyButton.svelte';
 	import Double from '$lib/Buttons/Double.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
@@ -13,7 +12,6 @@
 		resetState,
 		updateMarket
 	} from '$lib/db';
-	import DeleteButton from '$lib/DeleteButton.svelte';
 	import NumberInput from '$lib/NumberInput.svelte';
 	import TextArea from '$lib/TextArea.svelte';
 	import TextInput from '$lib/TextInput.svelte';

@@ -2,8 +2,6 @@
 	import { current_shop, state, openShop, updateShop, openMarket, deleteShop } from '$lib/db';
 	import TextInput from '$lib/TextInput.svelte';
 	import TextArea from '$lib/TextArea.svelte';
-	import DeleteButton from '$lib/DeleteButton.svelte';
-	import ApplyButton from '$lib/ApplyButton.svelte';
 	import Double from '$lib/Buttons/Double.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
@@ -47,9 +45,5 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--med-space);
-	}
-
-	.flex {
-		display: flex;
 	}
 </style>

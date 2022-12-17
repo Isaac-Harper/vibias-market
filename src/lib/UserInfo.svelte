@@ -1,6 +1,5 @@
 <script>
 	import { user, auth } from '$lib/db';
-	import { text } from 'svelte/internal';
 	import Secondary from './Buttons/Secondary.svelte';
 
 	let path = 'logo.png';
@@ -34,18 +33,6 @@
 </div>
 
 <style>
-	.container {
-		padding: var(--med-space);
-		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-		flex-direction: column;
-
-		background: #ae823b;
-		color: #efeeec;
-		display: none;
-	}
-
 	.holder {
 		display: flex;
 		gap: var(--med-space);
@@ -61,14 +48,5 @@
 
 	.logo {
 		max-height: 7rem;
-	}
-
-	.logout {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: var(--med-space);
-		background-color: #8c869b;
-		color: #efeeec;
 	}
 </style>

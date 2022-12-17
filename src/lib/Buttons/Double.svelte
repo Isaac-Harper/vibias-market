@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let func;
-	export let text;
-	export let second_text;
+	export let func: Function;
+	export let text: string;
+	export let second_text: string;
 
 	let clicked = false;
 

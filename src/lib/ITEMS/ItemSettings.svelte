@@ -3,8 +3,6 @@
 	import { current_item, state, openItem, deleteItem, openShop, updateItem } from '$lib/db';
 	import TextInput from '$lib/TextInput.svelte';
 	import TextArea from '$lib/TextArea.svelte';
-	import DeleteButton from '$lib/DeleteButton.svelte';
-	import ApplyButton from '$lib/ApplyButton.svelte';
 	import Double from '$lib/Buttons/Double.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
@@ -49,9 +47,5 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-	}
-
-	.flex {
-		display: flex;
 	}
 </style>

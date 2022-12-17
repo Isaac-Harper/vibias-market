@@ -39,9 +39,4 @@
 		width: 100%;
 		gap: var(--med-space);
 	}
-
-	.create {
-		background-color: var(--blue);
-		width: 6rem;
-	}
 </style>

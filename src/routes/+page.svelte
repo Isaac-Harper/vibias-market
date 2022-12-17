@@ -3,10 +3,8 @@
 	import MarketInfo from '$lib/MARKETS/MarketInfo.svelte';
 	import MarketList from '$lib/MARKETS/MarketList.svelte';
 	import ShopInfo from '$lib/SHOPS/ShopInfo.svelte';
-	import UserInfo from '$lib/UserInfo.svelte';
 	import Auth from '$lib/Auth.svelte';
 	import { user, init } from '$lib/db';
-	import { goto } from '$app/navigation';
 	import Primary from '$lib/Buttons/Primary.svelte';
 
 	let active = true;
@@ -49,11 +47,6 @@
 {/if}
 
 <style>
-	.box {
-		display: flex;
-		justify-content: center;
-	}
-
 	.align-center {
 		align-self: center;
 	}
@@ -69,26 +62,12 @@
 		border-radius: var(--med-space);
 	}
 
-	.grid {
-		padding: var(--med-space);
-		display: flex;
-		flex-direction: column;
-		gap: var(--med-space);
-		width: 100%;
-		max-width: 50rem;
-	}
-
 	.container {
 		display: flex;
 		flex-direction: column;
 		gap: var(--med-space);
 
 		overflow: hidden;
-	}
-
-	.landing {
-		height: 100vh;
-		height: 100dvh;
 	}
 
 	.grow {

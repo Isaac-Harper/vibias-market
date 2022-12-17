@@ -1,9 +1,13 @@
 <script lang="ts">
-	export let func;
-	export let text;
+	export let func: Function;
+	export let text: string;
+
+	function click() {
+		func();
+	}
 </script>
 
-<button on:click={func}>
+<button on:click={click}>
 	{text}
 </button>
 

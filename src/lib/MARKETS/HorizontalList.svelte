@@ -103,13 +103,4 @@
 
 		scrollbar-width: none;
 	}
-
-	.item {
-		height: 2rem;
-		flex: 0 0 auto;
-		min-width: 8rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 </style>
