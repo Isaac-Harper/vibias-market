@@ -2,19 +2,19 @@ import { createClient } from '@supabase/supabase-js'
 import { readable, writable, type Readable } from 'svelte/store'
 
 export const supabase = createClient(
-    import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_ANON_KEY
+	import.meta.env.VITE_SUPABASE_URL,
+	import.meta.env.VITE_SUPABASE_ANON_KEY
 )
 
 export let user = readable(supabase.auth.user(), set => {
-  supabase.auth.onAuthStateChange((event, session) => {
-    if (event == 'SIGNED_OUT') {
-      set(null)
-    } 
-    if (session != null) {
-      set(session.user)
-    } 
-  })
+	supabase.auth.onAuthStateChange((event, session) => {
+		if (event == 'SIGNED_OUT') {
+			set(null)
+		}
+		if (session != null) {
+			set(session.user)
+		}
+	})
 })
 
 
@@ -22,13 +22,13 @@ export let state = writable({
 	market_open: false,
 	shop_open: false,
 	item_open: false,
-	
+
 	edit_market_open: false,
 	edit_shop_open: false,
 	edit_item_open: false,
-	
+
 	join_market_open: false,
-	
+
 	create_market_open: false,
 	create_shop_open: false,
 	create_item_open: false,
@@ -39,13 +39,13 @@ export function resetState() {
 		market_open: false,
 		shop_open: false,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -57,13 +57,13 @@ export function openMarket() {
 		market_open: true,
 		shop_open: false,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -75,13 +75,13 @@ export function openShop() {
 		market_open: true,
 		shop_open: true,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -93,13 +93,13 @@ export function openItem() {
 		market_open: true,
 		shop_open: true,
 		item_open: true,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -111,13 +111,13 @@ export function openMarketEdit() {
 		market_open: true,
 		shop_open: false,
 		item_open: false,
-		
+
 		edit_market_open: true,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -129,13 +129,13 @@ export function openShopEdit() {
 		market_open: true,
 		shop_open: true,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: true,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -147,13 +147,13 @@ export function openItemEdit() {
 		market_open: true,
 		shop_open: true,
 		item_open: true,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: true,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -165,13 +165,13 @@ export function openMarketJoin() {
 		market_open: false,
 		shop_open: false,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: true,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: false,
@@ -183,13 +183,13 @@ export function openMarketCreate() {
 		market_open: false,
 		shop_open: false,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: true,
 		create_shop_open: false,
 		create_item_open: false,
@@ -201,13 +201,13 @@ export function openShopCreate() {
 		market_open: true,
 		shop_open: false,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: true,
 		create_item_open: false,
@@ -219,13 +219,13 @@ export function openItemCreate() {
 		market_open: true,
 		shop_open: true,
 		item_open: false,
-		
+
 		edit_market_open: false,
 		edit_shop_open: false,
 		edit_item_open: false,
-		
+
 		join_market_open: false,
-		
+
 		create_market_open: false,
 		create_shop_open: false,
 		create_item_open: true,
@@ -237,37 +237,41 @@ export function openItemCreate() {
 let empty: any[] | undefined = []
 let emptyA = {}
 
-export let current_market = writable({id: 0, 
-                                      creator_id: "", 
-                                      patrons: [], 
-                                      name: "", 
-                                      description: "", 
-                                      join_id: "", 
-                                      starting_coins: 0
-                                      })
-                                      
-export let current_shop = writable({  id: 0, 
-                                      creator_id: "", 
-                                      market_id: "", 
-                                      name: "", 
-                                      description: ""
-                                      })
-                                      
-export let current_item = writable({  id: 0, 
-                                      creator_id: "", 
-                                      shop_id: "", 
-                                      name: "", 
-                                      description: "", 
-                                      price: 0
-                                      })
-                                      
-export let current_patron = writable({id: 0, 
-                                      player_id: "", 
-                                      market_id: 0, 
-                                      name: "", 
-                                      coins: 0, 
-                                      inventory_ids: []
-                                      })
+export let current_market = writable({
+	id: 0,
+	creator_id: "",
+	patrons: [],
+	name: "",
+	description: "",
+	join_id: "",
+	starting_coins: 0
+})
+
+export let current_shop = writable({
+	id: 0,
+	creator_id: "",
+	market_id: "",
+	name: "",
+	description: ""
+})
+
+export let current_item = writable({
+	id: 0,
+	creator_id: "",
+	shop_id: "",
+	name: "",
+	description: "",
+	price: 0
+})
+
+export let current_patron = writable({
+	id: 0,
+	player_id: "",
+	market_id: 0,
+	name: "",
+	coins: 0,
+	inventory_ids: []
+})
 
 export let inventory = writable([])
 
@@ -283,96 +287,100 @@ export const auth = supabase.auth
 
 
 export async function init() {
-  market_list.set(await getMarkets())
-  shop_list.set(await getShops())
-  item_list.set(await getItems())
-  patron_list.set(await getPatrons())
+	market_list.set(await getMarkets())
+	shop_list.set(await getShops())
+	item_list.set(await getItems())
+	patron_list.set(await getPatrons())
 }
 
 export async function resetMarket() {
-  current_market.set({id: 0, 
-                      creator_id: "", 
-                      patrons: [], 
-                      name: "", 
-                      description: "", 
-                      join_id: "", 
-                      starting_coins: 0
-                      })
-                      
-  resetShop()
-                      
-  resetPatron()
+	current_market.set({
+		id: 0,
+		creator_id: "",
+		patrons: [],
+		name: "",
+		description: "",
+		join_id: "",
+		starting_coins: 0
+	})
+
+	resetShop()
+
+	resetPatron()
 }
 
 export async function resetShop() {
-  current_shop.set({  id: 0, 
-                      creator_id: "", 
-                      market_id: "", 
-                      name: "", 
-                      description: ""
-                      })
-  resetItem()
+	current_shop.set({
+		id: 0,
+		creator_id: "",
+		market_id: "",
+		name: "",
+		description: ""
+	})
+	resetItem()
 }
 
 export async function resetItem() {
-  current_item.set({  id: 0, 
-                      creator_id: "", 
-                      shop_id: "", 
-                      name: "",
-                      description: "", 
-                      price: 0
-                      })
+	current_item.set({
+		id: 0,
+		creator_id: "",
+		shop_id: "",
+		name: "",
+		description: "",
+		price: 0
+	})
 }
 
 export async function resetPatron() {
-  current_patron.set({  id: 0, 
-                        player_id: "", 
-                        market_id: 0, 
-                        name: "", 
-                        coins: 0, 
-                        inventory_ids: []
-                        })
+	current_patron.set({
+		id: 0,
+		player_id: "",
+		market_id: 0,
+		name: "",
+		coins: 0,
+		inventory_ids: []
+	})
 }
 
 
 export async function joinMarket(joinid) {
-  let { data, error } = await supabase
-    .rpc('joinMarket', {
-      joinid
-    })
+	let { data, error } = await supabase
+		.rpc('joinMarket', {
+			joinid
+		})
 
-  if (error) console.error(error)
+	if (error) console.error(error)
 
-  market_list.set(await getMarkets())
-  shop_list.set(await getShops())
-  item_list.set(await getItems())
+	market_list.set(await getMarkets())
+	shop_list.set(await getShops())
+	item_list.set(await getItems())
 }
 
 
 export async function createPatron(name) {
-  let tempUser;
-  user.subscribe(value => {
+	let tempUser;
+	user.subscribe(value => {
 		tempUser = value;
 	});
 
-  let tempMarket;
-  current_market.subscribe(value => {
+	let tempMarket;
+	current_market.subscribe(value => {
 		tempMarket = value;
 	});
 
 
-  const { data, error } = await supabase
-  .from('patrons')
-  .insert([
-    { name: name, player_id: tempUser.id, market_id: tempMarket.id, coins: tempMarket.starting_coins },
-  ])
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
+	const { data, error } = await supabase
+		.from('patrons')
+		.insert([
+			{ name: name, player_id: tempUser.id, market_id: tempMarket.id, coins: tempMarket.starting_coins },
+		])
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
 
-  init()
-  current_patron.set(data[0])
+	init()
+	current_patron.set(data[0])
 }
 
 ///////////////////////////////////////
@@ -383,54 +391,54 @@ export async function createPatron(name) {
 
 
 export async function updateMarket(market) {
-  const { data, error } = await supabase
-    .from('markets')
-    .update({name: market.name, description: market.description, starting_coins: market.starting_coins})
-    .eq('id', market.id)
+	const { data, error } = await supabase
+		.from('markets')
+		.update({ name: market.name, description: market.description, starting_coins: market.starting_coins })
+		.eq('id', market.id)
 
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
-  
-  init()
-  current_market.set(data[0])
-  
-  return data
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+
+	init()
+	current_market.set(data[0])
+
+	return data
 }
 
 export async function updateShop(shop) {
-  const { data, error } = await supabase
-    .from('shops')
-    .update({name: shop.name, description: shop.description})
-    .eq('id', shop.id)
+	const { data, error } = await supabase
+		.from('shops')
+		.update({ name: shop.name, description: shop.description })
+		.eq('id', shop.id)
 
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
-  
-  init()
-  current_shop.set(data[0])
-  
-  return data
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+
+	init()
+	current_shop.set(data[0])
+
+	return data
 }
 
 
 export async function updateItem(item) {
-  const { data, error } = await supabase
-    .from('items')
-    .update({name: item.name, description: item.description, price: item.price})
-    .eq('id', item.id)
+	const { data, error } = await supabase
+		.from('items')
+		.update({ name: item.name, description: item.description, price: item.price })
+		.eq('id', item.id)
 
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
-  
-  init()
-  current_item.set(data[0])   
-  return data
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+
+	init()
+	current_item.set(data[0])
+	return data
 }
 
 ///////////////////////////////////////
@@ -440,38 +448,38 @@ export async function updateItem(item) {
 ///////////////////////////////////////
 
 export async function getMarkets() {
-  const { data, error } = await supabase
-    .from('markets')
-    .select()
-  if (error) throw new Error(error.message)
-  if (data.length === 0) {
-  	joinMarket("5efd6fe9-e22e-4722-9531-6c9a6c78a2b1")
-  }	
-  return data
+	const { data, error } = await supabase
+		.from('markets')
+		.select()
+	if (error) throw new Error(error.message)
+	if (data.length === 0) {
+		joinMarket("5efd6fe9-e22e-4722-9531-6c9a6c78a2b1")
+	}
+	return data
 }
 
 export async function getShops() {
-  const { data, error } = await supabase
-    .from('shops')
-    .select()
-  if (error) throw new Error(error.message)
-  return data
+	const { data, error } = await supabase
+		.from('shops')
+		.select()
+	if (error) throw new Error(error.message)
+	return data
 }
 
 export async function getItems() {
-  const { data, error } = await supabase
-    .from('items')
-    .select()
-  if (error) throw new Error(error.message)
-  return data
+	const { data, error } = await supabase
+		.from('items')
+		.select()
+	if (error) throw new Error(error.message)
+	return data
 }
 
 export async function getPatrons() {
-  const { data, error } = await supabase
-    .from('patrons')
-    .select()
-  if (error) throw new Error(error.message)
-  return data
+	const { data, error } = await supabase
+		.from('patrons')
+		.select()
+	if (error) throw new Error(error.message)
+	return data
 }
 
 ///////////////////////////////////////
@@ -480,49 +488,49 @@ export async function getPatrons() {
 //
 ///////////////////////////////////////
 
-export async function newMarket(name:string, description:string, creator_id: string) {
-  const { data, error } = await supabase
-    .from('markets')
-    .insert([
-      { name: name, description: description, creator_id: creator_id}
-    ])
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
+export async function newMarket(name: string, description: string, creator_id: string) {
+	const { data, error } = await supabase
+		.from('markets')
+		.insert([
+			{ name: name, description: description, creator_id: creator_id }
+		])
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
 
-  market_list.set(await getMarkets())
-  shop_list.set(await getShops())
-  item_list.set(await getItems())
+	market_list.set(await getMarkets())
+	shop_list.set(await getShops())
+	item_list.set(await getItems())
 }
 
-export async function newShop(name:string, description:string, creator_id: string, market_id: number) {
-  const { data, error } = await supabase
-    .from('shops')
-    .insert([
-      { name: name, description: description, creator_id: creator_id, market_id: market_id}
-    ])
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
+export async function newShop(name: string, description: string, creator_id: string, market_id: number) {
+	const { data, error } = await supabase
+		.from('shops')
+		.insert([
+			{ name: name, description: description, creator_id: creator_id, market_id: market_id }
+		])
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
 
-  shop_list.set(await getShops())
-  item_list.set(await getItems())
+	shop_list.set(await getShops())
+	item_list.set(await getItems())
 }
 
-export async function newItem(name:string, description:string, price:number, creator_id: string, shop_id: number) {
-  const { data, error } = await supabase
-    .from('items')
-    .insert([
-      { name: name, description: description, price: price, creator_id: creator_id, shop_id: shop_id}
-    ])
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)    
-  }
+export async function newItem(name: string, description: string, price: number, creator_id: string, shop_id: number) {
+	const { data, error } = await supabase
+		.from('items')
+		.insert([
+			{ name: name, description: description, price: price, creator_id: creator_id, shop_id: shop_id }
+		])
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
 
-  item_list.set(await getItems())
+	item_list.set(await getItems())
 }
 
 ///////////////////////////////////////
@@ -531,118 +539,118 @@ export async function newItem(name:string, description:string, price:number, cre
 //
 ///////////////////////////////////////
 
-export async function deleteMarket(id:number) {
-  const {data, error } = await supabase
-    .from('markets')
-    .delete()
-    .eq('id', id)
-  
+export async function deleteMarket(id: number) {
+	const { data, error } = await supabase
+		.from('markets')
+		.delete()
+		.eq('id', id)
 
-  market_list.set(await getMarkets())
 
-  resetMarket()
+	market_list.set(await getMarkets())
+
+	resetMarket()
 }
 
-export async function deleteShop(id:number) {
-  const {data, error } = await supabase
-    .from('shops')
-    .delete()
-    .eq('id', id)
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)
-    
-  }
+export async function deleteShop(id: number) {
+	const { data, error } = await supabase
+		.from('shops')
+		.delete()
+		.eq('id', id)
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
 
-  shop_list.set(await getShops())
+	}
 
-  resetShop()
+	shop_list.set(await getShops())
+
+	resetShop()
 }
 
-export async function deleteItem(id:number) {
-  const {data, error } = await supabase
-    .from('items')
-    .delete()
-    .eq('id', id)
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message)
-    
-  }
+export async function deleteItem(id: number) {
+	const { data, error } = await supabase
+		.from('items')
+		.delete()
+		.eq('id', id)
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
 
-  item_list.set(await getItems())
+	}
 
-  resetItem()
+	item_list.set(await getItems())
+
+	resetItem()
 }
 
 
-async function getItemPrice(item_id:number) {
-  const {data, error } = await supabase
-    .from('items')
-    .select('price')
-    .eq('id', item_id)
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message) 
-  }
-  return data
+async function getItemPrice(item_id: number) {
+	const { data, error } = await supabase
+		.from('items')
+		.select('price')
+		.eq('id', item_id)
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+	return data
 }
 
-async function getItem(item_id:number) {
-  const {data, error } = await supabase
-    .from('items')
-    .select('*')
-    .eq('id', item_id)
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message) 
-  }
-  return data
+async function getItem(item_id: number) {
+	const { data, error } = await supabase
+		.from('items')
+		.select('*')
+		.eq('id', item_id)
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+	return data
 }
 
-async function getPatronsCoins(patrons_id:number) {
-  const {data, error } = await supabase
-    .from('patrons')
-    .select('coins')
-    .eq('id', patrons_id)
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message) 
-  }
-  return data
+async function getPatronsCoins(patrons_id: number) {
+	const { data, error } = await supabase
+		.from('patrons')
+		.select('coins')
+		.eq('id', patrons_id)
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+	return data
 }
 
-async function getPatronsInventory(patrons_id:number) {
-  const {data, error } = await supabase
-    .from('patrons')
-    .select('inventory_ids')
-    .eq('id', patrons_id)
-  if (error) {
-    alert(error.message)
-    throw new Error(error.message) 
-  }
-  return data
+async function getPatronsInventory(patrons_id: number) {
+	const { data, error } = await supabase
+		.from('patrons')
+		.select('inventory_ids')
+		.eq('id', patrons_id)
+	if (error) {
+		alert(error.message)
+		throw new Error(error.message)
+	}
+	return data
 }
 
-async function addItemToInventory(item:object, patron_id:number) {
-  const a = await getPatronsInventory(patron_id)
+async function addItemToInventory(item: object, patron_id: number) {
+	const a = await getPatronsInventory(patron_id)
 
-  let inv = a[0].inventory_ids
+	let inv = a[0].inventory_ids
 
-  inv.push(item)
+	inv.push(item)
 
 
-  console.log(inv)
+	console.log(inv)
 
-  inventory.set(inv)
+	inventory.set(inv)
 
-  await supabase
-    .from('patrons')
-    .update({inventory_ids: inv})
-    .eq('id', patron_id)
+	await supabase
+		.from('patrons')
+		.update({ inventory_ids: inv })
+		.eq('id', patron_id)
 
-  
-  patron_list.set(await getPatrons())
+
+	patron_list.set(await getPatrons())
 }
 
 ///////////////////////////////////////
@@ -651,40 +659,40 @@ async function addItemToInventory(item:object, patron_id:number) {
 //
 ///////////////////////////////////////
 
-export async function buyItem( item_id:number, patrons_id:number ) {
-  
-  const c = await getItem(item_id)
-  const b = await getPatronsCoins(patrons_id)
+export async function buyItem(item_id: number, patrons_id: number) {
+
+	const c = await getItem(item_id)
+	const b = await getPatronsCoins(patrons_id)
 
 
-  let tempPatron;
-  current_patron.subscribe(value => {
+	let tempPatron;
+	current_patron.subscribe(value => {
 		tempPatron = value;
 	});
 
 
-  const item = c[0]
-  const price = item.price
-  const coins = b[0].coins
+	const item = c[0]
+	const price = item.price
+	const coins = b[0].coins
 
-  let new_coins = coins
-  if (coins >= price) {
-    new_coins = coins - price
-    addItemToInventory(item, patrons_id)
+	let new_coins = coins
+	if (coins >= price) {
+		new_coins = coins - price
+		addItemToInventory(item, patrons_id)
 
-    tempPatron.inventory_ids.push(item)
-    tempPatron.coins = coins - price
-    current_patron.set(tempPatron)
-  }
+		tempPatron.inventory_ids.push(item)
+		tempPatron.coins = coins - price
+		current_patron.set(tempPatron)
+	}
 
-  await supabase
-    .from('patrons')
-    .update({coins: new_coins})
-    .eq('id', patrons_id)
+	await supabase
+		.from('patrons')
+		.update({ coins: new_coins })
+		.eq('id', patrons_id)
 
-  
 
-  patron_list.set(await getPatrons())
 
-  
+	patron_list.set(await getPatrons())
+
+
 }
