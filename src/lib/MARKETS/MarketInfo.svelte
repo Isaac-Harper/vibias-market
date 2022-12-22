@@ -8,7 +8,7 @@
 		openMarketEdit,
 		resetShop
 	} from '$lib/Backend/state';
-	import { user } from '$lib/Backend/state'
+	import { user } from '$lib/db'
 	import ShopCreation from '../SHOPS/ShopCreation.svelte';
 	import Inventory from '$lib/MARKETS/Inventory.svelte';
 	import { blur } from 'svelte/transition';
