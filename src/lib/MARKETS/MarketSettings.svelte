@@ -2,16 +2,14 @@
 	import Double from '$lib/Buttons/Double.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
+	import { user, deleteMarket, updateMarket } from '$lib/db'
 	import {
-		user,
 		current_market,
 		patron_list,
 		state,
 		openMarket,
-		deleteMarket,
-		resetState,
-		updateMarket
-	} from '$lib/db';
+		resetState
+	} from '$lib/Backend/state';
 	import NumberInput from '$lib/NumberInput.svelte';
 	import TextArea from '$lib/TextArea.svelte';
 	import TextInput from '$lib/TextInput.svelte';

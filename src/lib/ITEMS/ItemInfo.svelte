@@ -1,13 +1,9 @@
 <script lang="ts">
 	import {
-		state,
 		buyItem,
-		current_item,
-		current_market,
-		user,
-		patron_list,
-		openItemEdit
+		user
 	} from '$lib/db';
+	import { state, current_market, current_item, current_patron, openItemEdit, patron_list } from '$lib/Backend/state'
 	import ItemSettings from './ItemSettings.svelte';
 	import { blur } from 'svelte/transition';
 	import Primary from '$lib/Buttons/Primary.svelte';

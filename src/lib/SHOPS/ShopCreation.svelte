@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { user, newShop, current_market, state, openMarket } from '../db';
+	import { user, newShop } from '$lib/db';
+	import { current_market, state, openMarket } from '$lib/Backend/state'
 	import TextArea from '../TextArea.svelte';
 	import TextInput from '../TextInput.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';

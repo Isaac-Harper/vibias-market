@@ -2,7 +2,8 @@
 	export let current_shops;
 	export let creating_new_shop;
 
-	import { user, current_market, current_shop, resetShop, resetItem } from '../db';
+	import { user } from '$lib/db';
+	import { current_market, current_shop, resetShop, resetItem } from '$lib/Backend/state'
 
 	function toggle_shop(shop) {
 		if (shop == $current_shop) {

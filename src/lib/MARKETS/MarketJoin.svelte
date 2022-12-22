@@ -1,7 +1,8 @@
 <script>
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
-	import { state, openMarket, joinMarket, resetState } from '$lib/db';
+	import { joinMarket } from '$lib/db'
+	import { state, openMarket, resetState } from '$lib/Backend/state';
 	import TextInput from '$lib/TextInput.svelte';
 
 	function joinNew(join_id) {

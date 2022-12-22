@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Primary from '$lib/Buttons/Primary.svelte';
-	import { resetMarket, state, openMarketJoin, openMarketCreate } from '$lib/db';
+	import { resetMarket, state, openMarketJoin, openMarketCreate } from '$lib/Backend/state';
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';
 	import MarketCreation from './MarketCreation.svelte';
 	import MarketJoin from './MarketJoin.svelte';

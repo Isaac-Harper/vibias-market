@@ -1,14 +1,8 @@
 <script lang="ts">
 	import {
-		state,
-		openItemCreate,
-		item_list,
-		current_shop,
-		user,
-		resetItem,
-		openShopEdit,
-		current_market
+		user
 	} from '$lib/db';
+	import { state, openItemCreate, item_list, current_shop, resetItem, openShopEdit, current_market } from '$lib/Backend/state'
 	import { blur } from 'svelte/transition';
 	import ShopSettings from '$lib/SHOPS/ShopSettings.svelte';
 	import HorizontalList from '$lib/MARKETS/HorizontalList.svelte';

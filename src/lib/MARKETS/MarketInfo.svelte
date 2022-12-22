@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import {
-		user,
 		shop_list,
 		current_market,
 		state,
@@ -9,6 +8,7 @@
 		openMarketEdit,
 		resetShop
 	} from '$lib/db';
+	import { user } from '$lib/Backend/state'
 	import ShopCreation from '../SHOPS/ShopCreation.svelte';
 	import Inventory from '$lib/MARKETS/Inventory.svelte';
 	import { blur } from 'svelte/transition';

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import NumberInput from '$lib/NumberInput.svelte';
-	import { user, current_shop, state, openShop, newItem } from '../db';
+	import { user, newItem } from '$lib/db';
+	import { current_shop, state, openShop } from '$lib/Backend/state'
 	import TextArea from '../TextArea.svelte';
 	import TextInput from '../TextInput.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';

@@ -1,7 +1,8 @@
 <script>
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
-	import { state, user, newMarket, openMarket, resetState } from '$lib/db';
+	import { user, newMarket } from '$lib/db';
+	import { state, openMarket, resetState } from '$lib/Backend/state'
 	import TextArea from '$lib/TextArea.svelte';
 	import TextInput from '$lib/TextInput.svelte';
 

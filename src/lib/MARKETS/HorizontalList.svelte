@@ -5,7 +5,6 @@
 		openMarket,
 		openShop,
 		openItem,
-		user,
 		current_market,
 		market_list,
 		patron_list,
@@ -17,7 +16,9 @@
 		resetItem,
 		current_item,
 		current_shop
-	} from '$lib/db';
+	} from '$lib/Backend/state';
+	
+	import { user } from '$lib/db'
 
 	export let list = 'none';
 	export let content = [];

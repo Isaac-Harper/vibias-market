@@ -2,7 +2,8 @@
 	export let current_items;
 	export let creating_new_item;
 
-	import { user, current_market, current_item, resetItem } from '../db';
+	import { user, resetItem } from '$lib/db';
+	import { current_market, current_item } from '$lib/Backend/state'
 
 	function toggle_item(item) {
 		if (item == $current_item) {
