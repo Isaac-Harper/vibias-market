@@ -7,7 +7,7 @@
 		openShopCreate,
 		openMarketEdit,
 		resetShop
-	} from '$lib/db';
+	} from '$lib/Backend/state';
 	import { user } from '$lib/Backend/state'
 	import ShopCreation from '../SHOPS/ShopCreation.svelte';
 	import Inventory from '$lib/MARKETS/Inventory.svelte';
