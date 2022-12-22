@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { readable, writable, type Readable } from 'svelte/store'
 
-import { market_liste, shop_list, item_list, patron_list, current_market, current_shop, current_item, current_patron } from '$lib/Backend/state.ts'
+import { market_list, shop_list, item_list, patron_list, current_market, current_shop, current_item, current_patron } from '$lib/Backend/state.ts'
 
 
 // SUPABASE client setup
