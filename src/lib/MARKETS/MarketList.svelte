@@ -36,6 +36,8 @@
 		gap: var(--med-space);
 		padding: var(--med-space);
 		background-color: var(--card-dark);
+		background-image: var(--card-image);
+		
 		color: var(--normal-font-dark);
 		box-shadow: var(--card-border-shadow);
 		border-radius: var(--med-space);
