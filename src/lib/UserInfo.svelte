@@ -29,7 +29,7 @@
 </div>
 
 <style>
-	h2 {
+	h1 {
 		font-size: 1.75rem;
 		text-shadow: -2px 2px var(--hamlet-red)
 	}
