@@ -39,9 +39,9 @@
 	</div>
 
 	<div class="selector">
-		<a href="/about" class="option">About</a>
-		<a href="/faq" class="option">FAQ</a>
-		<a href="/contact" class="option">Contact</a>
+		<Link text="About" link="/about"/>
+		<Link text="FAQ" link="/faq"/>
+		<Link text="Contact" link="/contact"/>
 	</div>
 
 	<div class="grow" />
