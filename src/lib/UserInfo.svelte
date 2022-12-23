@@ -26,12 +26,6 @@
 			<p>&nbsp;</p>
 		{/if}
 	</div>
-
-	{#if $user}
-		<Secondary text="Sign Out" func={() => auth.signOut()} />
-	{/if}
-</div>
-
 <style>
 	.holder {
 		display: flex;

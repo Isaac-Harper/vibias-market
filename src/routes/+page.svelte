@@ -4,8 +4,9 @@
 	import MarketList from '$lib/MARKETS/MarketList.svelte';
 	import ShopInfo from '$lib/SHOPS/ShopInfo.svelte';
 	import Auth from '$lib/Auth.svelte';
-	import { user, init } from '$lib/db';
+	import { user, auth, init } from '$lib/db';
 	import Primary from '$lib/Buttons/Primary.svelte';
+	import Secondary from '$lib/Buttons/Secondary.svelte'
 
 	let active = true;
 
@@ -27,6 +28,7 @@
 {:else}
 	{#if $user}
 		<Primary text="Open App" func={toggleActive} />
+		<Secondary text="Sign Out" func={() => auth.signOut()} />
 	{:else}
 		<Auth />
 	{/if}
