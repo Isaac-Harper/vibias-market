@@ -63,6 +63,7 @@
 		background-color: var(--twilight-blue);
 		padding: var(--med-space);
 		border-radius: var(--med-space);
+		border: var(--card-border);
 	}
 
 	.container {
