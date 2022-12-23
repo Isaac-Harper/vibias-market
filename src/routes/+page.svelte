@@ -60,7 +60,8 @@
 	}
 
 	.middle {
-		background-color: var(--twilight-blue);
+		background-color: var(--card-dark);
+		background-image: var(--card-image);
 		padding: var(--med-space);
 		border-radius: var(--med-space);
 		border: var(--card-border);
