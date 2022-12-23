@@ -34,7 +34,7 @@
 		<Auth />
 	{/if}
 
-	<div class="middle">
+	<div class="card">
 		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
 		<img alt="fishies" class="img" src="/images/image11.png" />
 	</div>
@@ -59,13 +59,6 @@
 		aspect-ratio: 1.25;
 	}
 
-	.middle {
-		background-color: var(--card-dark);
-		background-image: var(--card-image);
-		padding: var(--med-space);
-		border-radius: var(--med-space);
-		border: var(--card-border);
-	}
 
 	.container {
 		display: flex;

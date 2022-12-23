@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="holder" class:creating_new={$state.create_market_open === true}>
+<div class="holder card" class:creating_new={$state.create_market_open === true}>
 	{#if !$state.create_market_open && !$state.join_market_open}
 		<h3 class="title">Markets</h3>
 		<HorizontalList list="market" />
@@ -34,13 +34,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--med-space);
-		padding: var(--med-space);
-		background-color: var(--card-dark);
-		background-image: var(--card-image);
-		border: var(--card-border);
-		
+	
 		color: var(--normal-font-dark);
-		box-shadow: var(--card-border-shadow);
-		border-radius: var(--med-space);
 	}
 </style>

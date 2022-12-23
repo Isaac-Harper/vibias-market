@@ -21,7 +21,7 @@
 </script>
 
 {#if $state.item_open}
-	<div class="container" transition:blur|local={{ duration: 300 }}>
+	<div class="container card" transition:blur|local={{ duration: 300 }}>
 		{#if !$state.edit_item_open}
 			<h3 class="title">{$current_item.name}</h3>
 			<p><b>{$current_item.price} Coins</b></p>
@@ -43,16 +43,6 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		overflow: hidden;
-
-		padding: var(--med-space);
-
-		background-color: var(--card-dark);
-		background-image: var(--card-image);
-		border: var(--card-border);
-
 		color: var(--normal-font-dark);
-		box-shadow: var(--card-border-shadow);
-		border-radius: var(--med-space);
 	}
 </style>

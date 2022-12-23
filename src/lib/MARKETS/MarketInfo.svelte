@@ -29,7 +29,7 @@
 </script>
 
 {#if $state.market_open}
-	<div class="container" transition:blur|local={{ duration: 300 }}>
+	<div class="container card" transition:blur|local={{ duration: 300 }}>
 		{#if !$state.edit_market_open && !$state.create_shop_open}
 			<div class="body">
 				<h3 class="title">{$current_market.name}</h3>
@@ -54,15 +54,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--med-space);
-		padding: var(--med-space);
-
-		background-color: var(--card-dark);
-		background-image: var(--card-image);
-		border: var(--card-border);
-		
 		color: var(--normal-font-dark);
-		box-shadow: var(--card-border-shadow);
-		border-radius: var(--med-space);
+
 	}
 
 	.body {

@@ -136,6 +136,14 @@ a:active {
 	justify-content: center;
 }
 
+.card {
+	border: var(--card-border);
+	background: var(--card-dark);
+	background-image: var(--card-image);
+	border-radius: 1rem;
+	overflow: hidden;
+	padding: var(--med-spacing);
+}
 
 .element--border--primary {
   border-radius: 1rem;
