@@ -28,6 +28,8 @@
   --skelton-navy: #0C142F;
   --bone-white: #EFEEEC;
   --wanju-teal: #4C7B7C;
+  
+  --twilight-blue-transparent: #3E4C67cc;
 
 
   --primary-button-background: var(--stone-tim-sage);
@@ -45,7 +47,7 @@
 
   --background-dark: #3b1f30;
   
-  --card-dark: var(--twilight-blue);
+  --card-dark: var(--twilight-blue-transparent);
   --card-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230c142f' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   --card-border: 2px solid var(--skelton-navy);
   
@@ -138,7 +140,7 @@ a:active {
 
 .card {
 	border: var(--card-border);
-	background: var(--card-dark)cc;
+	background: var(--card-dark);
 	background-image: var(--card-image);
 	border-radius: 1rem;
 	overflow: hidden;
