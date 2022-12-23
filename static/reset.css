@@ -142,7 +142,8 @@ a:active {
 	background-image: var(--card-image);
 	border-radius: 1rem;
 	overflow: hidden;
-	padding: var(--med-space);
+	padding: var(--med-spacing);
+	opacity: .9;
 }
 
 .element--border--primary {
