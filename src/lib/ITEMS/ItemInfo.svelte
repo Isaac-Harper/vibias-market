@@ -49,6 +49,7 @@
 
 		background-color: var(--card-dark);
 		background-image: var(--card-image);
+		border: var(--card-border);
 
 		color: var(--normal-font-dark);
 		box-shadow: var(--card-border-shadow);
