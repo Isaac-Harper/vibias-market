@@ -7,6 +7,7 @@
 	import { user, auth, init } from '$lib/db';
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte'
+	import Link from '$lib/Buttons/Link.svelte'
 
 	let active = true;
 
