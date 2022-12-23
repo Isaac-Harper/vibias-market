@@ -17,6 +17,7 @@
 
 {#if $user && active}
 	<Primary text="Homepage" func={toggleActive} />
+	<Secondary text="Sign Out" func={() => auth.signOut()} />
 	{#await init() then}
 		<div class="container element--border--primary">
 			<MarketList />
@@ -28,7 +29,6 @@
 {:else}
 	{#if $user}
 		<Primary text="Open App" func={toggleActive} />
-		<Secondary text="Sign Out" func={() => auth.signOut()} />
 	{:else}
 		<Auth />
 	{/if}
