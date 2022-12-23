@@ -30,8 +30,11 @@
 
 <style>
 	h1 {
-		font-size: 1.75rem;
+		font-size: 1.5rem;
 		text-shadow: -2px 2px var(--hamlet-red)
+	}
+	p {
+		font-size: .75rem; 
 	}
 	
 	.holder {
