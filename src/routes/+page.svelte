@@ -34,7 +34,7 @@
 		<Auth />
 	{/if}
 
-	<div class="center">
+	<div class="middle">
 		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
 		<img alt="fishies" class="img" src="/images/image11.png" />
 	</div>
@@ -59,7 +59,7 @@
 		aspect-ratio: 1.25;
 	}
 
-	.center {
+	.middle {
 		background-color: var(--twilight-blue);
 		padding: var(--med-space);
 		border-radius: var(--med-space);
