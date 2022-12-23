@@ -26,6 +26,8 @@
 			<p>&nbsp;</p>
 		{/if}
 	</div>
+</div>
+
 <style>
 	.holder {
 		display: flex;
