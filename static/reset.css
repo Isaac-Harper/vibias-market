@@ -138,12 +138,11 @@ a:active {
 
 .card {
 	border: var(--card-border);
-	background: var(--card-dark);
+	background: var(--card-dark)cc;
 	background-image: var(--card-image);
 	border-radius: 1rem;
 	overflow: hidden;
 	padding: var(--med-space);
-	opacity: .9;
 }
 
 .element--border--primary {
