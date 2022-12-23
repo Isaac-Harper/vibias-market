@@ -29,6 +29,11 @@
 </div>
 
 <style>
+	h2 {
+		font-size: 1.75rem;
+		text-shadow: -2px 2px var(--hamlet-red)
+	}
+	
 	.holder {
 		display: flex;
 		gap: var(--med-space);
