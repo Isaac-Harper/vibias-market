@@ -125,6 +125,12 @@ a:active {
   isolation: isolate;
 }
 
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 .element--border--primary {
   border-radius: 1rem;

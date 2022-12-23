@@ -4,7 +4,7 @@
 
 </script>
 
-<a href={link}>
+<a href={link} class="center">
 	{text}
 </a>
 
@@ -25,7 +25,6 @@
 		font-size: 18px;
 
 		text-decoration: none;
-		user-select: none;
 		padding: var(--small-space);
 		width: 100%;
 	}
