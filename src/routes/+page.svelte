@@ -38,7 +38,7 @@
 	{/if}
 
 	<div class="card">
-		<p>Virtual markets that make it easy to run shopping as a GM in your TTRPG if choice.</p>
+		<p class="text">Simplify Shopping in TTRPGs with Vibia's Market - The Ultimate Tool for Organizing and Managing Your In-Game Stores!</p>
 		<img alt="fishies" class="img" src="/images/image11.png" />
 	</div>
 
@@ -56,6 +56,7 @@
 	.align-center {
 		align-self: center;
 	}
+	
 
 	.img {
 		width: 100%;
