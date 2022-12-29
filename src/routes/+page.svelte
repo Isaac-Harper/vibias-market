@@ -6,8 +6,8 @@
 	import Auth from '$lib/Auth.svelte';
 	import { user, auth, init } from '$lib/db';
 	import Primary from '$lib/Buttons/Primary.svelte';
-	import Secondary from '$lib/Buttons/Secondary.svelte'
-	import Link from '$lib/Buttons/Link.svelte'
+	import Secondary from '$lib/Buttons/Secondary.svelte';
+	import Link from '$lib/Buttons/Link.svelte';
 
 	let active = true;
 
@@ -17,8 +17,11 @@
 </script>
 
 {#if $user && active}
-	<Primary text="Homepage" func={toggleActive} />
-	<Secondary text="Sign Out" func={() => auth.signOut()} />
+	<div class="flex">
+		<Primary text="Homepage" func={toggleActive} />
+		<Secondary text="Log Out" func={() => auth.signOut()} />
+	</div>
+
 	{#await init() then}
 		<div class="container element--border--primary">
 			<MarketList />
@@ -40,9 +43,9 @@
 	</div>
 
 	<div class="selector">
-		<Link text="About" link="/about"/>
-		<Link text="FAQ" link="/faq"/>
-		<Link text="Contact" link="/contact"/>
+		<Link text="About" link="/about" />
+		<Link text="FAQ" link="/faq" />
+		<Link text="Contact" link="/contact" />
 	</div>
 
 	<div class="grow" />
@@ -58,7 +61,6 @@
 		width: 100%;
 		aspect-ratio: 1.25;
 	}
-
 
 	.container {
 		display: flex;

@@ -8,7 +8,7 @@
 		openMarketEdit,
 		resetShop
 	} from '$lib/Backend/state';
-	import { user } from '$lib/db'
+	import { user } from '$lib/db';
 	import ShopCreation from '../SHOPS/ShopCreation.svelte';
 	import Inventory from '$lib/MARKETS/Inventory.svelte';
 	import { blur } from 'svelte/transition';
@@ -29,18 +29,19 @@
 </script>
 
 {#if $state.market_open}
-	<div class="container card" transition:blur|local={{ duration: 300 }}>
+	<div class="card" transition:blur|local={{ duration: 300 }}>
 		{#if !$state.edit_market_open && !$state.create_shop_open}
-			<div class="body">
-				<h3 class="title">{$current_market.name}</h3>
-				<p>{$current_market.description}</p>
-			</div>
+			<h3 class="title">{$current_market.name}</h3>
+			<p>{$current_market.description}</p>
+
 			<HorizontalList content={current_shops} list="shop" />
 			<Inventory />
 
 			{#if $user.id === $current_market.creator_id}
-				<Primary text="create new shop" func={openShopCreation} />
-				<Primary text="open settings" func={openMarketSettings} />
+				<div class="flex">
+					<Primary text="Create Shop" func={openShopCreation} />
+					<Primary text="Settings" func={openMarketSettings} />
+				</div>
 			{/if}
 		{/if}
 
@@ -48,17 +49,3 @@
 		<MarketSettings />
 	</div>
 {/if}
-
-<style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		gap: var(--med-space);
-		color: var(--normal-font-dark);
-
-	}
-
-	.body {
-		grid-area: body;
-	}
-</style>

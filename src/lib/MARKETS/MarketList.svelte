@@ -16,25 +16,17 @@
 	}
 </script>
 
-<div class="holder card" class:creating_new={$state.create_market_open === true}>
+<div class="card" class:creating_new={$state.create_market_open === true}>
 	{#if !$state.create_market_open && !$state.join_market_open}
 		<h3 class="title">Markets</h3>
 		<HorizontalList list="market" />
-		<Primary text="Create market" func={openCreate} />
-		<Primary text="Join market" func={openJoin} />
+		<div class="flex">
+			<Primary text="Create" func={openCreate} />
+			<Primary text="Join" func={openJoin} />
+		</div>
 	{/if}
 
 	<MarketCreation />
 
 	<MarketJoin />
 </div>
-
-<style>
-	.holder {
-		display: flex;
-		flex-direction: column;
-		gap: var(--med-space);
-	
-		color: var(--normal-font-dark);
-	}
-</style>

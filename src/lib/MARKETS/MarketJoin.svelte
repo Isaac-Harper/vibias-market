@@ -1,7 +1,7 @@
 <script>
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
-	import { joinMarket } from '$lib/db'
+	import { joinMarket } from '$lib/db';
 	import { state, openMarket, resetState } from '$lib/Backend/state';
 	import TextInput from '$lib/TextInput.svelte';
 
@@ -23,6 +23,8 @@
 		<TextInput title="Join ID" bind:value={join_id} />
 	</div>
 
-	<Primary text="Join!" func={() => joinNew(join_id)} />
-	<Secondary text="Cancel" func={closeJoin} />
+	<div class="flex">
+		<Primary text="Join" func={() => joinNew(join_id)} />
+		<Secondary text="Cancel" func={closeJoin} />
+	</div>
 {/if}

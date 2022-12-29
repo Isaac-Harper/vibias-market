@@ -1,7 +1,7 @@
 <script lang="ts">
 	import NumberInput from '$lib/NumberInput.svelte';
 	import { user, newItem } from '$lib/db';
-	import { current_shop, state, openShop } from '$lib/Backend/state'
+	import { current_shop, state, openShop } from '$lib/Backend/state';
 	import TextArea from '../TextArea.svelte';
 	import TextInput from '../TextInput.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
@@ -32,8 +32,11 @@
 		<TextInput title="Shop Name:" bind:value={new_item_name} />
 		<TextArea title="Shop Description:" bind:value={new_item_description} />
 		<NumberInput title="Item Price:" bind:value={new_item_price} />
-		<Primary text="Create" func={createNewItem} />
-		<Secondary text="Cancel" func={closeItemCreation} />
+
+		<div class="flex">
+			<Primary text="Create" func={createNewItem} />
+			<Secondary text="Cancel" func={closeItemCreation} />
+		</div>
 	</div>
 {/if}
 

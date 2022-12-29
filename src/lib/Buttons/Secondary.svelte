@@ -29,7 +29,8 @@
 
 		text-decoration: none;
 		user-select: none;
-		padding: 0 var(--med-space);
+		padding: var(--small-space);
+		flex-grow: 1;
 	}
 
 	button:hover {

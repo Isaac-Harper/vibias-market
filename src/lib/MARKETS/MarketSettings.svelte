@@ -2,14 +2,8 @@
 	import Double from '$lib/Buttons/Double.svelte';
 	import Primary from '$lib/Buttons/Primary.svelte';
 	import Secondary from '$lib/Buttons/Secondary.svelte';
-	import { user, deleteMarket, updateMarket } from '$lib/db'
-	import {
-		current_market,
-		patron_list,
-		state,
-		openMarket,
-		resetState
-	} from '$lib/Backend/state';
+	import { user, deleteMarket, updateMarket } from '$lib/db';
+	import { current_market, patron_list, state, openMarket, resetState } from '$lib/Backend/state';
 	import NumberInput from '$lib/NumberInput.svelte';
 	import TextArea from '$lib/TextArea.svelte';
 	import TextInput from '$lib/TextInput.svelte';
@@ -50,9 +44,13 @@
 						<button>Change coins</button>
 					</div>
 				{/each}
-				<Primary text="Apply" func={applySettings} />
+
 				<Double text="Delete" second_text="Are you sure?" func={deleteM} />
-				<Secondary text="Close Settings" func={closeSettings} />
+
+				<div class="flex">
+					<Primary text="Apply" func={applySettings} />
+					<Secondary text="Close" func={closeSettings} />
+				</div>
 			</div>
 		</div>
 	{/if}

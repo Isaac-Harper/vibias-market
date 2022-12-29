@@ -17,8 +17,8 @@
 		current_item,
 		current_shop
 	} from '$lib/Backend/state';
-	
-	import { user } from '$lib/db'
+
+	import { user } from '$lib/db';
 
 	export let list = 'none';
 	export let content = [];
@@ -98,7 +98,7 @@
 	.container {
 		display: flex;
 		overflow-x: scroll;
-		padding: 1rem 1rem;
+		padding: 0 1rem 4px;
 		margin: 0 -1rem;
 		gap: 0.5rem;
 
