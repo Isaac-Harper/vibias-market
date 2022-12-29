@@ -1,6 +1,12 @@
 <div class="card">
 	<h2>About Vibias Market</h2>
 	<p>
-		Welcome to Vibia's Market, the ultimate tool for making shopping in DnD and other role playing games easier than ever before! With Vibia's Market, you can create your own virtual market filled with all sorts of shops and items, inviting your players to shop to their heart's content. No more rummaging through endless pages of lists or trying to remember what you have in your inventory - Vibia's Market keeps it all organized and at your fingertips. So why wait? Start building your market today and take your role playing experience to the next level!
+		Welcome to Vibia's Market! We're excited to introduce you to our web app that is designed to make shopping in tabletop role-playing games (TTRPGs) easier and more convenient.
+
+With Vibia's Market, you can create your own virtual market with a variety of shops and items, and invite your players to browse and shop from the comfort of their own devices. No more flipping through rulebooks or searching through piles of paper to find what they need - everything is right at their fingertips.
+
+Our app was built using the latest technology, including a sveltekit frontend and a powerful postgres database, ensuring that your market runs smoothly and efficiently. We've worked hard to make sure that Vibia's Market is user-friendly and intuitive, so you and your players can get started right away.
+
+We believe that Vibia's Market has the potential to revolutionize the way TTRPGs are played, making it easier for players to access the gear and resources they need to fully immerse themselves in their characters and stories. We're confident that our app will be a valuable asset for any gaming group, and we can't wait to see how it enhances your gaming experience.
 	</p>
 </div>
