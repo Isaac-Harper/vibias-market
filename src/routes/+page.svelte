@@ -35,7 +35,7 @@
 	{/if}
 
 	<div class="card">
-		<p class="text">Welcome to Vibia's Market, the ultimate tool for making shopping in DnD and other role playing games easier than ever before! With Vibia's Market, you can create your own virtual market filled with all sorts of shops and items, inviting your players to shop to their heart's content. No more rummaging through endless pages of lists or trying to remember what you have in your inventory - Vibia's Market keeps it all organized and at your fingertips. So why wait? Start building your market today and take your role playing experience to the next level!</p>
+		<p class="text">Simplify Shopping in TTRPGs with Vibia's Market - The Ultimate Tool for Organizing and Managing Your In-Game Stores!</p>
 		<img alt="fishies" class="img" src="/images/image11.png" />
 	</div>
 
@@ -54,9 +54,6 @@
 		align-self: center;
 	}
 	
-	.text {
-		font-size: .85rem;
-	}	
 
 	.img {
 		width: 100%;
