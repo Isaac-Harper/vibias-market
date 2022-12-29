@@ -16,7 +16,7 @@ We believe that Vibia's Market has the potential to revolutionize the way TTRPGs
 
 	.card {
 		display: grid;
-		gap: .5rem;
+		gap: 1rem;
 	}	
 
 </style>
