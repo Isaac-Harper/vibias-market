@@ -55,7 +55,7 @@
 	}
 	
 	.text {
-		font-size: .7rem;
+		font-size: .85rem;
 	}	
 
 	.img {
