@@ -30,7 +30,7 @@
 		text-decoration: none;
 		user-select: none;
 		padding: var(--small-space);
-		flex-grow: 1;
+		flex: 1;
 	}
 
 	button:hover {

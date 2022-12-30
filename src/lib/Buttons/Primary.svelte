@@ -31,7 +31,7 @@
 		user-select: none;
 		padding: var(--small-space);
 
-		flex: 9;
+		flex: 4;
 	}
 
 	button:hover {
