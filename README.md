@@ -1,6 +1,6 @@
 # Vibias Market
 
-Live at VibiasMarket.com
+Live at https://VibiasMarket.com
 
 This is a market simulator I am building to be used in my DnD games. Right now its free to use for yourself
 
