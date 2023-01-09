@@ -38,7 +38,10 @@
 	{/if}
 
 	<div class="card">
-		<p class="text">Simplify Shopping in TTRPGs with Vibia's Market - The Ultimate Tool for Organizing and Managing Your In-Game Stores!</p>
+		<p class="text">
+			Simplify Shopping in TTRPGs with Vibia's Market - The Ultimate Tool for Organizing and
+			Managing Your In-Game Stores!
+		</p>
 		<img alt="fishies" class="img" src="/images/image11.png" />
 	</div>
 
@@ -56,7 +59,6 @@
 	.align-center {
 		align-self: center;
 	}
-	
 
 	.img {
 		width: 100%;
@@ -79,26 +81,5 @@
 		display: flex;
 		padding: var(--med-space);
 		gap: var(--med-space);
-	}
-
-	.option {
-		padding: var(--med-space);
-		width: 100%;
-		background-color: var(--stone-tim-sage);
-		border-radius: var(--med-space);
-		border: 2px solid var(--moss-green);
-		box-shadow: var(--moss-green) 4px 4px;
-
-		text-decoration: none;
-	}
-
-	.option:hover {
-		box-shadow: var(--moss-green) 3px 3px;
-		transform: translate(1px, 1px);
-	}
-
-	.option:active {
-		box-shadow: var(--moss-green) 2px 2px;
-		transform: translate(2px, 2px);
 	}
 </style>

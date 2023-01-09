@@ -31,6 +31,13 @@
   
   --twilight-blue-transparent: #3E4C67cc;
 
+  --inventory-background: var(--field-lavendar);
+  --inventory-border: var(--skelton-navy);
+  --inventory-text: var(--bone-white);
+
+  --item-background: var(--gorange-orange);
+  --item-border: var(--hamlet-red);
+  --item-text: var(--bone-white);
 
   --primary-button-background: var(--stone-tim-sage);
   --primary-button-border: var(--moss-green);

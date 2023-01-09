@@ -6,9 +6,21 @@
 
 	function togglePath() {
 		if (path === 'logo.png') {
-			path = 'logo_back.png';
+			path = 'images/logo_flip_1.png';
+			setTimeout(function () {
+				path = 'images/logo_flip_2.png';
+			}, 100);
+			setTimeout(function () {
+				path = 'logo_back.png';
+			}, 200);
 		} else {
-			path = 'logo.png';
+			path = 'images/logo_flip_2.png';
+			setTimeout(function () {
+				path = 'images/logo_flip_1.png';
+			}, 100);
+			setTimeout(function () {
+				path = 'logo.png';
+			}, 200);
 		}
 	}
 </script>
@@ -31,12 +43,12 @@
 <style>
 	h1 {
 		font-size: 1.5rem;
-		text-shadow: -2px 2px var(--hamlet-red)
+		text-shadow: -2px 2px var(--hamlet-red);
 	}
 	p {
-		font-size: .75rem; 
+		font-size: 0.75rem;
 	}
-	
+
 	.holder {
 		display: flex;
 		gap: var(--med-space);
